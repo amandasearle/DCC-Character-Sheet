@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>6th Jan 2014</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>7th Jan 2014</p></div>
 		</div>
 
 	</div>
@@ -141,7 +141,7 @@
 						<div class="sheet-row">
 							<div class="sheet-col-2-7 sheet-center sheet-hd-row">Action Dice:</div>
 							<div class="sheet-col-1-7 sheet-center">
-								<select name="attr_ActionDice1">
+								<select name="attr_ActionDie1">
 									<option value="d3">d3</option>
 									<option value="d4">d4</option>
 									<option value="d5">d5</option>
@@ -160,7 +160,7 @@
 							</div>
 
 							<div class="sheet-col-1-7 sheet-center">
-								<select name="attr_ActionDice2">
+								<select name="attr_ActionDie2">
 									<option value="d3" selected="selected">--</option>
 									<option value="d3">d3</option>
 									<option value="d4">d4</option>
@@ -4407,7 +4407,7 @@
 						<div class="sheet-row">
 							<div class="sheet-col-3-7 sheet-hd-row">Action Dice:</div>
 							<div class="sheet-col-1-7">
-								<select name="attr_ActionDice1">
+								<select name="attr_ActionDie1">
 									<option value="d3">d3</option>
 									<option value="d4">d4</option>
 									<option value="d5">d5</option>
@@ -4470,7 +4470,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-initiative" name="roll_Fumble" value="@{character_name} fumbles their attack. [[@{ArmorFumbleDie} + @{FumbleCheck}]] on Fumble Table."><input type="number" name="attr_FumbleCheck" value="@{LCK}*-1" disabled="true"/>Fumble</button></div>
+						<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-initiative" name="roll_Fumble" value="@{character_name} fumbles their attack. [[@{ArmorFumbleDie} + @{FumbleCheck}]] on Fumble Table.">
+							<input type="number" name="attr_FumbleCheck" value="@{LCK}*-1" disabled="true"/>
+							Fumble</button></div>
 					</div>
 
 				</div>				
@@ -4488,8 +4490,8 @@
 						<div class="sheet-col-1-8 sheet-center sheet-small-label">Current Score</div>
                         <div class="sheet-col-1-8 sheet-center sheet-small-label">Max Score</div>
 						<div class="sheet-col-1-8 sheet-center sheet-small-label">Mod</div>
-						<div class="sheet-col-1-8 sheet-center sheet-small-label">Skill Check Untrained</div>
 						<div class="sheet-col-1-8 sheet-center sheet-small-label">Skill Check Trained</div>
+						<div class="sheet-col-1-8 sheet-center sheet-small-label">Skill Check Untrained</div>			
 					</div>
 					
 					<div class="sheet-row">
@@ -4497,8 +4499,9 @@
 						<div class="sheet-col-1-8"><input type="number" name="attr_Strength" min="1" step="1"/></div>
                			<div class="sheet-col-1-8"><input type="number" name="attr_Strength_max" min="1" step="1"/></div>
 						<div class="sheet-col-1-8"><input type="number" name="attr_STR" value="floor( (0.0009 * @{Strength} * @{Strength} * @{Strength}) + (-0.029 * @{Strength} * @{Strength}) + (0.6 * @{Strength}) +0.41) -4" disabled="disabled"/></div>
-						<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-core-check" name="roll_STR" value="/em attempts an untrained Strength Skill Check\n\nSTR check :[[1d10 + @{STR} [Stat Mod] ]]"></button></div>
 						<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-core-check" name="roll_STR" value="/em attempts a trained Strength Skill Check\n\nSTR check :[[1d20 + @{STR} [Stat Mod] ]]"></button></div>
+						<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-core-check" name="roll_STR" value="/em attempts an untrained Strength Skill Check\n\nSTR check :[[1d10 + @{STR} [Stat Mod] ]]"></button></div>
+
 					</div>
 					
 					<div class="sheet-row">
@@ -4677,7 +4680,6 @@
 				<div class="sheet-row sheet-sub-header">
 					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Weapon</div>
 					<div class="sheet-col-1-8 sheet-center sheet-small-label sheet-vert-bottom">Wielded</div>
-					<!-- <div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Attack Die?</div> -->
 					<div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">Lucky Roll?</div>
 					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom sheet-padr">Magic Bonus</div>
 					<div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">To<br/>Hit</div>
@@ -4695,36 +4697,17 @@
 						<select name="attr_MeleeAttackWielded1">
 							<option value="1">Main Hand</option>
 							<option value="1.1">2 Handed</option>
-							<!--<option value="0">Off Hand</option>
-							<option value="1.2">Off Hand (Halfling)</option> -->
 						</select>
 					</div>
-					<!-- <div class="sheet-col-1-12" title="If you are not trained in your weapon use, you take -1 die for your attack roll.  You will also take a minus to your dice chain if using two-weapon fighting.">
-						<select name="attr_MeleeActionDie1">
-							<option value="d30">d30</option>
-							<option value="d24">d24</option>
-							<option value="d20" selected="selected">d20</option>
-							<option value="d16">d16</option>
-							<option value="d14">d14</option>
-							<option value="d12">d12</option>
-							<option value="d10">d10</option>
-							<option value="d8">d8</option>
-							<option value="d7">d7</option>
-							<option value="d6">d6</option>
-							<option value="d5">d5</option>
-							<option value="d4">d4</option>
-							<option value="d3">d3</option>				
-						</select>
-					</div> -->
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll1"></div>
 					<div class="sheet-col-1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_MeleeMagic1" value="0" step="1"></div>
 					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit1" value="@{STR} + @{MeleeMagic1} + @{MeleeAtkLuckyRoll1} + @{ATK}" disabled="disabled"></div>
-					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeAttack1" value="/em uses @{MeleeWeaponName1} to attack\n\n[[@{ActionDie} + @{MeleeToHit1} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
+					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeAttack1" value="/em uses @{MeleeWeaponName1} to attack\n\n[[@{ActionDie1} + @{MeleeToHit1} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-20 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeDmgLuckyRoll1"></div>
 					<div class="sheet-col-1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_MeleeDmg1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeDmgBonus1" value="(@{STR} + @{MeleeMagic1} + @{MeleeDmgLuckyRoll1}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeDmgBonus1" value="@{STR} + @{MeleeMagic1} + @{MeleeDmgLuckyRoll1}" disabled="disabled"></div>
 					<div class="sheet-col-1-8"><input type="text" name="attr_MeleeDmgType1"></div>
-					<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage1" value="\nFor [[@{MeleeDmg1} [Base damage] + @{MeleeDmgBonus1} [Damage Bonus] ]] @{MeleeDmgType1} damage.]]" >Damage</button></div>
+					<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage1" value="\nFor [[@{MeleeDmg1} [Base damage] + @{MeleeDmgBonus1} [Damage Bonus] ]] @{MeleeDmgType1} damage." >Damage</button></div>
 				</div>
 				<!-- END melee weapon row -->
 				<!-- BEGIN melee weapon row -->
@@ -4734,19 +4717,17 @@
 						<select name="attr_MeleeAttackWielded2">
 							<option value="1">Main Hand</option>
 							<option value="1.1">2 Handed</option>
-							<!-- <option value="0">Off Hand</option>
-							<option value="1.2">Off Hand (2weap fight style)</option> -->
 						</select>
 					</div>
-					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll1"></div>
+					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll2"></div>
 					<div class="sheet-col-1-12 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_MeleeMagic2" value="0" step="1"></div>
 					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit2" value="@{STR} + @{ATK} + @{MeleeMagic2} + @{MeleeAtkLuckyRoll2}" disabled="disabled"></div>
-					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeAttack2" value="/em uses @{MeleeWeaponName2} to attack\n\n[[@{ActionDie} + @{MeleeToHit2} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
+					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeAttack2" value="/em uses @{MeleeWeaponName2} to attack\n\n[[@{ActionDie1} + @{MeleeToHit2} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-20 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeDmgLuckyRoll2"></div>
 					<div class="sheet-col-1-12" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_MeleeDmg2"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeDmgBonus2" value="(@{STR} + @{MeleeMagic2} +@{MeleeDmgLuckyRoll2}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeDmgBonus2" value="@{STR} + @{MeleeMagic2} +@{MeleeDmgLuckyRoll2}" disabled="disabled"></div>
 					<div class="sheet-col-1-8"><input type="text" name="attr_MeleeDmgType2"></div>
-					<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage2" value="\nFor [[@{MeleeDmg2} [Base damage] + @{MeleeDmgBonus2} [Damage Bonus] ]] @{MeleeDmgType1} damage.]]" >Damage</button></div>
+					<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage2" value="\nFor [[@{MeleeDmg2} [Base damage] + @{MeleeDmgBonus2} [Damage Bonus] ]] @{MeleeDmgType1} damage." >Damage</button></div>
 				</div>
 				<!-- END melee weapon row -->
 
@@ -4778,10 +4759,10 @@
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyRoll1"></div>
 					<div class="sheet-col-1-14 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_RangedMagic1" value="0" step="1"></div>
 					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit1" value="@{RangedType1} + @{RangedAtkLuckyRoll1} + @{RangedMagic1}" disabled="disabled"></div>
-					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedAttack1" value="/em uses @{RangedWeaponName1} to attack\n\n[[@{ActionDie} + @{RangedToHit1} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
+					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedAttack1" value="/em uses @{RangedWeaponName1} to attack\n\n[[@{ActionDie1} + @{RangedToHit1} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-22 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedDmgLuckyRoll1"></div>
 					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg1"></div>		
-					<div class="sheet-col-1-24"><input type="number" name="attr_RangedDmgBonus1" value="@{RangedType1} + @{RangedMagic1} +@{RangedDmgLuckyRoll1}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_RangedDmgBonus1" value="@{RangedMagic1} + @{RangedDmgLuckyRoll1}" disabled="disabled"></div>
 					<div class="sheet-col-1-8"><input type="text" name="attr_RangedDmgType1"></div>
 					<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedDamage1" value="\nFor [[@{RangedDmg1} [Base damage] + @{RangedDmgBonus1} [Damage Bonus] ]] @{RangedDmgType1} damage." >Damage</button></div>
 				</div>
@@ -4799,10 +4780,10 @@
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyRoll2"></div>
 					<div class="sheet-col-1-14 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_RangedMagic2" value="0" step="1"></div>
 					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit2" value="@{RangedType2} + @{RangedAtkLuckyRoll2} + @{RangedMagic2}" disabled="disabled"></div>
-					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedAttack2" value="/em uses @{RangedWeaponName2} to attack\n\n[[@{ActionDie} + @{RangedToHit2} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
+					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedAttack2" value="/em uses @{RangedWeaponName2} to attack\n\n[[@{ActionDie1} + @{RangedToHit2} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-22 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedDmgLuckyRoll2"></div>
 					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg2"></div>		
-					<div class="sheet-col-1-24"><input type="number" name="attr_RangedDmgBonus2" value="@{RangedType2} + @{RangedMagic2} +@{RangedDmgLuckyRoll2}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_RangedDmgBonus2" value="@{RangedMagic2} + @{RangedDmgLuckyRoll2}" disabled="disabled"></div>
 					<div class="sheet-col-1-8"><input type="text" name="attr_RangedDmgType2"></div>
 					<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedDamage2" value="\nFor [[@{RangedDmg2} [Base damage] + @{RangedDmgBonus2} [Damage Bonus] ]] @{RangedDmgType2} damage." >Damage</button></div>
 				</div>
@@ -4878,7 +4859,7 @@
 						</div>
 						<div class="sheet-col-1-8">
 							<select name="attr_ArmorSpeed1">
-								<option value="No" selected="selected">No</option>
+								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
 								<option value="-10">-10</option>
 							</select>
@@ -4891,7 +4872,7 @@
 						<div class="sheet-col-1-6"><input type="text" name="attr_ArmorName2"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase2" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus2" value="0" step="1"></div>
-						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC2" value="@{ArmorACBase2} + @{AGI} + @{ArmorMagicBonus2}" disabled="disabled"></div>
+						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC2" value="@{ArmorACBase2} + @{ArmorMagicBonus2}" disabled="disabled"></div>
 						<div class="sheet-col-1-6">
 							<select name="attr_ArmorFumbleDie2">
 								<option value="0" selected="selected">--</option>
@@ -4916,7 +4897,7 @@
 						</div>
 						<div class="sheet-col-1-8">
 							<select name="attr_ArmorSpeed2">
-								<option value="No" selected="selected">No</option>
+								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
 								<option value="-10">-10</option>
 							</select>
@@ -4928,7 +4909,7 @@
 						<div class="sheet-col-1-6"><input type="text" name="attr_ArmorName3"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase3" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus3" value="0" step="1"></div>
-						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC3" value="@{ArmorACBase3} + @{AGI} + @{ArmorMagicBonus3}" disabled="disabled"></div>
+						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC3" value="@{ArmorACBase3} + @{ArmorMagicBonus3}" disabled="disabled"></div>
 						<div class="sheet-col-1-6">
 							<select name="attr_ArmorFumbleDie3">
 								<option value="0" selected="selected">--</option>
@@ -4953,7 +4934,7 @@
 						</div>
 						<div class="sheet-col-1-8">
 							<select name="attr_ArmorSpeed3">
-								<option value="No" selected="selected">No</option>
+								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
 								<option value="-10">-10</option>
 							</select>
