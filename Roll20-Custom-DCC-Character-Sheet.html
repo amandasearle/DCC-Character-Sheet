@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>7th Jan 2014</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>6th Jan 2014</p></div>
 		</div>
 
 	</div>
@@ -4804,8 +4804,8 @@
 			</div>
 						
 			<div class="sheet-row sheet-padb">
-				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_calc" value="10 + @{ArmorActive1} + @{ArmorActive2} + @{ArmorActive3}" disabled="disabled" ><br/>AC (worn armor)</div>						
-				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_no_Armor_calc" value="10 + @{AGI} + floor(@{ArmorActiveUnarmored1} + @{ArmorActiveUnarmored2} + @{ArmorActiveUnarmored3}" disabled="disabled"><br/>AC (unarmored)</div>
+				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_Calc" value="10 + @{AGI} + @{ArmorActive1} + @{ArmorActive2} + @{ArmorActive3}" disabled="disabled" ><br/>AC (worn armor)</div>						
+				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_Unarmored_Calc" value="10 + @{AGI} + @{ArmorActiveUnarmored1} + @{ArmorActiveUnarmored2} + @{ArmorActiveUnarmored3}" disabled="disabled"><br/>AC (unarmored)</div>
 				<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorCheck" value="@{ArmorCheck1} + @{ArmorCheck2} + @{ArmorCheck3}" disabled="disabled" ><br/>Total Check Penalty</div>						
 				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorSpeed" value="@{ArmorSpeed1} + @{ArmorSpeed2} + @{ArmorSpeed3}" disabled="disabled"><br/>Total Speed Reduction</div>
