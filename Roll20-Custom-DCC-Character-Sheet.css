@@ -1,6 +1,6 @@
 /* overall wrapper to fix moving width issues with overflow on hidden sections */
 .charsheet .sheet-overall-wrapper {
-	max-width: 832px;
+    max-width: 832px;
 }
 
 /* Tweak repeating section buttons so they have a bottom margin and dont overflow when in edit mode. */
@@ -42,7 +42,7 @@
 }
 
 .charsheet span.sheet-is-zero-tab::before {
-    content: "Player Sheet";
+    content: "0-Level Sheet";
 }
 
 .charsheet span.sheet-is-zero-tab {
@@ -66,7 +66,7 @@
 }
 
 .charsheet input.sheet-is-zero:checked + span.sheet-is-zero-tab::before {
-	content: "0-Level Sheet"
+	content: "Player Sheet"
 }
 
 /* END player/zero button Settings */
@@ -143,15 +143,24 @@
 
 /* Graphic Boxes */
 
+.charsheet .sheet-2colrow .sheet-col {
+	width: calc(50% - 3px) !important;
+	height: 32px;
+	margin-right: 2px !important;
+}
+
+.charsheet .sheet-2colrow .sheet-col:last-child {
+	margin-right: 0 !important;
+}
+
 .charsheet input.sheet-AC,
-.charsheet input.sheet-HP,
-.charsheet select.sheet-AD {
+.charsheet input.sheet-HP {
 	margin-top: 16px;
 	margin-bottom: 34px;
 	padding: 0px;
 	height: 44px;
 	width: 48px;
-	font-size: 36px;
+	font-size: 21px;
 	line-height: 48px;
 	font-weight: bold;
 	vertical-align: middle;
@@ -159,25 +168,21 @@
 	border: 0;
 }
 
-.charsheet select.sheet-AC {
+/*.charsheet select.sheet-AC {
 	height: 38px;
 	font-size: 32px;
 	margin-top: 23px;
 	margin-bottom: 30px;
 	width: 56px;
 	text-align: center;
-}
+} */
 
 .charsheet .sheet-ACBG {
-	background: url('http://i.imgur.com/6lUoOzW.png') no-repeat center top;
+	background: url('http://i.imgur.com/6lUoOzW.png') no-repeat 20% 0% / 6.6em auto;
 }
 
 .charsheet .sheet-HPBG {
-	background: url('http://i.imgur.com/37exssR.png') no-repeat center top;
-}
-
-.charsheet .sheet-ADBG {
-	background: url('http://i.imgur.com/M3KREye.png') no-repeat center top;
+	background: url('http://i.imgur.com/37exssR.png') no-repeat 20% 0% / 6.6em auto;;
 }
 
 /* END Graphic Boxes */
@@ -846,6 +851,78 @@ div[data-groupname^="repeating_classactions"] .repitem,
 
 .charsheet .sheet-margin-bottom {
 	margin-bottom: 5px;
+}
+
+/* TABS */
+
+.charsheet input.sheet-isCleric,
+.charsheet input.sheet-isDwarf,
+.charsheet input.sheet-isElf,
+.charsheet input.sheet-isHalfling,
+.charsheet input.sheet-isThief,
+.charsheet input.sheet-isWarrior,
+.charsheet input.sheet-isWizard,
+.charsheet input.sheet-isNPC,
+.charsheet .sheet-subtab {
+    display: inline;
+	width:24px;
+}
+
+.charsheet .sheet-subtab {
+	width:40px;
+} 
+
+.charsheet .sheet-isCleric:checked~.sheet-cleric,
+.charsheet .sheet-isDwarf:checked~.sheet-dwarf,
+.charsheet .sheet-isElf:checked~.sheet-elf,
+.charsheet .sheet-isHalfling:checked~.sheet-halfling,
+.charsheet .sheet-isThief:checked~.sheet-thief,
+.charsheet .sheet-isWarrior:checked~.sheet-warrior,
+.charsheet .sheet-isWizard:checked~.sheet-wizard,
+.charsheet .sheet-isNPC:checked~.sheet-npc {
+	display: none;
+}
+
+.charsheet .sheet-isNPC:checked~.sheet-pc,
+.charsheet .sheet-isPC:checked~.sheet-npc {
+	display: none;	
+}
+
+
+/* Extra Classes */
+
+.charsheet input.sheet-isMorlock,
+.charsheet input.sheet-isMutant,
+.charsheet input.sheet-isReptilian,
+.charsheet input.sheet-isRobot,
+.charsheet input.sheet-isSavage,
+.charsheet input.sheet-isSentinel,
+.charsheet input.sheet-isTechnologist,
+.charsheet input.sheet-isNPC,
+.charsheet .sheet-subtab {
+    display: inline;
+	width:24px;
+}
+
+.charsheet .sheet-isMorlock:checked~.sheet-morlock,
+.charsheet .sheet-isMutant:checked~.sheet-mutant,
+.charsheet .sheet-isReptilian:checked~.sheet-reptilian,
+.charsheet .sheet-isRobot:checked~.sheet-robot,
+.charsheet .sheet-isSavage:checked~.sheet-savage,
+.charsheet .sheet-isSentinel:checked~.sheet-sentinel,
+.charsheet .sheet-isTechnologist:checked~.sheet-technologist,
+.charsheet .sheet-isNPC:checked~.sheet-npc {
+	display: none;
+}
+
+/* Zero Level Character specific sections */
+
+/* Inventory */
+.charsheet textarea.sheet-inventory-zero {
+    width: 98%;
+    height: 170px;
+    font-size: 13px;
+    line-height: 16px;
 }
 
 /* Custom Pure Grid CSS (24 cols) DO NOT EDIT BELOW THIS LINE OR RISK BREAKING FORMATTING */
