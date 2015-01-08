@@ -22,8 +22,8 @@
 	overflow: hidden;
 }
 
-.charsheet input.sheet-is-zero:checked ~ div.sheet-zero,
-.charsheet input.sheet-is-zero:not(:checked )~ div.sheet-player
+.charsheet input.sheet-is-zero:not(:checked ) ~ div.sheet-zero,
+.charsheet input.sheet-is-zero:checked~ div.sheet-player
 {
 	max-height: 999999px;
 	visibility: visible;
@@ -611,6 +611,14 @@ div[data-groupname^="repeating_classactions"] .repitem,
 
 .charsheet .sheet-center {
 	text-align: center;
+}
+
+.charsheet .sheet-left {
+	text-align: left;
+}
+
+.charsheet .sheet-right {
+	text-align: right;
 }
 
 
