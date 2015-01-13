@@ -70,10 +70,20 @@
 								</div>
 							</div>
 
-						<div class="sheet-row">
-							<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
-							<div class="sheet-col-1-4 sheet-center sheet-small-label">Armor Class</div>
-						</div>
+							<div class="sheet-col-3-4">
+  								
+  								<div class="sheet-ACBG">
+  									<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
+									<div class="sheet-col-1-8 sheet-center"><input class="sheet-AC" type="number" name="attr_AC_Unarmored" value="@{AC_Unarmored_Calc}" disabled="disabled"/><br/>.</div>
+								</div>
+							</div>
+
+							<div class="sheet-row">
+								<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+								<div class="sheet-col-1-4 sheet-left sheet-small-label">Armor Class</div>
+                                <div class="sheet-col-1-13 sheet-center sheet-small-label">&nbsp;</div>
+    							<div class="sheet-col-1-4 sheet-left sheet-small-label">Unarmored AC</div>
+							</div>
 
 						</div>
 
@@ -102,7 +112,7 @@
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
-							<div class="sheet-col-1-4 sheet-center sheet-small-label">Hit Points</div>
+							<div class="sheet-col-1-4 sheet-left sheet-small-label">Hit Points</div>
 						</div>
 
 						<!-- </div> -->
@@ -382,7 +392,7 @@
 						<div class="sheet-row">
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
-							<div class="sheet-col-1-5 sheet-padl sheet-small-label sheet-center" title="Base Speed is based on your Race."><input class="sheet-underlined sheet-center" type="number" name="attr_Speed" value="30" step="5"><br/>Base Speed</div>
+							<div class="sheet-col-1-5 sheet-padl sheet-small-label sheet-center" title="Base Speed is based on your Race."><input class="sheet-underlined sheet-center" type="number" name="attr_Speed" value="30"><br/>Base Speed</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 						</div>
@@ -4343,10 +4353,20 @@
 								</div>
 							</div>
 
-						<div class="sheet-row">
-							<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
-							<div class="sheet-col-1-4 sheet-center sheet-small-label">Armor Class</div>
-						</div>
+							<div class="sheet-col-3-4">
+  								
+  								<div class="sheet-ACBG">
+  									<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
+									<div class="sheet-col-1-8 sheet-center"><input class="sheet-AC" type="number" name="attr_AC_Unarmored" value="@{AC_Unarmored_Calc}" disabled="disabled"/><br/>.</div>
+								</div>
+							</div>
+
+							<div class="sheet-row">
+								<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+								<div class="sheet-col-1-4 sheet-left sheet-small-label">Armor Class</div>
+                                <div class="sheet-col-1-13 sheet-center sheet-small-label">&nbsp;</div>
+    							<div class="sheet-col-1-4 sheet-left sheet-small-label">Unarmored AC</div>
+							</div>
 
 						</div>
 
@@ -4371,7 +4391,7 @@
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
-							<div class="sheet-col-1-4 sheet-center sheet-small-label">Hit Points</div>
+							<div class="sheet-col-1-4 sheet-left sheet-small-label">Hit Points</div>
 						</div>
 
 				</div>
@@ -4601,7 +4621,7 @@
 						<div class="sheet-row">
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
-							<div class="sheet-col-1-5 sheet-padl sheet-small-label sheet-center" title="Base Speed is based on your Race."><input class="sheet-underlined sheet-center" type="number" name="attr_Speed" value="30" step="5"><br/>Base Speed</div>
+							<div class="sheet-col-1-5 sheet-padl sheet-small-label sheet-center" title="Base Speed is based on your Race."><input class="sheet-underlined sheet-center" type="number" name="attr_Speed" value="30"><br/>Base Speed</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 						</div>
@@ -4797,7 +4817,7 @@
 			</div>
 						
 			<div class="sheet-row sheet-padb">
-				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_Calc" value="10 + @{AGI} + @{ArmorActive1} + @{ArmorActive2} + @{ArmorActive3}" disabled="disabled" ><br/>AC (worn armor)</div>						
+				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_Calc" value="@{AGI} + @{ArmorActive1} + @{ArmorActive2} + @{ArmorActive3}" disabled="disabled" ><br/>AC (worn armor)</div>						
 				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_Unarmored_Calc" value="10 + @{AGI} + @{ArmorActiveUnarmored1} + @{ArmorActiveUnarmored2} + @{ArmorActiveUnarmored3}" disabled="disabled"><br/>AC (unarmored)</div>
 				<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorCheck" value="@{ArmorCheck1} + @{ArmorCheck2} + @{ArmorCheck3}" disabled="disabled" ><br/>Total Check Penalty</div>						
