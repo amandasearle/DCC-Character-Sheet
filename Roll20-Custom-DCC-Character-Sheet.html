@@ -82,7 +82,7 @@
 								<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
 								<div class="sheet-col-1-4 sheet-left sheet-small-label">Armor Class</div>
                                 <div class="sheet-col-1-13 sheet-center sheet-small-label">&nbsp;</div>
-    							<div class="sheet-col-1-4 sheet-left sheet-small-label">Unarmored AC</div>
+    							<div class="sheet-col-1-4 sheet-left sheet-small-label">unArmored AC</div>
 							</div>
 
 						</div>
@@ -557,172 +557,10 @@
 				
 			</div>
 
-			
-
-				<!-- warrior -->
-				<div class="sheet-warrior">
-					<h2>Warrior Abilities</h2>
-					<div class="sheet-statblock">
-						<div class="sheet-item sheet-med">
-							<label>Mighty Deeds of Arms</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<select name="attr_DeedDie" value="d0">
-									<option value="d0" selected="selected">--</option>
-									<option value="d3">d3</option>
-									<option value="d4">d4</option>
-									<option value="d5">d5</option>
-									<option value="d6">d6</option>
-									<option value="d7">d7</option>
-									<option value="d8">d8</option>
-									<option value="d10">d10</option>
-									<option value="d10+1">d10+1</option>
-									<option value="d10+2">d10+2</option>
-									<option value="d10+3">d10+3</option>
-									<option value="d10+4">d10+4</option>
-				            </select>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-square" type="roll" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]" name="roll_DeedDie"/>
-						</div>
-					</div>
-					<div class="sheet-statblock">
-						<div class="sheet-item sheet-med">
-							<label>Threat Range:</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<select name="attr_WarriorThreat" value="20">
-									<option value="20" selected="selected">--</option>
-									<option value="19">19-20</option>
-									<option value="18">18-20</option>
-									<option value="17">17-20</option>
-				            </select>
-						</div>
-					</div>
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Lucky weapon:</label>
-						</div>
-						<div class="sheet-item sheet-large">
-							<input type="text" name="attr_LuckyWeapon"/>
-						</div>
-					</div>
-					<div class="sheet-item">
-						<label>Add class level to initiative</label>
-					</div>
-				</div>
-
-				<!-- wizard -->
-				<div class="sheet-wizard">
-					<h2>Wizard Spells &amp; Abilities</h2>
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Familiar:</label>
-						</div>
-						<div class="sheet-item sheet-large">
-							<input type="text" name="attr_WizardFamiliar"/>
-						</div>
-					</div>
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Patron(s):</label>
-						</div>
-						<div class="sheet-item sheet-large">
-							<input type="text" name="attr_WizardPatron"/>
-						</div>
-					</div>
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Corruption:</label>
-						</div>
-						<div class="sheet-item sheet-large">
-							<input type="text" name="attr_WizardCorruption"/>
-						</div>
-					</div>
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Other notes:</label>
-						</div>
-						<div class="sheet-item sheet-large">
-							<input type="text" name="attr_WizardNotes"/>
-						</div>
-					</div>
-					<div class="sheet-statblock">
-						<div class="sheet-item sheet-med">
-							<label>Momentum:</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<select name="attr_Momentum" value="10" class="sheet-square">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10" selected="selected">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-								<option value="16">16</option>
-								<option value="17">17</option>
-								<option value="18">18</option>
-								<option value="19">19</option>
-								<option value="20">20</option>
-							</select>
-						</div>
-					</div>
-					<div>
-						<label>Spells:</label>
-					</div>
-					<div class="sheet-statblock">
-						<div class="sheet-header">
-							<div class="sheet-item sheet-small">
-								<label>Spell Name</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Level</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Misc Mods</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Check</label>
-							</div>
-							<div class="sheet-item sheet-med">
-								<label>Mercurial Effect &amp; Notes</label>
-							</div>
-						</div>
-						<fieldset class="repeating_wizardspells">
-							<div class="sheet-row">
-								<div class="sheet-item sheet-small">
-									<input type="text" name="attr_WizardSpell"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="number" name="attr_WizardSpellLevel" value="1"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="number" name="attr_WizardSpellCheckMisc" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} casts @{WizardSpell}: [[@{ActionDie}+@{WizardSpellCheck}]]" name="roll_WizardSpell">
-										<input type="number" name="attr_WizardSpellCheck" value="@{Level}+@{INT}+@{WizardSpellCheckMisc}" disabled="true"/>
-									</button>
-								</div>
-								<div class="sheet-item sheet-med">
-									<input type="text" name="attr_WizardSpellMercurial"/>
-								</div>
-							</div>
-						</fieldset>
-					</div>
-				</div>
+			<hr/>
 
 				<!-- cleric -->
-				<div class="sheet-cleric">
+				<!--<div class="sheet-cleric">
 					<h2>Cleric Spells &amp; Abilities</h2>
 					<div>
 						<div class="sheet-item sheet-med">
@@ -923,29 +761,17 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>
+				</div>-->
 
-				<!-- thief -->
-				<div class="sheet-thief">
-					<h2>Thief Abilities</h2>
-					<div class="sheet-statblock">
-						<div class="sheet-header">
-							<div class="sheet-item sheet-med">
-								<label>Ability</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Base</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Check</label>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Luck die</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<select name="attr_ThiefLuckDie" value="d0">
+				<!-- dwarf -->
+				<div class="sheet-dwarf">
+
+					<h2>Dwarf Abilities</h2>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-5 sheet-hd-row">Mighty Deeds of Arms : </br></div>
+							<div class="sheet-col-1-10 sheet-right">
+								<select name="attr_DeedDie">
 									<option value="d0" selected="selected">--</option>
 									<option value="d3">d3</option>
 									<option value="d4">d4</option>
@@ -954,274 +780,55 @@
 									<option value="d7">d7</option>
 									<option value="d8">d8</option>
 									<option value="d10">d10</option>
-									<option value="d12">d12</option>
-									<option value="d14">d14</option>
-									<option value="d16">d16</option>
+									<option value="d10+1">d10+1</option>
+									<option value="d10+2">d10+2</option>
+									<option value="d10+3">d10+3</option>
+									<option value="d10+4">d10+4</option>
 								</select>
 							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-square" type="roll" value="@{character_name} uses Luck: [[@{ThiefLuckDie}]]" name="roll_ThiefLuckDie"/>
-							</div>
+							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_DeedDie" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]">Deed Die</button></div>
 						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Backstab</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefBackstab" value="0"/>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Sneak silently</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefSneak" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently: [[@{ActionDie}+@{ThiefSneakCheck}]]" name="roll_ThiefSneak">
-									<input type="number" class="sheet-square" name="attr_ThiefSneakCheck" value="@{ThiefSneak}+@{AGI}" disabled="true"/>
-								</button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Hide in shadows</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefHide" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} hides in shadows: [[@{ActionDie}+@{ThiefHideCheck}]]" name="roll_ThiefHide">
-									<input type="number" class="sheet-square" name="attr_ThiefHideCheck" value="@{ThiefHide}+@{AGI}" disabled="true"/>
-								</button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Pick pocket</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefPickPockets" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} picks pockets: [[@{ActionDie}+@{ThiefPickPocketsCheck}]]" name="roll_ThiefPickPockets">
-									<input type="number" class="sheet-square" name="attr_ThiefPickPocketsCheck" value="@{ThiefPickPockets}+@{AGI}" disabled="true"/>
-								</button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Climb sheer surfaces</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefCimb" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently: [[@{ActionDie}+@{ThiefCimbCheck}]]" name="roll_ThiefCimb"/>
-									<input type="number" class="sheet-square" name="attr_ThiefCimbCheck" value="@{ThiefCimb}+@{AGI}" disabled="true">
-								</button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Pick lock</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefPickLocks" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} picks locks: [[@{ActionDie}+@{ThiefPickLocksCheck}]]" name="roll_ThiefPickLocks">
-									<input type="number" class="sheet-square" name="attr_ThiefPickLocksCheck" value="@{ThiefPickLocks}+@{AGI}" disabled="true"/>
-								</button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Find trap</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefFindTraps" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} finds traps: [[@{ActionDie}+@{ThiefFindTrapsCheck}]]" name="roll_ThiefFindTraps">
-									<input type="number" class="sheet-square" name="attr_ThiefFindTrapsCheck" value="@{ThiefFindTraps}+@{INT}" disabled="true"/>
-								</button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Disable trap</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefDisableTraps" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} disables traps: [[@{ActionDie}+@{ThiefDisableTrapsCheck}]]" name="roll_ThiefDisableTraps">
-									<input type="number" class="sheet-square" name="attr_ThiefDisableTrapsCheck" value="@{ThiefDisableTraps}+@{AGI}" disabled="true"/>
-								</button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Forge document</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefForgeDocuments" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} forges documents: [[@{ActionDie}+@{ThiefForgeDocumentsCheck}]]" name="roll_ThiefForgeDocuments">
-									<input type="number" class="sheet-square" name="attr_ThiefForgeDocumentsCheck" value="@{ThiefForgeDocuments}+@{AGI}" disabled="true"/>
-								</button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Disguise self</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefDisguise" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} disguises: [[@{ActionDie}+@{ThiefDisguiseCheck}]]" name="roll_ThiefDisguise">
-									<input type="number" class="sheet-square" name="attr_ThiefDisguiseCheck" value="@{ThiefDisguise}+@{PER}" disabled="true"/>
-								</button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Read languages</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefRead" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} reads languages: [[@{ActionDie}+@{ThiefReadCheck}]]" name="roll_ThiefRead">
-									<input type="number" class="sheet-square" name="attr_ThiefReadCheck" value="@{ThiefRead}+@{INT}" disabled="true"/>
-								</button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Handle poison</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefPoison" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								 <button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} handles poison: [[@{ActionDie}+@{ThiefPoisonCheck}]]" name="roll_ThiefPoison">
-									 <input type="number" class="sheet-square" name="attr_ThiefPoisonCheck" value="@{ThiefPoison}}" disabled="true"/>
-								 </button>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Cast spell from scroll</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="text" class="sheet-square"  name="attr_ThiefCastScroll" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} casts a spell from a scroll: [[@{ActionDie}+@{ThiefCastScrollCheck}]]" name="roll_ThiefCastScroll">
-									<input type="number" class="sheet-square" name="attr_ThiefCastScrollCheck" value="@{ThiefCastScroll}+@{INT}" disabled="true"/>
-								</button>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<!-- halfling -->
-				<div class="sheet-halfling">	
-					<h2>Halfling Abilities</h2>
-					<div class="sheet-statblock">
-						<div class="sheet-item sheet-med">
-							<label>Stealth:</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<input type="text" class="sheet-square" name="attr_HalflingStealth" value="0"/>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} Sneaks: [[@{ActionDie}+@{HalflingStealth}+@{AGI}]]" name="roll_ThiefHide">
-								<input type="number" class="sheet-square" name="attr_ThiefCastScrollCheck" value="@{HalflingStealth}+@{AGI}" disabled="true"/>
-							</button>
-						</div>
-					</div>
-					<div>
-						<label>Infravision</label>
-					</div>
-					<div>
-						<label>Lucky</label>
-					</div>
-					<div>
-						<label>Two-weapon fighting</label><br/>
-						<ul>
-							<li>Action dice d16+d16<br/>
-							</li>
-							<li>Crit on nat 16<br/>
-							</li>
-							<li>Fumble only on 2x 1<br/>
-							</li>
-							<li>If Agi &gt;16, use normal rules<br/>
-							</li>
-						</ul>
-					</div>
-				</div>
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
-				<!-- dwarf -->
-				<div class="sheet-dwarf">	
-					<h2>Dwarf Abilities</h2>
-					<div>
-						<div class="sheet-statblock">
-							<div class="sheet-item sheet-med">
-								<label>Mighty Deeds of Arms:</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-					            <select name="attr_DeedDie" value="d0">
-										<option value="d0" selected="selected">--</option>
-										<option value="d3">d3</option>
-										<option value="d4">d4</option>
-										<option value="d5">d5</option>
-										<option value="d6">d6</option>
-										<option value="d7">d7</option>
-										<option value="d8">d8</option>
-										<option value="d10">d10</option>
-										<option value="d10+1">d10+1</option>
-										<option value="d10+2">d10+2</option>
-										<option value="d10+3">d10+3</option>
-										<option value="d10+4">d10+4</option>
-					            </select>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-square" type="roll" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]" name="roll_DeedDie"/>
-							</div>
+						<div class="sheet-row">
+							<div class="sheet-col-1-8 sheet-hd-row">Lucky Weapon: <br/></div>
+							<div class="sheet-col-1-4 sheet-right" title="The weapon must be specific ie Longsword or Shortsword instead of just swords"><input class="sheet-underline sheet-center" type="text" name="attr_LuckyWeapon"/></div>
 						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Lucky weapon:</label>
-							</div>
-							<div class="sheet-item sheet-large">
-								<input type="text" name="attr_LuckyWeapon"/>
-							</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">Shield bash (d14)<br/></div>
+							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_dwarfShieldBash" value="@{character_name} does a shield bash. Attack roll: [[d14 + @{STR}]] plus Mighty Deed. Damage roll: [[1d3 + @{STR}]] plus Mighty Deed.">Shield Bash</button></div>			
 						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Shield bash (d14)</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-square" type="roll" value="@{character_name} does a shield bash. Attack roll: [[d14+@{STR}]] plus Might Deed. Damage roll: [[1d4+@{STR}]] plus Mighty Deed." name="roll_dwarfShieldBash"/>
-							</div>
-						</div>
-						<div>
-							<label>Infravision</label>
-						</div>
-						<div>
-							<label>Underground skills (smell gold/gems, find construction)</label>
-						</div>
-					</div>
+		
+						<h3>Dwarven Traits : </br></h3>
+							<ul>
+  								<li><b>Infravision 60'</b><br/></li>
+  								<li><b>Underground Skills </b><br/>
+    								<ul>
+      									<li><b>Smell Gold/Gems </b><br/>
+      										<ul>
+      											<li>Strong concentration within 100' <br/></li>
+      											<li>Smaller concentrations, down to a single coin, as low as 40' (for a single coin or gem) <br/></li>
+      										</ul>
+      									</li>
+      									<li><b>Find Construction: Bonus equal to Class Level</b><br/>
+      										<ul>
+      											<li>Detecting Traps <br/></li>
+      											<li>Detecting Slanting Passages <br/></li>
+      											<li>Detecting Shifting Walls <br/></li>
+      											<li>Detecting New Construction <br/></li>
+      										</ul>
+      									</li>
+    								</ul>
+  								</li>
+							</ul>
 				</div>
 
 				<!-- elf -->
-				<div class="sheet-elf">
+				<!--<div class="sheet-elf">
 					<h2>Elf Spells &amp; Abilities</h2>
 					<div>
 						<div class="sheet-item sheet-med">
@@ -1368,12 +975,177 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>
-				
-				
+				</div> -->	
+
+				<!-- halfling -->
+				<!--<div class="sheet-halfling">	
+					<h2>Halfling Abilities</h2>
+					<div class="sheet-statblock">
+						<div class="sheet-item sheet-med">
+							<label>Stealth:</label>
+						</div>
+						<div class="sheet-item sheet-tiny">
+							<input type="text" class="sheet-square" name="attr_HalflingStealth" value="0"/>
+						</div>
+						<div class="sheet-item sheet-tiny">
+							<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} Sneaks: [[@{ActionDie}+@{HalflingStealth}+@{AGI}]]" name="roll_ThiefHide">
+								<input type="number" class="sheet-square" name="attr_ThiefCastScrollCheck" value="@{HalflingStealth}+@{AGI}" disabled="true"/>
+							</button>
+						</div>
+					</div>
+					<div>
+						<label>Infravision</label>
+					</div>
+					<div>
+						<label>Lucky</label>
+					</div>
+					<div>
+						<label>Two-weapon fighting</label><br/>
+						<ul>
+							<li>Action dice d16+d16<br/>
+							</li>
+							<li>Crit on nat 16<br/>
+							</li>
+							<li>Fumble only on 2x 1<br/>
+							</li>
+							<li>If Agi &gt;16, use normal rules<br/>
+							</li>
+						</ul>
+					</div>
+				</div>-->
+
+				<!-- Morlock -->
+				<!--<div class="sheet-morlock">
+					<h2>Morlock Abilities</h2>
+					<div>
+						<div class="sheet-statblock">
+							<div class="sheet-item sheet-med">
+								<label>Mighty Deeds of Arms:</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+					            <select name="attr_DeedDie">
+										<option value="d0" selected="selected">--</option>
+										<option value="d3">d3</option>
+										<option value="d4">d4</option>
+										<option value="d5">d5</option>
+										<option value="d6">d6</option>
+										<option value="d7">d7</option>
+										<option value="d8">d8</option>
+										<option value="d10">d10</option>
+										<option value="d10+1">d10+1</option>
+					            </select>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-square" type="roll" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]" name="roll_DeedDie"/>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Ranger Path:</label>
+							</div>
+							<div class="sheet-item sheet-large">
+					            <select name="attr_RangerPath">
+										<option value="None" selected="selected">None</option>
+										<option value="Archery">Archery Expert</option>
+										<option value="Two Weapon">Two-Weapon Expert</option>
+					            </select>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Favored Enemy:</label>
+							</div>
+							<div class="sheet-item sheet-large">
+								<input type="text" name="attr_RangerFavoredEnemy"/>
+							</div>
+						</div>
+						<div class="sheet-statblock">
+							<div class="sheet-header">
+								<div class="sheet-item sheet-med">
+									<label>Ability</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<label>Base</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<label>Check</label>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Climb</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerClimb" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} climbs: [[@{ActionDie}+@{RangerClimbheck}]]" name="roll_RangerClimb">
+										<input type="number" class="sheet-square" name="attr_RangerClimbCheck" value="@{RangerClimb}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Find Traps</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerTraps" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} finds and/or neutralizes a trap: [[@{ActionDie}+@{RangerTrapsCheck}]]" name="roll_RangerTraps">
+										<input type="number" class="sheet-square" name="attr_RangerTrapsCheck" value="@{RangerTraps}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Sneak and Hide</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerSneak" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently and hides: [[@{ActionDie}+@{RangerSneakCheck}]]" name="roll_RangerSneak">
+										<input type="number" class="sheet-square" name="attr_RangerSneakCheck" value="@{RangerSneak}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Strider</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerStrider" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} walks or even runs without leaving tracks or being hampered by difficult terrain: [[@{ActionDie}+@{RangerStriderCheck}]]" name="roll_RangerStrider">
+										<input type="number" class="sheet-square" name="attr_RangerStriderCheck" value="@{RangerStrider}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Survival</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerSurvival" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} uses wilderness skills: [[@{ActionDie}+@{RangerSurvivalCheck}]]" name="roll_RangerSurvival">
+										<input type="number" class="sheet-square" name="attr_RangerSurvivalCheck" value="@{RangerSurvival}+@{PER}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<label>Luck check to avoid being surprised outdoors</label>
+						</div>
+					</div>
+				</div>	-->	
+
 				<!-- Mutant -->
-				<div class="sheet-mutant">
-					<h2>Bard Spells &amp; Abilities</h2>
+				<!--<div class="sheet-mutant">
+					<h2>Mutant &amp; Abilities</h2>
 					<div class="sheet-statblock">
 						<div class="sheet-item sheet-med">
 							<label>Talent Die</label>
@@ -1531,11 +1303,140 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>	
-				
-				<!-- robot -->
-				<div class="sheet-robot">
-					<h2>Gnome Spells &amp; Abilities</h2>		
+				</div>	-->
+
+				<!-- Reptilian -->
+				<!-- <div class="sheet-reptilian">
+					<h2>Reptilian Abilities</h2>
+					<div>
+						<div class="sheet-statblock">
+							<div class="sheet-item sheet-med">
+								<label>Mighty Deeds of Arms:</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+					            <select name="attr_DeedDie">
+										<option value="d0" selected="selected">--</option>
+										<option value="d3">d3</option>
+										<option value="d4">d4</option>
+										<option value="d5">d5</option>
+										<option value="d6">d6</option>
+										<option value="d7">d7</option>
+										<option value="d8">d8</option>
+										<option value="d10">d10</option>
+										<option value="d10+1">d10+1</option>
+					            </select>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-square" type="roll" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]" name="roll_DeedDie"/>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Ranger Path:</label>
+							</div>
+							<div class="sheet-item sheet-large">
+					            <select name="attr_RangerPath">
+										<option value="None" selected="selected">None</option>
+										<option value="Archery">Archery Expert</option>
+										<option value="Two Weapon">Two-Weapon Expert</option>
+					            </select>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Favored Enemy:</label>
+							</div>
+							<div class="sheet-item sheet-large">
+								<input type="text" name="attr_RangerFavoredEnemy"/>
+							</div>
+						</div>
+						<div class="sheet-statblock">
+							<div class="sheet-header">
+								<div class="sheet-item sheet-med">
+									<label>Ability</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<label>Base</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<label>Check</label>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Climb</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerClimb" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} climbs: [[@{ActionDie}+@{RangerClimbheck}]]" name="roll_RangerClimb">
+										<input type="number" class="sheet-square" name="attr_RangerClimbCheck" value="@{RangerClimb}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Find Traps</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerTraps" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} finds and/or neutralizes a trap: [[@{ActionDie}+@{RangerTrapsCheck}]]" name="roll_RangerTraps">
+										<input type="number" class="sheet-square" name="attr_RangerTrapsCheck" value="@{RangerTraps}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Sneak and Hide</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerSneak" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently and hides: [[@{ActionDie}+@{RangerSneakCheck}]]" name="roll_RangerSneak">
+										<input type="number" class="sheet-square" name="attr_RangerSneakCheck" value="@{RangerSneak}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Strider</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerStrider" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} walks or even runs without leaving tracks or being hampered by difficult terrain: [[@{ActionDie}+@{RangerStriderCheck}]]" name="roll_RangerStrider">
+										<input type="number" class="sheet-square" name="attr_RangerStriderCheck" value="@{RangerStrider}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Survival</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerSurvival" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} uses wilderness skills: [[@{ActionDie}+@{RangerSurvivalCheck}]]" name="roll_RangerSurvival">
+										<input type="number" class="sheet-square" name="attr_RangerSurvivalCheck" value="@{RangerSurvival}+@{PER}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<label>Luck check to avoid being surprised outdoors</label>
+						</div>
+					</div>
+				</div>	-->
+
+				<!-- Robot -->
+				<!--<div class="sheet-robot">
+					<h2>Robot Spells &amp; Abilities</h2>		
 					<div class="sheet-statblock">
 						<div class="sheet-item sheet-med">
 							<label>Trick Die</label>
@@ -1688,11 +1589,140 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>
-				
+				</div> -->
+
+				<!-- Savage -->
+				<!--<div class="sheet-savage">
+					<h2>Savage Abilities</h2>
+					<div>
+						<div class="sheet-statblock">
+							<div class="sheet-item sheet-med">
+								<label>Mighty Deeds of Arms:</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+					            <select name="attr_DeedDie">
+										<option value="d0" selected="selected">--</option>
+										<option value="d3">d3</option>
+										<option value="d4">d4</option>
+										<option value="d5">d5</option>
+										<option value="d6">d6</option>
+										<option value="d7">d7</option>
+										<option value="d8">d8</option>
+										<option value="d10">d10</option>
+										<option value="d10+1">d10+1</option>
+					            </select>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-square" type="roll" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]" name="roll_DeedDie"/>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Ranger Path:</label>
+							</div>
+							<div class="sheet-item sheet-large">
+					            <select name="attr_RangerPath">
+										<option value="None" selected="selected">None</option>
+										<option value="Archery">Archery Expert</option>
+										<option value="Two Weapon">Two-Weapon Expert</option>
+					            </select>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Favored Enemy:</label>
+							</div>
+							<div class="sheet-item sheet-large">
+								<input type="text" name="attr_RangerFavoredEnemy"/>
+							</div>
+						</div>
+						<div class="sheet-statblock">
+							<div class="sheet-header">
+								<div class="sheet-item sheet-med">
+									<label>Ability</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<label>Base</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<label>Check</label>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Climb</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerClimb" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} climbs: [[@{ActionDie}+@{RangerClimbheck}]]" name="roll_RangerClimb">
+										<input type="number" class="sheet-square" name="attr_RangerClimbCheck" value="@{RangerClimb}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Find Traps</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerTraps" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} finds and/or neutralizes a trap: [[@{ActionDie}+@{RangerTrapsCheck}]]" name="roll_RangerTraps">
+										<input type="number" class="sheet-square" name="attr_RangerTrapsCheck" value="@{RangerTraps}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Sneak and Hide</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerSneak" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently and hides: [[@{ActionDie}+@{RangerSneakCheck}]]" name="roll_RangerSneak">
+										<input type="number" class="sheet-square" name="attr_RangerSneakCheck" value="@{RangerSneak}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Strider</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerStrider" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} walks or even runs without leaving tracks or being hampered by difficult terrain: [[@{ActionDie}+@{RangerStriderCheck}]]" name="roll_RangerStrider">
+										<input type="number" class="sheet-square" name="attr_RangerStriderCheck" value="@{RangerStrider}+@{AGI}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+							<div>
+								<div class="sheet-item sheet-med">
+									<label>Survival</label>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="text" class="sheet-square"  name="attr_RangerSurvival" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} uses wilderness skills: [[@{ActionDie}+@{RangerSurvivalCheck}]]" name="roll_RangerSurvival">
+										<input type="number" class="sheet-square" name="attr_RangerSurvivalCheck" value="@{RangerSurvival}+@{PER}+@{Level}" disabled="true"/>
+									</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<label>Luck check to avoid being surprised outdoors</label>
+						</div>
+					</div>
+				</div>	-->
+
 				<!-- Sentinel -->
-				<div class="sheet-paladin">
-					<h2>Paladin Spells &amp; Abilities</h2>
+				<!-- <div class="sheet-sentinel">
+					<h2>Sentinel Spells &amp; Abilities</h2>
 					<div class="sheet-statblock">
 						<div class="sheet-item sheet-med">
 							<label>Smite:</label>
@@ -1966,11 +1996,11 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>
-				
-				<!-- Reptilian -->
-				<div class="sheet-ranger">
-					<h2>Ranger Abilities</h2>
+				</div> -->
+
+				<!-- Technologist -->
+				<!--<div class="sheet-technologist">
+					<h2>Technologist Abilities</h2>
 					<div>
 						<div class="sheet-statblock">
 							<div class="sheet-item sheet-med">
@@ -2095,7 +2125,363 @@
 							<label>Luck check to avoid being surprised outdoors</label>
 						</div>
 					</div>
-				</div>	
+				</div>	-->
+
+				<!-- Thief -->
+				<!--<div class="sheet-thief">
+					<h2>Thief Abilities</h2>
+					<div class="sheet-statblock">
+						<div class="sheet-header">
+							<div class="sheet-item sheet-med">
+								<label>Ability</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<label>Base</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<label>Check</label>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Luck die</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<select name="attr_ThiefLuckDie" value="d0">
+									<option value="d0" selected="selected">--</option>
+									<option value="d3">d3</option>
+									<option value="d4">d4</option>
+									<option value="d5">d5</option>
+									<option value="d6">d6</option>
+									<option value="d7">d7</option>
+									<option value="d8">d8</option>
+									<option value="d10">d10</option>
+									<option value="d12">d12</option>
+									<option value="d14">d14</option>
+									<option value="d16">d16</option>
+								</select>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-square" type="roll" value="@{character_name} uses Luck: [[@{ThiefLuckDie}]]" name="roll_ThiefLuckDie"/>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Backstab</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefBackstab" value="0"/>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Sneak silently</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefSneak" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently: [[@{ActionDie}+@{ThiefSneakCheck}]]" name="roll_ThiefSneak">
+									<input type="number" class="sheet-square" name="attr_ThiefSneakCheck" value="@{ThiefSneak}+@{AGI}" disabled="true"/>
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Hide in shadows</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefHide" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} hides in shadows: [[@{ActionDie}+@{ThiefHideCheck}]]" name="roll_ThiefHide">
+									<input type="number" class="sheet-square" name="attr_ThiefHideCheck" value="@{ThiefHide}+@{AGI}" disabled="true"/>
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Pick pocket</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefPickPockets" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} picks pockets: [[@{ActionDie}+@{ThiefPickPocketsCheck}]]" name="roll_ThiefPickPockets">
+									<input type="number" class="sheet-square" name="attr_ThiefPickPocketsCheck" value="@{ThiefPickPockets}+@{AGI}" disabled="true"/>
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Climb sheer surfaces</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefCimb" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently: [[@{ActionDie}+@{ThiefCimbCheck}]]" name="roll_ThiefCimb"/>
+									<input type="number" class="sheet-square" name="attr_ThiefCimbCheck" value="@{ThiefCimb}+@{AGI}" disabled="true">
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Pick lock</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefPickLocks" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} picks locks: [[@{ActionDie}+@{ThiefPickLocksCheck}]]" name="roll_ThiefPickLocks">
+									<input type="number" class="sheet-square" name="attr_ThiefPickLocksCheck" value="@{ThiefPickLocks}+@{AGI}" disabled="true"/>
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Find trap</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefFindTraps" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} finds traps: [[@{ActionDie}+@{ThiefFindTrapsCheck}]]" name="roll_ThiefFindTraps">
+									<input type="number" class="sheet-square" name="attr_ThiefFindTrapsCheck" value="@{ThiefFindTraps}+@{INT}" disabled="true"/>
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Disable trap</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefDisableTraps" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} disables traps: [[@{ActionDie}+@{ThiefDisableTrapsCheck}]]" name="roll_ThiefDisableTraps">
+									<input type="number" class="sheet-square" name="attr_ThiefDisableTrapsCheck" value="@{ThiefDisableTraps}+@{AGI}" disabled="true"/>
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Forge document</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefForgeDocuments" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} forges documents: [[@{ActionDie}+@{ThiefForgeDocumentsCheck}]]" name="roll_ThiefForgeDocuments">
+									<input type="number" class="sheet-square" name="attr_ThiefForgeDocumentsCheck" value="@{ThiefForgeDocuments}+@{AGI}" disabled="true"/>
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Disguise self</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefDisguise" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} disguises: [[@{ActionDie}+@{ThiefDisguiseCheck}]]" name="roll_ThiefDisguise">
+									<input type="number" class="sheet-square" name="attr_ThiefDisguiseCheck" value="@{ThiefDisguise}+@{PER}" disabled="true"/>
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Read languages</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefRead" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} reads languages: [[@{ActionDie}+@{ThiefReadCheck}]]" name="roll_ThiefRead">
+									<input type="number" class="sheet-square" name="attr_ThiefReadCheck" value="@{ThiefRead}+@{INT}" disabled="true"/>
+								</button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Handle poison</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefPoison" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								 <button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} handles poison: [[@{ActionDie}+@{ThiefPoisonCheck}]]" name="roll_ThiefPoison">
+									 <input type="number" class="sheet-square" name="attr_ThiefPoisonCheck" value="@{ThiefPoison}}" disabled="true"/>
+								 </button>
+							</div>
+						</div>
+						<div>
+							<div class="sheet-item sheet-med">
+								<label>Cast spell from scroll</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<input type="text" class="sheet-square"  name="attr_ThiefCastScroll" value="0"/>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} casts a spell from a scroll: [[@{ActionDie}+@{ThiefCastScrollCheck}]]" name="roll_ThiefCastScroll">
+									<input type="number" class="sheet-square" name="attr_ThiefCastScrollCheck" value="@{ThiefCastScroll}+@{INT}" disabled="true"/>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>-->
+
+				<!-- Warrior -->
+				<div class="sheet-warrior">
+					<h2>Warrior Abilities</h2>
+
+					<div class="sheet-row">
+							<div class="sheet-col-1-5 sheet-hd-row">Mighty Deeds of Arms : </br></div>
+							<div class="sheet-col-1-10 sheet-right">
+								<select name="attr_DeedDie">
+									<option value="d0" selected="selected">--</option>
+									<option value="d3">d3</option>
+									<option value="d4">d4</option>
+									<option value="d5">d5</option>
+									<option value="d6">d6</option>
+									<option value="d7">d7</option>
+									<option value="d8">d8</option>
+									<option value="d10">d10</option>
+									<option value="d10+1">d10+1</option>
+									<option value="d10+2">d10+2</option>
+									<option value="d10+3">d10+3</option>
+									<option value="d10+4">d10+4</option>
+								</select>
+							</div>
+							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_DeedDie" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]">Deed Die</button></div>
+					</div>
+
+					<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+					<div class="sheet-row">
+
+								<div class="sheet-col-1-8 sheet-hd-row">Lucky Weapon: <br/></div>
+								<div class="sheet-col-1-4 sheet-right" title="The weapon must be specific ie Longsword or Shortsword instead of just swords"><input class="sheet-underline sheet-center" type="text" name="attr_LuckyWeapon"/></div>			
+					</div>
+
+					<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>			
+					
+					<div class="sheet-row">
+								<div class="sheet-col-1-4 sheet-hd-row">Add Class level to Initiative: <br/></div>
+								<div class="sheet-col-1-12 sheet-right"><input class="sheet-center sheet-underline" type="text" name="attr_ClassInitiative"></div>
+					</div>
+
+				</div>
+
+				<!-- Wizard -->
+				<!--<div class="sheet-wizard">
+					<h2>Wizard Spells &amp; Abilities</h2>
+					<div>
+						<div class="sheet-item sheet-med">
+							<label>Familiar:</label>
+						</div>
+						<div class="sheet-item sheet-large">
+							<input type="text" name="attr_WizardFamiliar"/>
+						</div>
+					</div>
+					<div>
+						<div class="sheet-item sheet-med">
+							<label>Patron(s):</label>
+						</div>
+						<div class="sheet-item sheet-large">
+							<input type="text" name="attr_WizardPatron"/>
+						</div>
+					</div>
+					<div>
+						<div class="sheet-item sheet-med">
+							<label>Corruption:</label>
+						</div>
+						<div class="sheet-item sheet-large">
+							<input type="text" name="attr_WizardCorruption"/>
+						</div>
+					</div>
+					<div>
+						<div class="sheet-item sheet-med">
+							<label>Other notes:</label>
+						</div>
+						<div class="sheet-item sheet-large">
+							<input type="text" name="attr_WizardNotes"/>
+						</div>
+					</div>
+					<div class="sheet-statblock">
+						<div class="sheet-item sheet-med">
+							<label>Momentum:</label>
+						</div>
+						<div class="sheet-item sheet-tiny">
+							<select name="attr_Momentum" value="10" class="sheet-square">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10" selected="selected">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+							</select>
+						</div>
+					</div>
+					<div>
+						<label>Spells:</label>
+					</div>
+					<div class="sheet-statblock">
+						<div class="sheet-header">
+							<div class="sheet-item sheet-small">
+								<label>Spell Name</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<label>Level</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<label>Misc Mods</label>
+							</div>
+							<div class="sheet-item sheet-tiny">
+								<label>Check</label>
+							</div>
+							<div class="sheet-item sheet-med">
+								<label>Mercurial Effect &amp; Notes</label>
+							</div>
+						</div>
+						<fieldset class="repeating_wizardspells">
+							<div class="sheet-row">
+								<div class="sheet-item sheet-small">
+									<input type="text" name="attr_WizardSpell"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="number" name="attr_WizardSpellLevel" value="1"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<input type="number" name="attr_WizardSpellCheckMisc" value="0"/>
+								</div>
+								<div class="sheet-item sheet-tiny">
+									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} casts @{WizardSpell}: [[@{ActionDie}+@{WizardSpellCheck}]]" name="roll_WizardSpell">
+										<input type="number" name="attr_WizardSpellCheck" value="@{Level}+@{INT}+@{WizardSpellCheckMisc}" disabled="true"/>
+									</button>
+								</div>
+								<div class="sheet-item sheet-med">
+									<input type="text" name="attr_WizardSpellMercurial"/>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>-->
 		
 			<hr/>
 		</div>
@@ -2108,6 +2494,7 @@
 			<h4 class="sheet-center">Melee Weapons </h4>
 
 				<div class="sheet-row sheet-sub-header">
+					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-vert-bottom">Lucky Weapon</div>
 					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Weapon</div>
 					<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-vert-bottom">Wielded</div>
 					<div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Attack Die?</div>
@@ -2118,12 +2505,12 @@
 					<div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">Lucky Roll?</div>
 					<div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Damage Dice</div>
 					<div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">Dmg<br/>Bonus</div>
-					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-vert-bottom">Damage Type</div>
 					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Damage</div>
 				</div>
 
 				<!-- BEGIN melee weapon row 1-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-9 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyWeapon1"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_MeleeWeaponName1"></div>
 					<div class="sheet-col-1-7" title="How is the weapon being wielded">
 						<select name="attr_MeleeAttackWielded1">
@@ -2152,18 +2539,18 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll1"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_MeleeMagic1" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit1" value="@{STR} + @{MeleeMagic1} + @{MeleeAtkLuckyRoll1} + @{ATK}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit1" value="@{STR} + @{MeleeMagic1} + @{MeleeAtkLuckyRoll1} + @{ATK} + @{MeleeAtkLuckyWeapon1}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeAttack1" value="/em uses @{MeleeWeaponName1} to attack\n\n[[@{MeleeAttackDice1} + @{MeleeToHit1} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeDmgLuckyRoll1"></div>
 					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_MeleeDmg1"></div>
 					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeDmgBonus1" value="@{STR} + @{MeleeMagic1} + @{MeleeDmgLuckyRoll1}" disabled="disabled"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_MeleeDmgType1"></div>
-					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage1" value="\nFor [[@{MeleeDmg1} [Base damage] + @{MeleeDmgBonus1} [Damage Bonus] ]] @{MeleeDmgType1} damage." >Damage</button></div>
+					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage1" value="\nFor [[@{MeleeDmg1} [Base damage] + @{MeleeDmgBonus1} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
 				<!-- END melee weapon row -->
 
 				<!-- BEGIN melee weapon row 2-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-9 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyWeapon2"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_MeleeWeaponName2"></div>
 					<div class="sheet-col-1-7" title="How is the weapon being wielded">
 						<select name="attr_MeleeAttackWielded2">
@@ -2192,18 +2579,18 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll2"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_MeleeMagic2" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit2" value="@{STR} + @{MeleeMagic2} + @{MeleeAtkLuckyRoll2} + @{ATK}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit2" value="@{STR} + @{MeleeMagic2} + @{MeleeAtkLuckyRoll2} + @{ATK} + @{MeleeAtkLuckyWeapon2}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeAttack2" value="/em uses @{MeleeWeaponName2} to attack\n\n[[@{MeleeAttackDice2} + @{MeleeToHit2} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeDmgLuckyRoll2"></div>
 					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_MeleeDmg2"></div>
 					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeDmgBonus2" value="@{STR} + @{MeleeMagic2} + @{MeleeDmgLuckyRoll2}" disabled="disabled"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_MeleeDmgType2"></div>
-					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage2" value="\nFor [[@{MeleeDmg2} [Base damage] + @{MeleeDmgBonus2} [Damage Bonus] ]] @{MeleeDmgType2} damage." >Damage</button></div>
+					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage2" value="\nFor [[@{MeleeDmg2} [Base damage] + @{MeleeDmgBonus2} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
 				<!-- END melee weapon row -->
 
 				<!-- BEGIN melee weapon row 3-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-9 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyWeapon3"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_MeleeWeaponName3"></div>
 					<div class="sheet-col-1-7" title="How is the weapon being wielded">
 						<select name="attr_MeleeAttackWielded3">
@@ -2232,18 +2619,18 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll3"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_MeleeMagic3" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit3" value="@{STR} + @{MeleeMagic3} + @{MeleeAtkLuckyRoll3} + @{ATK}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit3" value="@{STR} + @{MeleeMagic3} + @{MeleeAtkLuckyRoll3} + @{ATK} + @{MeleeAtkLuckyWeapon3}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeAttack3" value="/em uses @{MeleeWeaponName3} to attack\n\n[[@{MeleeAttackDice3} + @{MeleeToHit3} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeDmgLuckyRoll3"></div>
 					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_MeleeDmg3"></div>
 					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeDmgBonus3" value="@{STR} + @{MeleeMagic3} + @{MeleeDmgLuckyRoll3}" disabled="disabled"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_MeleeDmgType3"></div>
-					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage3" value="\nFor [[@{MeleeDmg3} [Base damage] + @{MeleeDmgBonus3} [Damage Bonus] ]] @{MeleeDmgType3} damage." >Damage</button></div>
+					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage3" value="\nFor [[@{MeleeDmg3} [Base damage] + @{MeleeDmgBonus3} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
 				<!-- END melee weapon row -->
 
 				<!-- BEGIN melee weapon row 4-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-9 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyWeapon4"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_MeleeWeaponName4"></div>
 					<div class="sheet-col-1-7" title="How is the weapon being wielded">
 						<select name="attr_MeleeAttackWielded4">
@@ -2272,18 +2659,18 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll4"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_MeleeMagic4" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit4" value="@{STR} + @{MeleeMagic4} + @{MeleeAtkLuckyRoll4} + @{ATK}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit4" value="@{STR} + @{MeleeMagic4} + @{MeleeAtkLuckyRoll4} + @{ATK} + @{MeleeAtkLuckyWeapon4}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeAttack4" value="/em uses @{MeleeWeaponName4} to attack\n\n[[@{MeleeAttackDice4} + @{MeleeToHit4} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeDmgLuckyRoll4"></div>
 					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_MeleeDmg4"></div>
 					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeDmgBonus4" value="@{STR} + @{MeleeMagic4} + @{MeleeDmgLuckyRoll4}" disabled="disabled"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_MeleeDmgType4"></div>
-					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage4" value="\nFor [[@{MeleeDmg4} [Base damage] + @{MeleeDmgBonus4} [Damage Bonus] ]] @{MeleeDmgType4} damage." >Damage</button></div>
+					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage4" value="\nFor [[@{MeleeDmg4} [Base damage] + @{MeleeDmgBonus4} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
 				<!-- END melee weapon row -->
 
 				<!-- BEGIN melee weapon row 5-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-9 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyWeapon5"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_MeleeWeaponName5"></div>
 					<div class="sheet-col-1-7" title="How is the weapon being wielded">
 						<select name="attr_MeleeAttackWielded5">
@@ -2312,18 +2699,18 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll5"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_MeleeMagic5" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit5" value="@{STR} + @{MeleeMagic5} + @{MeleeAtkLuckyRoll5} + @{ATK}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit5" value="@{STR} + @{MeleeMagic5} + @{MeleeAtkLuckyRoll5} + @{ATK} + @{MeleeAtkLuckyWeapon5}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeAttack5" value="/em uses @{MeleeWeaponName5} to attack\n\n[[@{MeleeAttackDice5} + @{MeleeToHit5} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeDmgLuckyRoll5"></div>
 					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_MeleeDmg5"></div>
 					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeDmgBonus5" value="@{STR} + @{MeleeMagic5} + @{MeleeDmgLuckyRoll5}" disabled="disabled"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_MeleeDmgType5"></div>
-					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage5" value="\nFor [[@{MeleeDmg5} [Base damage] + @{MeleeDmgBonus5} [Damage Bonus] ]] @{MeleeDmgType5} damage." >Damage</button></div>
+					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage5" value="\nFor [[@{MeleeDmg5} [Base damage] + @{MeleeDmgBonus5} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
 				<!-- END melee weapon row -->
 
 				<!-- BEGIN melee weapon row 6-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-9 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyWeapon6"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_MeleeWeaponName6"></div>
 					<div class="sheet-col-1-7" title="How is the weapon being wielded">
 						<select name="attr_MeleeAttackWielded6">
@@ -2352,22 +2739,22 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll6"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_MeleeMagic6" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit6" value="@{STR} + @{MeleeMagic6} + @{MeleeAtkLuckyRoll6} + @{ATK}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeToHit6" value="@{STR} + @{MeleeMagic6} + @{MeleeAtkLuckyRoll6} + @{ATK} + @{MeleeAtkLuckyWeapon6}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeAttack6" value="/em uses @{MeleeWeaponName6} to attack\n\n[[@{MeleeAttackDice6} + @{MeleeToHit6} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Melee Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeDmgLuckyRoll6"></div>
 					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_MeleeDmg6"></div>
 					<div class="sheet-col-1-24"><input type="number" name="attr_MeleeDmgBonus6" value="@{STR} + @{MeleeMagic6} + @{MeleeDmgLuckyRoll6}" disabled="disabled"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_MeleeDmgType6"></div>
-					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage6" value="\nFor [[@{MeleeDmg6} [Base damage] + @{MeleeDmgBonus6} [Damage Bonus] ]] @{MeleeDmgType6} damage." >Damage</button></div>
+					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MeleeDamage6" value="\nFor [[@{MeleeDmg6} [Base damage] + @{MeleeDmgBonus6} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
 				<!-- END melee weapon row -->
 
 			<h4 class="sheet-center">Ranged Weapons </h4>
 
 				<div class="sheet-row sheet-sub-header">
+					<div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">Lucky Weap</div>
 					<div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom">Ammo</div>
 					<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Weapon</div>
-					<div class="sheet-col-1-9 sheet-center sheet-small-label sheet-vert-bottom">Range (in S/M/L)</div>
+					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Range (in S/M/L)</div>
 					<div class="sheet-col-1-11 sheet-center sheet-small-label sheet-vert-bottom">Type</div>
 					<div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Attack Die?</div>
 					<div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">Lucky Roll?</div>
@@ -2375,16 +2762,17 @@
 					<div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">To<br/>Hit</div>
 					<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Attack</div>
 					<div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">Lucky Roll?</div>
-					<div class="sheet-col-1-14 sheet-center sheet-small-label sheet-vert-bottom">Damage Dice</div>
+					<div class="sheet-col-1-16 sheet-center sheet-small-label sheet-vert-bottom">Damage Dice</div>
 					<div class="sheet-col-1-24 sheet-center sheet-small-label sheet-vert-bottom">Dmg<br/>Bonus</div>
 					<div class="sheet-col-1-10 sheet-center sheet-small-label sheet-vert-bottom">Damage</div>
 				</div>
 
 				<!-- BEGIN ranged weapon row 1-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyWeapon1"></div>
 					<div class="sheet-col-1-16"><input type="number" name="attr_RangedAmmo1" value="0"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_RangedWeaponName1"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_RangedDistance1"></div>
+					<div class="sheet-col-1-10"><input type="text" name="attr_RangedDistance1"></div>
 					<div class="sheet-col-1-11" title="Choose either normal or thrown">
 						<select name="attr_RangedType1">
 							<option value="@{AGI}">Normal</option>
@@ -2410,10 +2798,10 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyRoll1"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_RangedMagic1" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit1" value="@{RangedType1} + @{RangedAtkLuckyRoll1} + @{RangedMagic1}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit1" value="@{RangedType1} + @{RangedAtkLuckyRoll1} + @{RangedMagic1} + @{RangedAtkLuckyWeapon1} + @{ATK}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedAttack1" value="/em uses @{RangedWeaponName1} with range of @{RangedDistance1} to attack\n\n[[@{RangedAttackDice1} + @{RangedToHit1} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedDmgLuckyRoll1"></div>
-					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg1"></div>		
+					<div class="sheet-col-1-16" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg1"></div>		
 					<div class="sheet-col-1-24"><input type="number" name="attr_RangedDmgBonus1" value="@{RangedMagic1} + @{RangedDmgLuckyRoll1}" disabled="disabled"></div>
 					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedDamage1" value="\nFor [[@{RangedDmg1} [Base damage] + @{RangedDmgBonus1} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
@@ -2421,9 +2809,10 @@
 
 				<!-- BEGIN ranged weapon row 2-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyWeapon2"></div>
 					<div class="sheet-col-1-16"><input type="number" name="attr_RangedAmmo2" value="0"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_RangedWeaponName2"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_RangedDistance2"></div>
+					<div class="sheet-col-1-10"><input type="text" name="attr_RangedDistance2"></div>
 					<div class="sheet-col-1-11" title="Choose either normal or thrown">
 						<select name="attr_RangedType2">
 							<option value="@{AGI}">Normal</option>
@@ -2449,10 +2838,10 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyRoll2"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_RangedMagic2" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit2" value="@{RangedType2} + @{RangedAtkLuckyRoll2} + @{RangedMagic2}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit2" value="@{RangedType2} + @{RangedAtkLuckyRoll2} + @{RangedMagic2} + @{RangedAtkLuckyWeapon2} + @{ATK}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedAttack2" value="/em uses @{RangedWeaponName2} with range of @{RangedDistance2} to attack\n\n[[@{RangedAttackDice2} + @{RangedToHit2} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedDmgLuckyRoll2"></div>
-					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg2"></div>		
+					<div class="sheet-col-1-16" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg2"></div>		
 					<div class="sheet-col-1-24"><input type="number" name="attr_RangedDmgBonus2" value="@{RangedMagic2} + @{RangedDmgLuckyRoll2}" disabled="disabled"></div>
 					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedDamage2" value="\nFor [[@{RangedDmg2} [Base damage] + @{RangedDmgBonus2} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
@@ -2460,9 +2849,10 @@
 
 				<!-- BEGIN ranged weapon row 3-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyWeapon3"></div>
 					<div class="sheet-col-1-16"><input type="number" name="attr_RangedAmmo3" value="0"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_RangedWeaponName3"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_RangedDistance3"></div>
+					<div class="sheet-col-1-10"><input type="text" name="attr_RangedDistance3"></div>
 					<div class="sheet-col-1-11" title="Choose either normal or thrown">
 						<select name="attr_RangedType3">
 							<option value="@{AGI}">Normal</option>
@@ -2488,10 +2878,10 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyRoll3"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_RangedMagic3" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit3" value="@{RangedType3} + @{RangedAtkLuckyRoll3} + @{RangedMagic3}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit3" value="@{RangedType3} + @{RangedAtkLuckyRoll3} + @{RangedMagic3} + @{RangedAtkLuckyWeapon3} + @{ATK}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedAttack3" value="/em uses @{RangedWeaponName3} with range of @{RangedDistance3} to attack\n\n[[@{RangedAttackDice3} + @{RangedToHit3} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedDmgLuckyRoll3"></div>
-					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg3"></div>		
+					<div class="sheet-col-1-16" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg3"></div>		
 					<div class="sheet-col-1-24"><input type="number" name="attr_RangedDmgBonus3" value="@{RangedMagic3} + @{RangedDmgLuckyRoll3}" disabled="disabled"></div>
 					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedDamage3" value="\nFor [[@{RangedDmg3} [Base damage] + @{RangedDmgBonus3} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
@@ -2499,9 +2889,10 @@
 
 				<!-- BEGIN ranged weapon row 4-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyWeapon4"></div>
 					<div class="sheet-col-1-16"><input type="number" name="attr_RangedAmmo4" value="0"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_RangedWeaponName4"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_RangedDistance4"></div>
+					<div class="sheet-col-1-10"><input type="text" name="attr_RangedDistance4"></div>
 					<div class="sheet-col-1-11" title="Choose either normal or thrown">
 						<select name="attr_RangedType4">
 							<option value="@{AGI}">Normal</option>
@@ -2527,10 +2918,10 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyRoll4"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_RangedMagic4" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit4" value="@{RangedType4} + @{RangedAtkLuckyRoll4} + @{RangedMagic4}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit4" value="@{RangedType4} + @{RangedAtkLuckyRoll4} + @{RangedMagic4} + @{RangedAtkLuckyWeapon4} + @{ATK}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedAttack4" value="/em uses @{RangedWeaponName4} with range of @{RangedDistance4} to attack\n\n[[@{RangedAttackDice4} + @{RangedToHit4} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedDmgLuckyRoll4"></div>
-					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg4"></div>		
+					<div class="sheet-col-1-16" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg4"></div>		
 					<div class="sheet-col-1-24"><input type="number" name="attr_RangedDmgBonus4" value="@{RangedMagic4} + @{RangedDmgLuckyRoll4}" disabled="disabled"></div>
 					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedDamage4" value="\nFor [[@{RangedDmg4} [Base damage] + @{RangedDmgBonus4} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
@@ -2538,9 +2929,10 @@
 
 				<!-- BEGIN ranged weapon row 5-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyWeapon5"></div>
 					<div class="sheet-col-1-16"><input type="number" name="attr_RangedAmmo5" value="0"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_RangedWeaponName5"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_RangedDistance5"></div>
+					<div class="sheet-col-1-10"><input type="text" name="attr_RangedDistance5"></div>
 					<div class="sheet-col-1-11" title="Choose either normal or thrown">
 						<select name="attr_RangedType5">
 							<option value="@{AGI}">Normal</option>
@@ -2566,10 +2958,10 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyRoll5"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_RangedMagic5" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit5" value="@{RangedType5} + @{RangedAtkLuckyRoll5} + @{RangedMagic5}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit5" value="@{RangedType5} + @{RangedAtkLuckyRoll5} + @{RangedMagic5} + @{RangedAtkLuckyWeapon5} + @{ATK}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedAttack5" value="/em uses @{RangedWeaponName5} with range of @{RangedDistance5} to attack\n\n[[@{RangedAttackDice5} + @{RangedToHit5} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedDmgLuckyRoll5"></div>
-					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg5"></div>		
+					<div class="sheet-col-1-16" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg5"></div>		
 					<div class="sheet-col-1-24"><input type="number" name="attr_RangedDmgBonus5" value="@{RangedMagic5} + @{RangedDmgLuckyRoll5}" disabled="disabled"></div>
 					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedDamage5" value="\nFor [[@{RangedDmg5} [Base damage] + @{RangedDmgBonus5} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
@@ -2577,9 +2969,10 @@
 
 				<!-- BEGIN ranged weapon row 6-->
 				<div class="sheet-row">
+					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if this is your Lucky Weapon (Class ability)"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyWeapon6"></div>
 					<div class="sheet-col-1-16"><input type="number" name="attr_RangedAmmo6" value="0"></div>
 					<div class="sheet-col-1-6"><input type="text" name="attr_RangedWeaponName6"></div>
-					<div class="sheet-col-1-9"><input type="text" name="attr_RangedDistance6"></div>
+					<div class="sheet-col-1-10"><input type="text" name="attr_RangedDistance6"></div>
 					<div class="sheet-col-1-11" title="Choose either normal or thrown">
 						<select name="attr_RangedType6">
 							<option value="@{AGI}">Normal</option>
@@ -2605,10 +2998,10 @@
 					</div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged to Hit"><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedAtkLuckyRoll6"></div>
 					<div class="sheet-col-1-16 sheet-padr" title="The magic bonus will be added as a bonus to BOTH the attack and damage rolls"><input type="number" name="attr_RangedMagic6" value="0" step="1"></div>
-					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit6" value="@{RangedType6} + @{RangedAtkLuckyRoll6} + @{RangedMagic6}" disabled="disabled"></div>
+					<div class="sheet-col-1-24"><input type="number" name="attr_RangedToHit6" value="@{RangedType6} + @{RangedAtkLuckyRoll6} + @{RangedMagic6} + @{RangedAtkLuckyWeapon6} + @{ATK}" disabled="disabled"></div>
 					<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedAttack6" value="/em uses @{RangedWeaponName6} with range of @{RangedDistance6} to attack\n\n[[@{RangedAttackDice6} + @{RangedToHit6} [To Hit] ]] vs AC (if a crit, roll on the appropriate crit table" >Attack</button></div>
 					<div class="sheet-col-1-24 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Ranged Damage."><input type="checkbox" value="@{LCK_Starting}" name="attr_RangedDmgLuckyRoll6"></div>
-					<div class="sheet-col-1-14" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg6"></div>		
+					<div class="sheet-col-1-16" title="Only enter the base damage roll here without any bonuses from stats or other sources"><input class="sheet-center" type="text" name="attr_RangedDmg6"></div>		
 					<div class="sheet-col-1-24"><input type="number" name="attr_RangedDmgBonus6" value="@{RangedMagic6} + @{RangedDmgLuckyRoll6}" disabled="disabled"></div>
 					<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_RangedDamage6" value="\nFor [[@{RangedDmg6} [Base damage] + @{RangedDmgBonus6} [Damage Bonus] ]] damage." >Damage</button></div>
 				</div>
@@ -2618,7 +3011,9 @@
 			<!-- END AUTO GENERATED WEAPON SECTION -->
 		</div>
 
-		<div class="sheet-section-spellbook">
+		<!-- Spellbook (mispelled on purpose so won't work) -->
+
+		<div class="sheet-section-spellbok">
 
 			<!-- Start hidden spell casting stats -->
 			<input type="hidden" name="attr_base_spell_dc" value="(8 + (@{global_spell_dc_bonus}))" />
