@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>13th Jan 2014</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>21th Jan 2015</p></div>
 		</div>
 
 	</div>
@@ -990,41 +990,73 @@
 				</div>-->
 
 				<!-- halfling -->
-				<!--<div class="sheet-halfling">	
-					<h2>Halfling Abilities</h2>
-					<div class="sheet-statblock">
-						<div class="sheet-item sheet-med">
-							<label>Stealth:</label>
+				<div class="sheet-halfling">	
+					<h3>Halfling Abilities</h3>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-8 sheet-hd-row">Stealth Bonus : </br></div>
+							<div class="sheet-col-1-14 sheet-right">
+								<select name="attr_HalflingStealth" title="Select your bonus for Sneak and Hide based on your level">
+									<option value="3" selected="selected">+3</option>
+									<option value="5">+5</option>
+									<option value="7">+7</option>
+									<option value="8">+8</option>
+									<option value="9">+9</option>
+									<option value="11">+11</option>
+									<option value="12">+12</option>
+									<option value="13">+13</option>
+									<option value="14">+14</option>
+									<option value="15">+15</option>
+								</select>
+							</div>
+							<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_HalflingSneak" value="@{character_name} Sneaks: [[@{ActionDie1} + @{HalflingStealth} + @{AGI}]]">Sneak</button></div>
+							<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_HalflingHide" value="@{character_name} Hides: [[@{ActionDie1} + @{HalflingStealth} + @{AGI}]]">Hide</button></div>
 						</div>
-						<div class="sheet-item sheet-tiny">
-							<input type="text" class="sheet-square" name="attr_HalflingStealth" value="0"/>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} Sneaks: [[@{ActionDie}+@{HalflingStealth}+@{AGI}]]" name="roll_ThiefHide">
-								<input type="number" class="sheet-square" name="attr_ThiefCastScrollCheck" value="@{HalflingStealth}+@{AGI}" disabled="true"/>
-							</button>
-						</div>
-					</div>
-					<div>
-						<label>Infravision</label>
-					</div>
-					<div>
-						<label>Lucky</label>
-					</div>
-					<div>
-						<label>Two-weapon fighting</label><br/>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
 						<ul>
-							<li>Action dice d16+d16<br/>
-							</li>
-							<li>Crit on nat 16<br/>
-							</li>
-							<li>Fumble only on 2x 1<br/>
-							</li>
-							<li>If Agi &gt;16, use normal rules<br/>
-							</li>
+  							<li><b>Two-weapon fighting </b><br/>
+    							<ul>
+      								<li>Attack Die: d16 + d16<br/></li>
+      								<li>Can fight with two equal sized weapons, such as two handaxes or two short swords<br/></li>
+      								<li>Scores a Critical and Automatic hit on a natural 16<br/></li>
+      								<li>Fumbles only when both dice come up a 1<br/></li>
+      								<li>If AGI &gt;16, use normal two-weapon fighting rules<br/></li>
+    							</ul>
+  							</li>
 						</ul>
-					</div>
-				</div>-->
+
+					<h3>Halfling Traits : </br></h3>
+
+						<ul>
+  							<li><b>Infravision 30'</b><br/></li>
+  							<li><b>Good Luck Charm </b><br/>
+    							<ul>
+      								<li><b>Double the bonus of a Luck check </b><br/>
+      									<ul>
+      										<li>For every 1 point of Luck expended, gain a +2 to your roll <br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Recover lost Luck</b><br/>
+      									<ul>
+      										<li>Luck score is restored each night by a number of points equal to level <br/></li>
+      										<li>Luck score cannot be taken past natural maximum <br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Expend Luck for Allies</b><br/>
+      									<ul>
+      										<li>Ally must be nearby and visible <br/></li>
+      										<li>Can act out of Initiative order to burn Luck and apply to Ally's rolls <br/></li>
+      										<li>Luck Modifier can apply to any roll made by an Ally <br/></li>
+      										<li>This trait applies to only <i>one</i> halfling in a party.  More halflings do not make the party more lucky. <br/></li>
+      									</ul>
+      								</li>
+    							</ul>
+  							</li>
+						</ul>
+					
+				</div>
 
 				<!-- Morlock -->
 				<!--<div class="sheet-morlock">
