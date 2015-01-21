@@ -104,7 +104,7 @@
 								<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_HP_max" value="1"><br/>Max HP</div>
 								<div class="sheet-col-1-7 sheet-center sheet-small-label">&nbsp;</div>
 								<div class="sheet-col-2-7 sheet-center" title="User format 1dx"><input class="sheet-underlined sheet-center" type="text" name="attr_HPDie" value="1"><br/>Hit Point Die</div>
-								<div class="sheet-col-2-7 sheet-center" title="Use this button to roll for your Hit Points when your character levels."><button type="roll" class="sheet-initiative" name="roll_HPDie" value="@{character_name} rolls their Hit Points for the next level. [[@{HPDie}+@{STA}]]">Roll for HP</button></div>
+								<div class="sheet-col-2-7 sheet-center" title="Use this button to roll for your Hit Points when your character levels."><button type="roll" class="sheet-initiative" name="roll_HPDie" value="@{character_name} rolls their Hit Points for the next level. [[@{HPDie} + @{STA}]]">Roll for HP</button></div>
 
 							</div>
 
@@ -814,29 +814,30 @@
 							<div class="sheet-col-1-6 sheet-hd-row">Shield bash (d14)<br/></div>
 							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_dwarfShieldBash" value="@{character_name} does a shield bash. Attack roll: [[d14 + @{STR}]] plus Mighty Deed. Damage roll: [[1d3 + @{STR}]] plus Mighty Deed.">Shield Bash</button></div>			
 						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 		
-						<h3>Dwarven Traits : </br></h3>
-							<ul>
-  								<li><b>Infravision 60'</b><br/></li>
-  								<li><b>Underground Skills </b><br/>
-    								<ul>
-      									<li><b>Smell Gold/Gems </b><br/>
-      										<ul>
-      											<li>Strong concentration within 100' <br/></li>
-      											<li>Smaller concentrations, down to a single coin, as low as 40' (for a single coin or gem) <br/></li>
-      										</ul>
-      									</li>
-      									<li><b>Find Construction: Bonus equal to Class Level</b><br/>
-      										<ul>
-      											<li>Detecting Traps <br/></li>
-      											<li>Detecting Slanting Passages <br/></li>
-      											<li>Detecting Shifting Walls <br/></li>
-      											<li>Detecting New Construction <br/></li>
-      										</ul>
-      									</li>
-    								</ul>
-  								</li>
-							</ul>
+						<ul>
+  							<li><b>Infravision 60'</b><br/></li>
+  							<li><b>Underground Skills </b><br/>
+    							<ul>
+      								<li><b>Smell Gold/Gems </b><br/>
+      									<ul>
+      										<li>Strong concentration within 100' <br/></li>
+      										<li>Smaller concentrations, down to a single coin, as low as 40' (for a single coin or gem) <br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Find Construction: Bonus equal to Class Level</b><br/>
+      									<ul>
+      										<li>Detecting Traps <br/></li>
+      										<li>Detecting Slanting Passages <br/></li>
+      										<li>Detecting Shifting Walls <br/></li>
+      										<li>Detecting New Construction <br/></li>
+      									</ul>
+      								</li>
+    							</ul>
+  							</li>
+						</ul>
 				</div>
 
 				<!-- elf -->
@@ -1025,11 +1026,6 @@
       								<li>If AGI &gt;16, use normal two-weapon fighting rules<br/></li>
     							</ul>
   							</li>
-						</ul>
-
-					<h3>Halfling Traits : </br></h3>
-
-						<ul>
   							<li><b>Infravision 30'</b><br/></li>
   							<li><b>Good Luck Charm </b><br/>
     							<ul>
@@ -1059,133 +1055,69 @@
 				</div>
 
 				<!-- Morlock -->
-				<!--<div class="sheet-morlock">
-					<h2>Morlock Abilities</h2>
-					<div>
-						<div class="sheet-statblock">
-							<div class="sheet-item sheet-med">
-								<label>Mighty Deeds of Arms:</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-					            <select name="attr_DeedDie">
-										<option value="d0" selected="selected">--</option>
-										<option value="d3">d3</option>
-										<option value="d4">d4</option>
-										<option value="d5">d5</option>
-										<option value="d6">d6</option>
-										<option value="d7">d7</option>
-										<option value="d8">d8</option>
-										<option value="d10">d10</option>
-										<option value="d10+1">d10+1</option>
-					            </select>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-square" type="roll" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]" name="roll_DeedDie"/>
-							</div>
+				<div class="sheet-morlock">
+					<h3>Morlock Abilities</h3>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">Acute Senses Check : <br/></div>
+							<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MorlockSmell" value="@{character_name} sniffs the air. Smell Check: [[d30 + @{INT}]]">Smell</button></div>
+							<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_MorlockListen" value="@{character_name} listens carefully. Listen Check: [[d30 + @{LCK}]]">Listen</button></div>
+							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_MorlockFeel" value="@{character_name} feels the ground. Vibration Check: [[d30 + @{INT}]]">Feel vibrations</button></div>
 						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Ranger Path:</label>
-							</div>
-							<div class="sheet-item sheet-large">
-					            <select name="attr_RangerPath">
-										<option value="None" selected="selected">None</option>
-										<option value="Archery">Archery Expert</option>
-										<option value="Two Weapon">Two-Weapon Expert</option>
-					            </select>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Favored Enemy:</label>
-							</div>
-							<div class="sheet-item sheet-large">
-								<input type="text" name="attr_RangerFavoredEnemy"/>
-							</div>
-						</div>
-						<div class="sheet-statblock">
-							<div class="sheet-header">
-								<div class="sheet-item sheet-med">
-									<label>Ability</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<label>Base</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<label>Check</label>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Climb</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerClimb" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} climbs: [[@{ActionDie}+@{RangerClimbheck}]]" name="roll_RangerClimb">
-										<input type="number" class="sheet-square" name="attr_RangerClimbCheck" value="@{RangerClimb}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Find Traps</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerTraps" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} finds and/or neutralizes a trap: [[@{ActionDie}+@{RangerTrapsCheck}]]" name="roll_RangerTraps">
-										<input type="number" class="sheet-square" name="attr_RangerTrapsCheck" value="@{RangerTraps}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Sneak and Hide</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerSneak" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently and hides: [[@{ActionDie}+@{RangerSneakCheck}]]" name="roll_RangerSneak">
-										<input type="number" class="sheet-square" name="attr_RangerSneakCheck" value="@{RangerSneak}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Strider</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerStrider" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} walks or even runs without leaving tracks or being hampered by difficult terrain: [[@{ActionDie}+@{RangerStriderCheck}]]" name="roll_RangerStrider">
-										<input type="number" class="sheet-square" name="attr_RangerStriderCheck" value="@{RangerStrider}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Survival</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerSurvival" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} uses wilderness skills: [[@{ActionDie}+@{RangerSurvivalCheck}]]" name="roll_RangerSurvival">
-										<input type="number" class="sheet-square" name="attr_RangerSurvivalCheck" value="@{RangerSurvival}+@{PER}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-						</div>
-						<div>
-							<label>Luck check to avoid being surprised outdoors</label>
-						</div>
-					</div>
-				</div>	-->	
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<ul>
+  							<li><b>Claw Fighting </b><br/>
+    							<ul>
+      								<li>Must fight with both claws <br/></li>
+      								<li>Each claw gets its own attack die: d16<br/></li>
+      								<li>Only the Primary Claw scores a Critical and Automatic hit on a natural 16<br/></li>
+      								<li>Only the Primary Claw fumbles on a 1<br/></li>
+      								<li>Claw damage increases with level<br/></li>
+      								<li>If AGI &gt;16, use normal two-weapon fighting rules<br/></li>
+    							</ul>
+  							</li>
+  							<li><b>Burrow </b><br/>
+  								<ul>
+  									<li>Can only burrow through earth</li>
+  									<li>Can burrow at a movement rate of 20'</li>
+  									<li>Tunnel made is only for use by Morlocks</li>
+  								</ul>
+  							</li>
+  							<li><b>Underground Skills </b><br/>
+    								<ul>
+      									<li><b>Smell Gold/Gems </b><br/>
+      										<ul>
+      											<li>Strong concentration within 100' <br/></li>
+      											<li>Smaller concentrations, down to a single coin, as low as 40' (for a single coin or gem) <br/></li>
+      										</ul>
+      									</li>
+      									<li><b>Find Construction: Bonus equal to Class Level</b><br/>
+      										<ul>
+      											<li>Detecting Traps <br/></li>
+      											<li>Detecting Slanting Passages <br/></li>
+      											<li>Detecting Shifting Walls <br/></li>
+      											<li>Detecting New Construction <br/></li>
+      										</ul>
+      									</li>
+    								</ul>
+  								</li>
+  							<li><b>Blind Luck </b><br/>
+    							<ul>
+      								<li>Can detect vibrations in the earth (since they are effectively blind)<br/></li>
+      								<li>Immune to visual illusions or anything dependent on sight<br/></li>
+      								<li>Acute Senses<br/>
+      									<ul>
+      										<li>Greater sense of smell, sound and vibrations <br/></li>
+      										<li>Once per session, can roll a Luck Check to automatically dodge an incoming surprise attack, notice an important clue, avoid a trap, or anything else the player can think of and the judge accepts. <br/></li>
+      									</ul>
+      								</li>
+      								<li>Twice as difficult to catch by surprise in underground environments<br/></li>
+    							</ul>
+  							</li>
+						</ul>
+				</div>
 
 				<!-- Mutant -->
 				<!--<div class="sheet-mutant">
