@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>21th Jan 2015</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>27th Jan 2015</p></div>
 		</div>
 
 	</div>
@@ -102,9 +102,29 @@
 
 							<div class="sheet-col-3-4 sheet-padl">		
 								<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_HP_max" value="1"><br/>Max HP</div>
+
 								<div class="sheet-col-1-7 sheet-center sheet-small-label">&nbsp;</div>
-								<div class="sheet-col-2-7 sheet-center" title="User format 1dx"><input class="sheet-underlined sheet-center" type="text" name="attr_HPDie" value="1"><br/>Hit Point Die</div>
-								<div class="sheet-col-2-7 sheet-center" title="Use this button to roll for your Hit Points when your character levels."><button type="roll" class="sheet-initiative" name="roll_HPDie" value="@{character_name} rolls their Hit Points for the next level. [[@{HPDie} + @{STA}]]">Roll for HP</button></div>
+
+								<div class="sheet-col-2-7 sheet-center">Hit Point Die : </br></div>
+								<div class="sheet-col-2-7 sheet-center" title="Choose your class Hit Dice">
+									<select name="attr_HPDie">
+										<option value="d4">d4</option>
+										<option value="d6" selected="selected">d6</option>
+										<option value="d8">d8</option>
+										<option value="d10">d10</option>
+										<option value="d12">d12</option>
+										<option value="2d4">2d4</option>
+									</select>
+								</div>
+
+								<div class="sheet-col-1-4 sheet-center sheet-small-label">&nbsp;</div>
+
+								<div class="sheet-col-1-4 sheet-right sheet-vert-middle">Lucky Roll?</div>
+								<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for HP"><input type="checkbox" value="@{LCK_Starting}" name="attr_HPLuckyRoll"></div>
+
+								<div class="sheet-col-1-20 sheet-center sheet-small-label">&nbsp;</div>
+
+								<div class="sheet-col-2-7 sheet-center" title="Use this button to roll for your Hit Points when your character levels."><button type="roll" class="sheet-initiative" name="roll_HPDie" value="@{character_name} rolls their Hit Points for the next level. [[@{HPDie} + @{STA} + @{HPLuckyRoll}]]">Roll for HP</button></div>
 
 							</div>
 
