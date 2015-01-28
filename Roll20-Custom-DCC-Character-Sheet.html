@@ -592,7 +592,7 @@
 				<input type="radio" class="isWizard" value="14" name="attr_Class" checked><label class="sheet-subtab">Wizard</label>	
 
 				<!-- cleric -->
-				<div class="sheet-cleric">
+				<!--<div class="sheet-cleric">
 					<h2>Cleric Spells &amp; Abilities</h2>
 					<div>
 						<div class="sheet-item sheet-med">
@@ -793,7 +793,7 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>
+				</div>-->
 
 				<!-- dwarf -->
 				<div class="sheet-dwarf">
@@ -4498,8 +4498,8 @@
 				<div class="sheet-col-1-13 sheet-right sheet-small-label">Lucky</div>
 				<div class="sheet-col-1-22 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Armor Class"><input type="checkbox" value="@{LCK_Starting}" name="attr_ArmorClassLuckyRoll"></div>
 				<div class="sheet-col-1-13 sheet-left sheet-small-label">Roll?</div>
-				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorCheck" value="@{ArmorCheck1} + @{ArmorCheck2} + @{ArmorCheck3}" disabled="disabled" ><br/>Total Check Penalty</div>						
-				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorSpeed" value="@{ArmorSpeed1} + @{ArmorSpeed2} + @{ArmorSpeed3}" disabled="disabled"><br/>Total Speed Reduction</div>
+				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorCheck" value="@{ArmorCheckActive1} + @{ArmorCheckActive2} + @{ArmorCheckActive3} + @{ArmorCheckActive4} + @{ArmorCheckActive5} + @{ArmorCheckActive6} + @{ArmorCheckActive7} + @{ArmorCheckActive8} + @{ArmorCheckActive9} + @{ArmorCheckActive10}" disabled="disabled" ><br/>Total Check Penalty</div>						
+				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorSpeed" value="@{ArmorSpeedActive1} + @{ArmorSpeedActive2} + @{ArmorSpeedActive3} + @{ArmorSpeedActive4} + @{ArmorSpeedActive5} + @{ArmorSpeedActive6} + @{ArmorSpeedActive7} + @{ArmorSpeedActive8} + @{ArmorSpeedActive9} + @{ArmorSpeedActive10}" disabled="disabled"><br/>Total Speed Reduction</div>
 			</div>
 
 			<div class="sheet-row sheet-padb">
@@ -4525,12 +4525,13 @@
 						<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Base AC</div>
 						<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Magic Bonus</div>
 						<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Total AC</div>
-						<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Fumble Die</div>
-						<div class="sheet-col-1-8 sheet-center sheet-small-label sheet-vert-bottom">Check Penalty</div>
+						<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-vert-bottom">Fumble Die</div>
+						<div class="sheet-col-1-9 sheet-right sheet-small-label sheet-vert-bottom">Check Penalty</div>
+                        <div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
 						<div class="sheet-col-1-8 sheet-center sheet-small-label sheet-vert-bottom">Speed Reduction</div>
 					</div>
 					
-					<!-- BEGIN Armor Row 1 -->
+					<!-- BEGIN Armor row 1 -->
 					<div class="sheet-row">
 						<div class="sheet-col-1-12 sheet-vert-middle sheet-checkbox-row"><input type="checkbox" name="attr_ArmorActive1" value="@{ArmorTotalAC1}"/></div>
 						<div class="sheet-col-1-12 sheet-vert-middle sheet-checkbox-row"><input type="checkbox" name="attr_ArmorActiveUnarmored1" value="@{ArmorTotalAC1}" /></div>
@@ -4538,7 +4539,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase1" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus1" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC1" value="@{ArmorACBase1} + @{ArmorMagicBonus1}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+					    <div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie1">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -4547,7 +4549,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+                        <div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive1" value="@{ArmorCheck1}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck1">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -4560,7 +4564,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+                        <div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive1" value="@{ArmorSpeed1}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed1">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -4578,7 +4584,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase2" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus2" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC2" value="@{ArmorACBase2} + @{ArmorMagicBonus2}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie2">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -4587,7 +4594,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive2" value="@{ArmorCheck2}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck2">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -4600,7 +4609,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive2" value="@{ArmorSpeed2}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed2">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -4618,7 +4629,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase3" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus3" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC3" value="@{ArmorACBase3} + @{ArmorMagicBonus3}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie3">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -4627,7 +4639,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive3" value="@{ArmorCheck3}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck3">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -4640,7 +4654,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive3" value="@{ArmorSpeed3}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed3">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -4658,7 +4674,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase4" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus4" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC4" value="@{ArmorACBase4} + @{ArmorMagicBonus4}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie4">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -4667,7 +4684,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive4" value="@{ArmorCheck4}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck4">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -4680,7 +4699,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive4" value="@{ArmorSpeed4}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed4">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -4698,7 +4719,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase5" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus5" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC5" value="@{ArmorACBase5} + @{ArmorMagicBonus5}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie5">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -4707,7 +4729,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive5" value="@{ArmorCheck5}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck5">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -4720,7 +4744,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive5" value="@{ArmorSpeed5}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed5">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -4738,7 +4764,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase6" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus6" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC6" value="@{ArmorACBase6} + @{ArmorMagicBonus6}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie6">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -4747,7 +4774,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive6" value="@{ArmorCheck6}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck6">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -4760,7 +4789,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive6" value="@{ArmorSpeed6}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed6">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -4778,7 +4809,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase7" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus7" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC7" value="@{ArmorACBase7} + @{ArmorMagicBonus7}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie7">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -4787,7 +4819,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive7" value="@{ArmorCheck7}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck7">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -4800,7 +4834,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive7" value="@{ArmorSpeed7}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed7">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -4818,7 +4854,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase8" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus8" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC8" value="@{ArmorACBase8} + @{ArmorMagicBonus8}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie8">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -4827,7 +4864,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive8" value="@{ArmorCheck8}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck8">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -4840,7 +4879,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive8" value="@{ArmorSpeed8}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed8">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -4858,7 +4899,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase9" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus9" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC9" value="@{ArmorACBase9} + @{ArmorMagicBonus9}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie9">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -4867,7 +4909,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive9" value="@{ArmorCheck9}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck9">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -4880,7 +4924,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive9" value="@{ArmorSpeed9}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed9">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -4898,7 +4944,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase10" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus10" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC10" value="@{ArmorACBase10} + @{ArmorMagicBonus10}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie10">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -4907,7 +4954,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive10" value="@{ArmorCheck10}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck10">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -4920,7 +4969,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive10" value="@{ArmorSpeed10}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed10">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -5498,13 +5549,13 @@
 			</div>
 						
 			<div class="sheet-row sheet-padb">
-				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_Calc" value="10 + @{AGI} + @{ArmorClassLuckyRoll} + @{ArmorActive1} + @{ArmorActive2} + @{ArmorActive3}" disabled="disabled" ><br/>AC (worn armor)</div>						
-				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_Unarmored_Calc" value="10 + @{AGI} + @{ArmorClassLuckyRoll} + @{ArmorActiveUnarmored1} + @{ArmorActiveUnarmored2} + @{ArmorActiveUnarmored3}" disabled="disabled"><br/>AC (unArmored)</div>
+				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_Calc" value="10 + @{AGI} + @{ArmorClassLuckyRoll} + @{ArmorActive1} + @{ArmorActive2} + @{ArmorActive3} + @{ArmorActive4} + @{ArmorActive5} + @{ArmorActive6} + @{ArmorActive7} + @{ArmorActive8} + @{ArmorActive9} + @{ArmorActive10}" disabled="disabled" ><br/>AC (worn armor)</div>						
+				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_AC_Unarmored_Calc" value="10 + @{AGI} + @{ArmorClassLuckyRoll} + @{unArmored_Class_Bonus} + @{ArmorActiveUnarmored1} + @{ArmorActiveUnarmored2} + @{ArmorActiveUnarmored3} + @{ArmorActiveUnarmored4} + @{ArmorActiveUnarmored5} + @{ArmorActiveUnarmored6} + @{ArmorActiveUnarmored7} + @{ArmorActiveUnarmored8} + @{ArmorActiveUnarmored9} + @{ArmorActiveUnarmored10}" disabled="disabled"><br/>AC (unArmored)</div>
 				<div class="sheet-col-1-13 sheet-right sheet-small-label">Lucky</div>
 				<div class="sheet-col-1-22 sheet-checkbox-row" title="Check the box if you have the Lucky Roll for Armor Class"><input type="checkbox" value="@{LCK_Starting}" name="attr_ArmorClassLuckyRoll"></div>
 				<div class="sheet-col-1-13 sheet-left sheet-small-label">Roll?</div>
-				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorCheck" value="@{ArmorCheck1} + @{ArmorCheck2} + @{ArmorCheck3}" disabled="disabled" ><br/>Total Check Penalty</div>						
-				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorSpeed" value="@{ArmorSpeed1} + @{ArmorSpeed2} + @{ArmorSpeed3}" disabled="disabled"><br/>Total Speed Reduction</div>
+				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorCheck" value="@{ArmorCheckActive1} + @{ArmorCheckActive2} + @{ArmorCheckActive3} + @{ArmorCheckActive4} + @{ArmorCheckActive5} + @{ArmorCheckActive6} + @{ArmorCheckActive7} + @{ArmorCheckActive8} + @{ArmorCheckActive9} + @{ArmorCheckActive10}" disabled="disabled" ><br/>Total Check Penalty</div>						
+				<div class="sheet-col-1-5 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_ArmorSpeed" value="@{ArmorSpeedActive1} + @{ArmorSpeedActive2} + @{ArmorSpeedActive3} + @{ArmorSpeedActive4} + @{ArmorSpeedActive5} + @{ArmorSpeedActive6} + @{ArmorSpeedActive7} + @{ArmorSpeedActive8} + @{ArmorSpeedActive9} + @{ArmorSpeedActive10}" disabled="disabled"><br/>Total Speed Reduction</div>
 			</div>
 								
 			<div class="sheet-row">
@@ -5518,8 +5569,9 @@
 						<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Base AC</div>
 						<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Magic Bonus</div>
 						<div class="sheet-col-1-12 sheet-center sheet-small-label sheet-vert-bottom">Total AC</div>
-						<div class="sheet-col-1-6 sheet-center sheet-small-label sheet-vert-bottom">Fumble Die</div>
-						<div class="sheet-col-1-8 sheet-center sheet-small-label sheet-vert-bottom">Check Penalty</div>
+						<div class="sheet-col-1-7 sheet-center sheet-small-label sheet-vert-bottom">Fumble Die</div>
+						<div class="sheet-col-1-9 sheet-right sheet-small-label sheet-vert-bottom">Check Penalty</div>
+                        <div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
 						<div class="sheet-col-1-8 sheet-center sheet-small-label sheet-vert-bottom">Speed Reduction</div>
 					</div>
 					
@@ -5531,7 +5583,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase1" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus1" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC1" value="@{ArmorACBase1} + @{ArmorMagicBonus1}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+					    <div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+                        <div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie1">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -5540,7 +5593,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+                        <div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive1" value="@{ArmorCheck1}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck1">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -5553,7 +5608,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+                        <div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive1" value="@{ArmorSpeed1}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed1">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -5571,7 +5628,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase2" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus2" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC2" value="@{ArmorACBase2} + @{ArmorMagicBonus2}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie2">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -5580,7 +5638,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						 <div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive2" value="@{ArmorCheck2}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck2">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -5593,7 +5653,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive2" value="@{ArmorSpeed2}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed2">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
@@ -5611,7 +5673,8 @@
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorACBase3" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorMagicBonus3" value="0" step="1"></div>
 						<div class="sheet-col-1-12"><input type="number" name="attr_ArmorTotalAC3" value="@{ArmorACBase3} + @{ArmorMagicBonus3}" disabled="disabled"></div>
-						<div class="sheet-col-1-6">
+						<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorFumbleDie3">
 								<option value="0" selected="selected">--</option>
 								<option value="d4">d4</option>
@@ -5620,7 +5683,9 @@
 								<option value="d16">d16</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						<div class="sheet-col-1-23 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorCheckActive3" value="@{ArmorCheck3}"/></div>
+						<div class="sheet-col-1-17">
 							<select name="attr_ArmorCheck3">
 								<option value="0" selected="selected">--</option>
 								<option value="-1">-1</option>
@@ -5633,7 +5698,9 @@
 								<option value="-8">-8</option>
 							</select>
 						</div>
-						<div class="sheet-col-1-8">
+						 <div class="sheet-col-1-22 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-col-1-24 sheet-vert-middle sheet-checkbox-row" title="Select when wearing this armor"><input type="checkbox" name="attr_ArmorSpeedActive3" value="@{ArmorSpeed3}"/></div>
+						<div class="sheet-col-1-15">
 							<select name="attr_ArmorSpeed3">
 								<option value="0" selected="selected">No</option>
 								<option value="-5">-5</option>
