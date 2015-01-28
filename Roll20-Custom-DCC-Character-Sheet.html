@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>27th Jan 2015</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>28th Jan 2015</p></div>
 		</div>
 
 	</div>
@@ -412,18 +412,18 @@
 						<div class="sheet-row">
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
-							<div class="sheet-col-1-5 sheet-padl sheet-small-label sheet-center" title="Base Speed is based on your Race."><input class="sheet-underlined sheet-center" type="number" name="attr_Speed" value="30"><br/>Base Speed</div>
+							<div class="sheet-col-1-5 sheet-padl sheet-small-label sheet-center" title="Base Speed is based on your Race."><input class="sheet-underlined sheet-center" type="number" name="attr_Speed" value="0" step="5"><br/>Base Speed</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 						</div>
 
 
 						<div class="sheet-row">
-							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Walk" value="( @{Speed} + @{ArmorSpeed} )" step="5"><br/>Walk</div>
-							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Run" value="( @{Speed} * 2 )" step="5"><br/>Run</div>
+							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Walk" value="@{Speed} + @{ArmorSpeed}" disabled="disabled"><br/>Walk</div>
+							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Run" value="floor( (@{Speed} + @{ArmorSpeed}) * 2)" disabled="disabled"><br/>Run</div>
 							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Fly" value="0" step="5"><br/>Fly</div>
-							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Climb" value="( @{Speed} / 4 )" step="5"><br/>Climb</div>
-							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Swim" value="( @{Speed} / 4 )" step="5"><br/>Swim</div>
+							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Climb" value="floor( (@{Speed} + @{ArmorSpeed}) / 2)" disabled="disabled"><br/>Climb</div>
+							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Swim" value="floor( (@{Speed} + @{ArmorSpeed}) / 2)" disabled="disabled"><br/>Swim</div>
 							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Burrow" value="0" step="5"><br/>Burrow</div>
 						</div>
 
@@ -592,7 +592,7 @@
 				<input type="radio" class="isWizard" value="14" name="attr_Class" checked><label class="sheet-subtab">Wizard</label>	
 
 				<!-- cleric -->
-				<!--<div class="sheet-cleric">
+				<div class="sheet-cleric">
 					<h2>Cleric Spells &amp; Abilities</h2>
 					<div>
 						<div class="sheet-item sheet-med">
@@ -793,7 +793,7 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>-->
+				</div>
 
 				<!-- dwarf -->
 				<div class="sheet-dwarf">
@@ -5301,22 +5301,23 @@
 						<div class="sheet-row">
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
-							<div class="sheet-col-1-5 sheet-padl sheet-small-label sheet-center" title="Base Speed is based on your Race."><input class="sheet-underlined sheet-center" type="number" name="attr_Speed" value="30"><br/>Base Speed</div>
+							<div class="sheet-col-1-5 sheet-padl sheet-small-label sheet-center" title="Base Speed is based on your Race."><input class="sheet-underlined sheet-center" type="number" name="attr_Speed" value="0" step="5"><br/>Base Speed</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 							<div class="sheet-col-1-5 sheet-center sheet-small-label">&nbsp;</div>
 						</div>
 
 
 						<div class="sheet-row">
-							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Walk" value="@{Speed} + @{ArmorSpeed}"><br/>Walk</div>
-							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Run" value="floor(@{Speed} * 2)"><br/>Run</div>
+							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Walk" value="@{Speed} + @{ArmorSpeed}" disabled="disabled"><br/>Walk</div>
+							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Run" value="floor( (@{Speed} + @{ArmorSpeed}) * 2)" disabled="disabled"><br/>Run</div>
 							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Fly" value="0" step="5"><br/>Fly</div>
-							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Climb" value="floor(@{Speed} / 4)"><br/>Climb</div>
-							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Swim" value="floor(@{Speed} / 4)"><br/>Swim</div>
+							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Climb" value="floor( (@{Speed} + @{ArmorSpeed}) / 2)" disabled="disabled"><br/>Climb</div>
+							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Swim" value="floor( (@{Speed} + @{ArmorSpeed}) / 2)" disabled="disabled"><br/>Swim</div>
 							<div class="sheet-col-1-6 sheet-padl sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="number" name="attr_Burrow" value="0" step="5"><br/>Burrow</div>
 						</div>
 
 					</div>
+
 
 				</div>
 
