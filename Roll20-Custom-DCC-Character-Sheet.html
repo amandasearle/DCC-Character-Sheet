@@ -271,7 +271,7 @@
 							</select>
 						</div>
 						<div class="sheet-col-1-7 sheet-center">
-							<input type="hidden" name="attr_FumbleCheck" value="@{LCK}*-1" disabled="true"/>
+							<input type="hidden" name="attr_FumbleCheck" value="@{LCK}*(-1)" disabled="true"/>
 							<button type="roll" class="sheet-roll" name="roll_Fumble" value="@{character_name} fumbles their attack. [[@{ArmorFumbleDie} + @{FumbleCheck}]] on Fumble Table.">Fumble</button>
 						</div>
 					</div>
@@ -5210,7 +5210,7 @@
 							</select>
 						</div>
 						<div class="sheet-col-1-7 sheet-center">
-							<input type="hidden" name="attr_FumbleCheck" value="@{LCK}*-1" disabled="true"/>
+							<input type="hidden" name="attr_FumbleCheck" value="@{LCK}*(-1)" disabled="true"/>
 							<button type="roll" class="sheet-roll" name="roll_Fumble" value="@{character_name} fumbles their attack. [[@{ArmorFumbleDie} + @{FumbleCheck}]] on Fumble Table.">Fumble</button>
 						</div>
 					</div>
@@ -5284,7 +5284,7 @@
 						<div class="sheet-col-3-8 sheet-core-stat-label">Luck</div>
 						<div class="sheet-col-1-8"><input type="number" name="attr_Luck" min="1" step="1"/></div>
 						<div class="sheet-col-1-8"><input type="number" name="attr_Luck_max" min="1" step="1"/></div>
-						<div class="sheet-col-1-8"><input type="number" name="attr_LCK" value="floor( (0.0009 * @{Luck} * @{Luck} * @{Luck}) + (-0.029 * @{Luck} * @{Luck}) + (0.6 * @{Luck}) +0.41) -4" disabled="disabled"/></div>
+						<div class="sheet-col-1-8"><input type="number" name="attr_LCK" value="(floor( (0.0009 * @{Luck} * @{Luck} * @{Luck}) + (-0.029 * @{Luck} * @{Luck}) + (0.6 * @{Luck}) +0.41) -4)" disabled="disabled"/></div>
 						<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-core-check" name="roll_LCK" value="/em attempts a trained Luck Skill Check\n\nLUCK check : [[1d20 + @{LCK} [Stat Mod] ]]"></button></div>
 						<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-core-check" name="roll_LCK" value="/em attempts an untrained Luck Skill Check\n\nLUCK check : [[1d10 + @{LCK} [Stat Mod] ]]"></button></div>
 					</div>
