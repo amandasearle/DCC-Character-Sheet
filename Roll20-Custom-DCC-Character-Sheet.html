@@ -176,7 +176,7 @@
 
 							<div class="sheet-col-1-7 sheet-center">
 								<select name="attr_ActionDie2">
-									<option value="d3" selected="selected">--</option>
+									<option value="0" selected="selected">--</option>
 									<option value="d3">d3</option>
 									<option value="d4">d4</option>
 									<option value="d5">d5</option>
@@ -239,7 +239,10 @@
 								</select>
 							</div>
 
-							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-roll" name="roll_CritDie" value="@{character_name} rolls a critical hit. [[@{CritDie}+@{LCK}]] on Table @{CritDie_max}">Crit</button></div>
+							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-roll" name="roll_CritDie" value="@{character_name} rolls a critical hit. [[@{CritDie} + @{LCK} + @{CritLuckyRoll}]] on Table @{CritDie_max}">Crit</button></div>
+
+							<div class="sheet-col-1-5 sheet-right sheet-vert-middle">Lucky Roll?</div>
+							<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Critical Hits"><input type="checkbox" value="@{LCK_Starting}" name="attr_CritLuckyRoll"></div>
 
 						</div>
 
@@ -271,9 +274,12 @@
 							</select>
 						</div>
 						<div class="sheet-col-1-7 sheet-center">
-							<input type="hidden" name="attr_FumbleCheck" value="@{LCK}*(-1)" disabled="true"/>
-							<button type="roll" class="sheet-roll" name="roll_Fumble" value="@{character_name} fumbles their attack. [[@{ArmorFumbleDie} + @{FumbleCheck}]] on Fumble Table.">Fumble</button>
+							<input type="hidden" name="attr_FumbleCheck" value="@{LCK} * (-1)" disabled="true"/>
+							<button type="roll" class="sheet-roll" name="roll_Fumble" value="@{character_name} fumbles their attack. [[@{ArmorFumbleDie} + @{FumbleCheck} + @{FumbleLuckyRoll}]] on Fumble Table.">Fumble</button>
 						</div>
+
+						<div class="sheet-col-1-5 sheet-right sheet-vert-middle">Lucky Roll?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Fumbles"><input type="checkbox" value="@{LCK_Starting} * (-1)" name="attr_FumbleLuckyRoll"></div>
 					</div>
 
 				</div>				
@@ -344,7 +350,7 @@
 						<div class="sheet-col-3-8 sheet-core-stat-label">Luck</div>
 						<div class="sheet-col-1-8"><input type="number" name="attr_Luck" min="1" step="1"/></div>
 						<div class="sheet-col-1-8"><input type="number" name="attr_Luck_max" min="1" step="1"/></div>
-						<div class="sheet-col-1-8"><input type="number" name="attr_LCK" value="floor( (0.0009 * @{Luck} * @{Luck} * @{Luck}) + (-0.029 * @{Luck} * @{Luck}) + (0.6 * @{Luck}) +0.41) -4" disabled="disabled"/></div>
+						<div class="sheet-col-1-8"><input type="number" name="attr_LCK" value="(floor( (0.0009 * @{Luck} * @{Luck} * @{Luck}) + (-0.029 * @{Luck} * @{Luck}) + (0.6 * @{Luck}) +0.41) -4)" disabled="disabled"/></div>
 						<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-core-check" name="roll_LCK" value="/em attempts a trained Luck Skill Check\n\nLUCK check : [[1d20 + @{LCK} [Stat Mod] ]]"></button></div>
 						<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-core-check" name="roll_LCK" value="/em attempts an untrained Luck Skill Check\n\nLUCK check : [[1d10 + @{LCK} [Stat Mod] ]]"></button></div>
 					</div>
@@ -466,7 +472,7 @@
 								<div class="sheet-col-1-3 sheet-hd-row sheet-right">Starting Luck: <br/> </div>
 								<div class="sheet-col-1-7 sheet-center" title="Enter your Starting Luck value here"><input class="sheet-underline sheet-center" type="number" name="attr_Luck_Starting" min="0" step="1"></div>
                                 <div class="sheet-col-1-15 sheet-center sheet-small-label">&nbsp;</div>
-								<div class="sheet-col-2-7 sheet-center"><input type="number" name="attr_LCK_Starting" value="floor( (0.0009 * @{Luck_Starting} * @{Luck_Starting} * @{Luck_Starting}) + (-0.029 * @{Luck_Starting} * @{Luck_Starting}) + (0.6 * @{Luck_Starting}) +0.41) -4" disabled="disabled"/>Lucky Roll Bonus</div>
+								<div class="sheet-col-2-7 sheet-center"><input type="number" name="attr_LCK_Starting" value="(floor( (0.0009 * @{Luck_Starting} * @{Luck_Starting} * @{Luck_Starting}) + (-0.029 * @{Luck_Starting} * @{Luck_Starting}) + (0.6 * @{Luck_Starting}) +0.41) -4)" disabled="disabled"/>Lucky Roll Bonus</div>
 							</div>
 	
 						</div>
@@ -5182,7 +5188,10 @@
 								</select>
 							</div>
 
-							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-roll" name="roll_CritDie" value="@{character_name} rolls a critical hit. [[@{CritDie} + @{LCK}]] on Table @{CritDie_max}">Crit</button></div>
+							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-roll" name="roll_CritDie" value="@{character_name} rolls a critical hit. [[@{CritDie} + @{LCK} + @{CritLuckyRoll}]] on Table @{CritDie_max}">Crit</button></div>
+
+							<div class="sheet-col-1-5 sheet-right sheet-vert-middle">Lucky Roll?</div>
+							<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Critical Hits"><input type="checkbox" value="@{LCK_Starting}" name="attr_CritLuckyRoll"></div>
 
 						</div>
 
@@ -5210,9 +5219,12 @@
 							</select>
 						</div>
 						<div class="sheet-col-1-7 sheet-center">
-							<input type="hidden" name="attr_FumbleCheck" value="@{LCK}*(-1)" disabled="true"/>
-							<button type="roll" class="sheet-roll" name="roll_Fumble" value="@{character_name} fumbles their attack. [[@{ArmorFumbleDie} + @{FumbleCheck}]] on Fumble Table.">Fumble</button>
+							<input type="hidden" name="attr_FumbleCheck" value="@{LCK} * (-1)" disabled="true"/>
+							<button type="roll" class="sheet-roll" name="roll_Fumble" value="@{character_name} fumbles their attack. [[@{ArmorFumbleDie} + @{FumbleCheck} + @{FumbleLuckyRoll}]] on Fumble Table.">Fumble</button>
 						</div>
+
+						<div class="sheet-col-1-5 sheet-right sheet-vert-middle">Lucky Roll?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Fumbles"><input type="checkbox" value="@{LCK_Starting} * (-1)" name="attr_FumbleLuckyRoll"></div>
 					</div>
 
 				</div>				
@@ -5407,7 +5419,7 @@
 								<div class="sheet-col-1-3 sheet-hd-row sheet-right">Starting Luck: <br/> </div>
 								<div class="sheet-col-1-7 sheet-center" title="Enter your Starting Luck value here"><input class="sheet-underline sheet-center" type="number" name="attr_Luck_Starting" min="0" step="1"></div>
                                 <div class="sheet-col-1-15 sheet-center sheet-small-label">&nbsp;</div>
-								<div class="sheet-col-2-7 sheet-center"><input type="number" name="attr_LCK_Starting" value="floor( (0.0009 * @{Luck_Starting} * @{Luck_Starting} * @{Luck_Starting}) + (-0.029 * @{Luck_Starting} * @{Luck_Starting}) + (0.6 * @{Luck_Starting}) +0.41) -4" disabled="disabled"/>Lucky Roll Bonus</div>
+								<div class="sheet-col-2-7 sheet-center"><input type="number" name="attr_LCK_Starting" value="(floor( (0.0009 * @{Luck_Starting} * @{Luck_Starting} * @{Luck_Starting}) + (-0.029 * @{Luck_Starting} * @{Luck_Starting}) + (0.6 * @{Luck_Starting}) +0.41) -4)" disabled="disabled"/>Lucky Roll Bonus</div>
 							</div>
 	
 						</div>
