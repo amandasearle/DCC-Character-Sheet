@@ -323,24 +323,26 @@ div[data-groupname^="repeating_classactions"] .repitem,
 	overflow: hidden;
 }
 
-.charsheet input.sheet-spelltypeadvanced:checked ~ div.sheet-spell-type-advanced,
-.charsheet input.sheet-spelltypeattack:checked ~ div.sheet-spell-type-attack,
-.charsheet input.sheet-spelltypesave:checked ~ div.sheet-spell-type-save,
-.charsheet input.sheet-spelltypedamage:checked ~ div.sheet-spell-type-damage,
-.charsheet input.sheet-spelltypeheal:checked ~ div.sheet-spell-type-heal,
-.charsheet input.sheet-spelltypeeffects:checked ~ div.sheet-spell-type-effects {
+.charsheet input.sheet-spelltypeGeneral:checked ~ div.sheet-spell-type-General,
+.charsheet input.sheet-spelltypeMercurialMagic:checked ~ div.sheet-spell-type-MercurialMagic,
+.charsheet input.sheet-spelltypeManifest:checked ~ div.sheet-spell-type-Manifest,
+.charsheet input.sheet-spelltypeCorruption:checked ~ div.sheet-spell-type-Corruption,
+.charsheet input.sheet-spelltypeMisfire:checked ~ div.sheet-spell-type-Misfire,
+.charsheet input.sheet-spelltypeSpellCheck:checked ~ div.sheet-spell-type-SpellCheck,
+.charsheet input.sheet-spelltypeDamage:checked ~ div.sheet-spell-type-Damage {
 	max-height: 999999px;
 	visibility: visible;
 	opacity: 1;
 	transition: opacity 0.5s linear 0s;
 }
 
-.charsheet input.sheet-spelltypeadvanced:checked ~ span.sheet-spelltypeadvanced,
-.charsheet input.sheet-spelltypeattack:checked ~ span.sheet-spelltypeattack,
-.charsheet input.sheet-spelltypesave:checked ~ span.sheet-spelltypesave,
-.charsheet input.sheet-spelltypedamage:checked ~ span.sheet-spelltypedamage,
-.charsheet input.sheet-spelltypeheal:checked ~ span.sheet-spelltypeheal,
-.charsheet input.sheet-spelltypeeffects:checked ~ span.sheet-spelltypeeffects
+.charsheet input.sheet-spelltypeGeneral:checked ~ span.sheet-spelltypeGeneral,
+.charsheet input.sheet-spelltypeMercurialMagic:checked ~ span.sheet-spelltypeMercurialMagic,
+.charsheet input.sheet-spelltypeManifest:checked ~ span.sheet-spelltypeManifest,
+.charsheet input.sheet-spelltypeCorruption:checked ~ span.sheet-spelltypeCorruption,
+.charsheet input.sheet-spelltypeMisfire:checked ~ span.sheet-spelltypeMisfire,
+.charsheet input.sheet-spelltypeSpellCheck:checked ~ span.sheet-spelltypeSpellCheck,
+.charsheet input.sheet-spelltypeDamage:checked ~ span.sheet-spelltypeDamage
  {
     background: #879a6a;     
     color: white;
@@ -348,7 +350,7 @@ div[data-groupname^="repeating_classactions"] .repitem,
 }
 
 .charsheet input.sheet-spelltypetab {
-    width: 119px;
+    width: 100px;
     height: 20px;
     cursor: pointer;
 	position: relative;
@@ -359,17 +361,17 @@ div[data-groupname^="repeating_classactions"] .repitem,
 .charsheet span.sheet-spelltypetab {
     text-align: center;
     display: inline-block;    
-    font-size: 13px;
+    font-size: 12px;
 	background: #8c6075;
 	color: white;
 	font-weight: bold;
 	border-radius: 4px;
 	
-	width: 119px;
+	width: 100px;
     height: 20px;
 	cursor: pointer;
 	position: relative;
-	margin-left: -121px;
+	margin-left: -100px;
 }
 
 /* END spell type tab Settings */
