@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>3rd Feb 2015</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>7th Feb 2015</p></div>
 		</div>
 
 	</div>
@@ -207,7 +207,7 @@
 
 						<div class="sheet-row">
 							<div class="sheet-col-2-7 sheet-right sheet-hd-row">Crit Range :</br></div>
-							<div class="sheet-col-1-7">
+							<div class="sheet-col-1-6">
 								<select name="attr_WarriorThreat">
 									<option value="20" selected="selected">20</option>
 									<option value="19">19-20</option>
@@ -220,7 +220,7 @@
 						<div class="sheet-row">
 
 							<div class="sheet-col-2-7 sheet-right sheet-hd-row">Crit Die :</br></div>
-							<div class="sheet-col-1-7 sheet-center">
+							<div class="sheet-col-1-6 sheet-center">
 								<select name="attr_CritDie">
 									<option value="d3">d3</option>
 									<option value="d4" selected="selected">d4</option>
@@ -239,7 +239,7 @@
 								</select>
 							</div>
 
-							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-roll" name="roll_CritDie" value="@{character_name} rolls a critical hit. [[@{CritDie} + @{LCK} + @{CritLuckyRoll}]] on Table @{CritDie_max}">Crit</button></div>
+							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-roll" name="roll_CritDie" value="@{character_name} rolls a critical hit. [[@{CritDie} + @{LCK} + @{CritLuckyRoll}]] on Table @{CritDieTable}">Crit</button></div>
 
 							<div class="sheet-col-1-5 sheet-right sheet-vert-middle">Lucky Roll?</div>
 							<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Critical Hits"><input type="checkbox" value="@{LCK_Starting}" name="attr_CritLuckyRoll"></div>
@@ -247,18 +247,16 @@
 						</div>
 
 					<div class="sheet-row">
-
 						<div class="sheet-col-2-7 sheet-right sheet-hd-row">Crit Table :</br></div>
-						<div class="sheet-col-1-7 sheet-center">
-							<select name="attr_CritDie_max">
-								<option value="I" selected="selected">I</option>
+						<div class="sheet-col-1-6 sheet-center">
+							<select name="attr_CritDieTable">
+								<option value="I">I</option>
 								<option value="II">II</option>
 								<option value="III">III</option>
 								<option value="IV">IV</option>
 								<option value="V">V</option>
 							</select>
 						</div>
-
 					</div>
 
 					<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
@@ -4958,7 +4956,7 @@
 						<div class="sheet-row">
 							<div class="sheet-col-2-7 sheet-right sheet-hd-row">Crit Range :</br></div>
 							<div class="sheet-col-1-7">
-								<select name="attr_WarriorThreat">
+								<select name="attr_WarriorThreatZero">
 									<option value="20" selected="selected">20</option>
 								</select>
 							</div>
@@ -4968,12 +4966,12 @@
 
 							<div class="sheet-col-2-7 sheet-right sheet-hd-row">Crit Die :</br></div>
 							<div class="sheet-col-1-7 sheet-center">
-								<select name="attr_CritDie">
+								<select name="attr_CritDieZero">
 									<option value="d4" selected="selected">d4</option>
 								</select>
 							</div>
 
-							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-roll" name="roll_CritDie" value="@{character_name} rolls a critical hit. [[@{CritDie} + @{LCK} + @{CritLuckyRoll}]] on Table @{CritDie_max}">Crit</button></div>
+							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-roll" name="roll_CritDieZero" value="@{character_name} rolls a critical hit. [[@{CritDieZero} + @{LCK} + @{CritLuckyRoll}]] on Table @{CritDie_maxZero}">Crit</button></div>
 
 							<div class="sheet-col-1-5 sheet-right sheet-vert-middle">Lucky Roll?</div>
 							<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Critical Hits"><input type="checkbox" value="@{LCK_Starting}" name="attr_CritLuckyRoll"></div>
@@ -4981,14 +4979,12 @@
 						</div>
 
 					<div class="sheet-row">
-
-						<div class="sheet-col-2-7 sheet-right sheet-hd-row">Crit Table :</br></div>
+						<div class="sheet-col-2-7 sheet-right sheet-hd-row">Crit Table :</br> </div>
 						<div class="sheet-col-1-7 sheet-center">
-							<select name="attr_CritDie_max">
+							<select name="attr_CritDie_maxZero">
 								<option value="I" selected="selected">I</option>
 							</select>
 						</div>
-
 					</div>
 
 					<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
