@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>8th Feb 2015</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>9th Feb 2015</p></div>
 		</div>
 
 	</div>
@@ -599,10 +599,21 @@
 				<div class="sheet-cleric">
 					<h3>Cleric Abilities</h3>
 
+						<ul>
+  							<li><b>Hit Points:</b> 1d8 per level<br/> </li>
+  							<li><b>Weapons: </b> Those allowed by chosen god<br/></li>
+  							<li><b>Armor: </b> Any<br/></li>
+  							<li><b>Alignment: </b> Same as chosen god<br/></li>
+						</ul>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
 						<div class="sheet-row">
 							<div class="sheet-col-1-8 sheet-hd-row">Deity: <br/></div>
-							<div class="sheet-col-1-4 sheet-right" title="Enter your Deity"><input class="sheet-underline sheet-center" type="text" name="attr_ClericDeity"/></div>
+							<div class="sheet-col-1-4 sheet-right" title="Enter your Deity"><input class="sheet-underline sheet-center" type="text" name="attr_ClericDeity"></div>
 						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-5 sheet-hd-row">Disapproval : </br></div>
@@ -632,6 +643,122 @@
 							</div>
 						</div>
 
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-9 sheet-left sheet-hd-row">Turn Unholy :</br></div>
+							<input type="hidden" name="attr_TurnUnholyLevel" value="(@{Level})" />
+							<div class="sheet-col-1-14 sheet-small-label sheet-center" Title="Bonus is Luck Mod + Perception Mod + Caster Level"><input class="sheet-underlined" type="number" name="attr_TurnUnholyCheck" value="(@{LCK} + @{PER} + @{Level})" disabled="disabled"><br/>Bonus</div>
+							<div class="sheet-col-1-9 sheet-center">
+								<button type="roll" class="sheet-roll" name="roll_TurnUnholy" value="@{character_name} attempts to turn Unholy Creatures of their God with a [[@{ActionDie1} + @{TurnUnholyCheck} + @{TurnUnholyLuckyRoll}]].">Turn Unholy</button>
+							</div>
+
+							<div class="sheet-col-1-10 sheet-right sheet-vert-middle">Lucky Roll?</div>
+							<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Turn Unholy"><input type="checkbox" value="@{LCK_Starting}" name="attr_TurnUnholyLuckyRoll"></div>
+						</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-9 sheet-left sheet-hd-row">Divine Aid :</br></div>
+							<input type="hidden" name="attr_DivineAidLevel" value="(@{Level})" />
+							<div class="sheet-col-1-14 sheet-small-label sheet-center" Title="Bonus is Perception Mod + Caster Level"><input class="sheet-underlined" type="number" name="attr_DivineAidCheck" value="(@{PER} + @{Level})" disabled="disabled"><br/>Bonus</div>
+							<div class="sheet-col-1-9 sheet-center">
+								<button type="roll" class="sheet-roll" name="roll_DivineAid" value="@{character_name} beseeches their God for help with a [[@{ActionDie1} + @{DivineAidCheck}]].">Divine Aid</button>
+							</div>
+						</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-8 sheet-left sheet-hd-row">Lay On Hands :</br></div>
+							<input type="hidden" name="attr_LayOnHandsLevel" value="(@{Level})" />
+							<div class="sheet-col-1-14 sheet-small-label sheet-center" Title="Bonus is Perception Mod + Caster Level"><input class="sheet-underlined" type="number" name="attr_LayOnHandsCheck" value="(@{PER} + @{Level})" disabled="disabled"><br/>Bonus</div>
+							<div class="sheet-col-1-8 sheet-center">
+								<button type="roll" class="sheet-roll" name="roll_LayOnHands" value="@{character_name} attempts to heal someone with the power of their God [[@{ActionDie1} + @{LayOnHandsCheck} + @{LayOnHandsLuckyRoll}]].">Lay On Hands</button>
+							</div>
+
+							<div class="sheet-col-1-10 sheet-right sheet-vert-middle">Lucky Roll?</div>
+							<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Magical Healing"><input type="checkbox" value="@{LCK_Starting}" name="attr_LayOnHandsLuckyRoll"></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div><label>Lay On Hands Results Table</label>
+							<table>
+								<tr>
+									<th> (Alignment Step) </th>
+									<th> 1-11 </th>
+									<th> 12-13 </th>
+									<th> 14-19 </th>
+									<th> 20-21 </th>
+									<th> 22+ </th>
+								</tr>
+								<tr>
+									<td> (Same) </td>
+									<td> Failure </td>
+									<td> 2 dice </td>
+									<td> 3 dice </td>
+									<td> 5 dice </td>
+									<td> 5 dice </td>
+								</tr>
+								<tr>
+									<td> (Adjacent) </td>
+									<td> Failure </td>
+									<td> 1 die </td>
+									<td> 2 dice </td>
+									<td> 3 dice </td>
+									<td> 4 dice </td>
+								</tr>
+								<tr>
+									<td> (Opposed) </td>
+									<td> Failure </td>
+									<td> 1 die </td>
+									<td> 1 die </td>
+									<td> 2 dice </td>
+									<td> 3 dice </td>
+								</tr>
+							</table>
+						</div>
+
+						<div class="sheet-col-1-1">
+							<div class="sheet-row sheet-sub-header">
+								<div class="sheet-col-1-3 sheet-center sheet-inspiration-label">PCs of Same Alignment</div>
+								<div class="sheet-col-1-3 sheet-center sheet-inspiration-label">PCs of Adjacent Alignment</div>
+								<div class="sheet-col-1-3 sheet-center sheet-inspiration-label">PCs of Opposed Alignment</div>
+							</div>
+							<div class="sheet-row">
+								<div class="sheet-col-1-3"><textarea name="attr_ClericAlignSame"></textarea></div>
+								<div class="sheet-col-1-3"><textarea name="attr_ClericAlignAdjacent"></textarea></div>
+								<div class="sheet-col-1-3"><textarea name="attr_ClericAlignOpposed"></textarea></div>
+							</div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div><label>Gods of the Eternal Struggle</label>
+							<table>
+								<tr>
+									<th> Alignment of Deity </th>
+									<th> Weapons Useable by Cleric </th>
+									<th> Unholy Creatures to Deity </th>
+								</tr>
+								<tr>
+									<td> Law </td>
+									<td> Club, mace, sling, staff, warhammer </td>
+									<td> Un-dead, demons, devils, chaotic extraplanar creatures, monsters (e.g., basilisk or medusa), Chaos Primes, chaotic humanoids (e.g., orcs), chaotic dragons </td>
+								</tr>
+								<tr>
+									<td> Neutral </td>
+									<td> Dagger, mace, sling, staff, sword (any) </td>
+									<td> Mundane animals, un-dead, demons, devils, monsters (e.g., basilisk or medusa), lycanthropes, perversions of nature (e.g., otyughs and slimes) </td>
+								</tr>
+								<tr>
+									<td> Chaos </td>
+									<td> Axe (any), bow (any), dagger, dart, flail </td>
+									<td> Angels, paladins, lawful dragons, Lords of Law, Lawful Primes, and Law-aligned humanoids (e.g., goblins) </td>
+								</tr>
+							</table>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
 						<div class="sheet-row">
 							<div class="sheet-col-1-5 sheet-hd-row">Momentum : </br></div>
 							<div class="sheet-col-1-10 sheet-right">
@@ -660,117 +787,6 @@
 							</div>
 						</div>
 
-					<div><label>Lay On Hands Results Table</label>
-						<table>
-							<tr>
-								<td> (alignment step) </td>
-								<td> 12 </td>
-								<td> 14 </td>
-								<td> 20 </td>
-								<td> 22+ </td>
-							</tr>
-							<tr>
-								<td> (same) </td>
-								<td> 2 dice </td>
-								<td> 3 dice </td>
-								<td> 5 dice </td>
-								<td> 5 dice </td>
-							</tr>
-							<tr>
-								<td> (adjacent) </td>
-								<td> 1 die </td>
-								<td> 2 dice </td>
-								<td> 3 dice </td>
-								<td> 4 dice </td>
-							</tr>
-							<tr>
-								<td> (opposed) </td>
-								<td> 1 die </td>
-								<td> 1 die </td>
-								<td> 2 dice </td>
-								<td> 3 dice </td>
-							</tr>
-						</table>
-					</div>
-
-					<!--<div class="sheet-statblock">
-						<div class="sheet-header">
-							<div class="sheet-item sheet-small">
-								<label>Spell Name</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Level</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Misc Mods</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Check</label>
-							</div>
-							<div class="sheet-item sheet-med">
-								<label>Manifestation &amp; Notes</label>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-small">
-								<input type="text" name="attr_DivineAid" value="Divine Aid" disabled="true"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="number" name="attr_DivineAidLevel" value="1" disabled="true"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="number" name="attr_DivineAidCheckMisc" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} casts Divine Aid: [[@{ActionDie}+@{DivineAidCheck}]]" name="roll_DivineAid">
-									<input type="number" name="attr_DivineAidCheck" value="@{Level}+@{PER}+@{DivineAidCheckMisc}" disabled="true"/>
-								</button>
-							</div>
-							<div class="sheet-item sheet-med">
-								<input type="text" name="attr_DivineAidNotes"/>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-small">
-								<input type="text" name="attr_TurnUnholy" value="Turn Unholy" disabled="true"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="number" name="attr_TurnUnholyLevel" value="1" disabled="true"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="number" name="attr_TurnUnholyCheckMisc" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} casts Turn Unholy: [[@{ActionDie}+@{TurnUnholyCheck}]]" name="roll_TurnUnholy">
-									<input type="number" name="attr_TurnUnholyCheck" value="@{Level}+@{PER}+@{TurnUnholyCheckMisc}" disabled="true"/>
-								</button>
-							</div>
-							<div class="sheet-item sheet-med">
-								<input type="text" name="attr_TurnUnholyNotes"/>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-small">
-								<input type="text" name="attr_LayOnHands" value="Lay On Hands" disabled="true"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="number" name="attr_LayOnHandsLevel" value="1" disabled="true"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<input type="number" name="attr_LayOnHandsCheckMisc" value="0"/>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} casts Lay On Hands: [[@{ActionDie}+@{LayOnHandsCheck}]]" name="roll_LayOnHands">
-									<input type="number" name="attr_LayOnHandsCheck" value="@{Level}+@{PER}+@{LayOnHandsCheckMisc}" disabled="true"/>
-								</button>
-							</div>
-							<div class="sheet-item sheet-med">
-								<input type="text" name="attr_LayOnHandsNotes"/>
-							</div>
-						
-						</div>
-
-					</div> -->
 				</div>
 
 				<!-- dwarf -->
@@ -816,6 +832,11 @@
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 		
 						<ul>
+  							<li><b>Hit Points:</b>1d10 per level<br/> </li>
+  							<li><b>Weapons: </b> Battleaxe, club, dagger, handaxe, longsword, mace, short sword, spear, two-handed sword, warhammer, crossbow, javelin, shortbow, and sling<br/></li>
+  							<li><b>Armor: </b> Any<br/></li>
+  							<li><b>Alignment: </b> Law (common), Neutral (uncommon), Chaos (rare)<br/></li>
+  							<li><b>Languages: </b> Knows one additional language<br/></li>
   							<li><b>Infravision 60'</b><br/></li>
   							<li><b>Underground Skills </b><br/>
     							<ul>
@@ -1015,6 +1036,11 @@
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<ul>
+							<li><b>Hit Points:</b> 1d6 per level<br/> </li>
+  							<li><b>Weapons: </b> Club, dagger, handaxe, staff, short sword, crossbow, javelin, shortbow, and sling<br/></li>
+  							<li><b>Armor: </b> Any<br/></li>
+  							<li><b>Alignment: </b> Law (common), Neutral (uncommon), Chaos (extremely rare)<br/></li>
+  							<li><b>Languages: </b> Knows one additional language<br/></li>
   							<li><b>Two-weapon fighting </b><br/>
     							<ul>
       								<li>Attack Die: d16 + d16<br/></li>
@@ -1066,6 +1092,11 @@
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<ul>
+  							<li><b>Hit Points:</b> 1d10 per level<br/> </li>
+  							<li><b>Weapons: </b> Club, crossbow, dagger, handaxe, javelin, shortbow, short sword, sling, and staff<br/></li>
+  							<li><b>Armor: </b> Any<br/></li>
+  							<li><b>Alignment: </b> Law (uncommon), Neutral (common), Chaos (uncommon)<br/></li>
+  							<li><b>Languages: </b> Knows one additional language<br/></li>
   							<li><b>Claw Fighting </b><br/>
     							<ul>
       								<li>Must fight with both claws <br/></li>
@@ -1277,10 +1308,10 @@
 							</div>
 						</fieldset>
 					</div>
-				</div>	-->
+				</div>-->
 
 				<!-- Reptilian -->
-				<!-- <div class="sheet-reptilian">
+				<!--<div class="sheet-reptilian">
 					<h2>Reptilian Abilities</h2>
 					<div>
 						<div class="sheet-statblock">
@@ -1406,7 +1437,7 @@
 							<label>Luck check to avoid being surprised outdoors</label>
 						</div>
 					</div>
-				</div>	-->
+				</div>-->
 
 				<!-- Robot -->
 				<!--<div class="sheet-robot">
@@ -1692,10 +1723,10 @@
 							<label>Luck check to avoid being surprised outdoors</label>
 						</div>
 					</div>
-				</div>	-->
+				</div>-->
 
 				<!-- Sentinel -->
-				<!-- <div class="sheet-sentinel">
+				<!--<div class="sheet-sentinel">
 					<h2>Sentinel Spells &amp; Abilities</h2>
 					<div class="sheet-statblock">
 						<div class="sheet-item sheet-med">
@@ -1970,7 +2001,7 @@
 							</div>
 						</fieldset>
 					</div>
-				</div> -->
+				</div>-->
 
 				<!-- Technologist -->
 				<!--<div class="sheet-technologist">
@@ -2099,7 +2130,7 @@
 							<label>Luck check to avoid being surprised outdoors</label>
 						</div>
 					</div>
-				</div>	-->
+				</div>-->
 
 				<!-- Thief -->
 				<!--<div class="sheet-thief">
@@ -2356,8 +2387,17 @@
 								<option value="9">9</option>
 								<option value="10">10</option>
 							</select>
-						</div>	
+						</div>
 					</div>
+
+					<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+					<ul>
+  						<li><b>Hit Points:</b> 1d12 per level<br/> </li>
+  						<li><b>Weapons: </b> Battleaxe, club, crossbow, dagger, dart, handaxe, javelin, longbow, longsword, mace, polearm, shortbow, short sword, sling, spear, staff, two-handed sword, and warhammer<br/></li>
+  						<li><b>Armor: </b> Any<br/></li>
+  						<li><b>Alignment: </b> Any<br/></li>
+					</ul>
 
 				</div>
 
@@ -4830,7 +4870,7 @@
 
 					</div>			
 		
-					<h4 class="sheet-center">Inventory </h4>
+					<h4 class="sheet-center"> Inventory </h4>
 
 						<div class="sheet-col-1-1">
 
