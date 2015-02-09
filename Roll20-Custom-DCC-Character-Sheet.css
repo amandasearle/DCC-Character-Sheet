@@ -376,6 +376,24 @@ div[data-groupname^="repeating_classactions"] .repitem,
 
 /* END spell type tab Settings */
 
+/* Table Settings */
+.charsheet table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 2px solid #404040;
+}
+
+.charsheet td,
+.charsheet th,
+.charsheet tr,
+.charsheet tbody,
+.charsheet thead {
+	border: 1px solid #404040;
+	padding: 5px;
+}
+
+/* END Table settings */
+
 /* Inventory Page Settings */
 .charsheet div[class^="sheet-inventory-page"] { 	
 	visibility: hidden;
@@ -941,7 +959,8 @@ div[data-groupname^="repeating_classactions"] .repitem,
 .charsheet .sheet-isHalfling:checked~ div.sheet-savage,
 .charsheet .sheet-isHalfling:checked~ div.sheet-sentinel,
 .charsheet .sheet-isHalfling:checked~ div.sheet-technologist, 
-.charsheet .sheet-isHalfling:checked~ div.sheet-warrior, 
+.charsheet .sheet-isHalfling:checked~ div.sheet-warrior,
+.charsheet .sheet-isMorlock:checked~ div.sheet-cleric,
 .charsheet .sheet-isMorlock:checked~ div.sheet-dwarf,
 .charsheet .sheet-isMorlock:checked~ div.sheet-elf,
 .charsheet .sheet-isMorlock:checked~ div.sheet-halfling,
@@ -954,6 +973,7 @@ div[data-groupname^="repeating_classactions"] .repitem,
 .charsheet .sheet-isMorlock:checked~ div.sheet-thief,
 .charsheet .sheet-isMorlock:checked~ div.sheet-warrior,
 .charsheet .sheet-isMorlock:checked~ div.sheet-wizard,
+.charsheet .sheet-isMutant:checked~ div.sheet-cleric,
 .charsheet .sheet-isMutant:checked~ div.sheet-dwarf,
 .charsheet .sheet-isMutant:checked~ div.sheet-elf,
 .charsheet .sheet-isMutant:checked~ div.sheet-halfling,
@@ -966,6 +986,7 @@ div[data-groupname^="repeating_classactions"] .repitem,
 .charsheet .sheet-isMutant:checked~ div.sheet-thief,
 .charsheet .sheet-isMutant:checked~ div.sheet-warrior,
 .charsheet .sheet-isMutant:checked~ div.sheet-wizard,
+.charsheet .sheet-isReptilian:checked~ div.sheet-cleric,
 .charsheet .sheet-isReptilian:checked~ div.sheet-dwarf,
 .charsheet .sheet-isReptilian:checked~ div.sheet-elf,
 .charsheet .sheet-isReptilian:checked~ div.sheet-halfling,
@@ -978,6 +999,7 @@ div[data-groupname^="repeating_classactions"] .repitem,
 .charsheet .sheet-isReptilian:checked~ div.sheet-thief,
 .charsheet .sheet-isReptilian:checked~ div.sheet-warrior,
 .charsheet .sheet-isReptilian:checked~ div.sheet-wizard,
+.charsheet .sheet-isRobot:checked~ div.sheet-cleric,
 .charsheet .sheet-isRobot:checked~ div.sheet-dwarf,
 .charsheet .sheet-isRobot:checked~ div.sheet-elf,
 .charsheet .sheet-isRobot:checked~ div.sheet-halfling,
@@ -990,6 +1012,7 @@ div[data-groupname^="repeating_classactions"] .repitem,
 .charsheet .sheet-isRobot:checked~ div.sheet-thief,
 .charsheet .sheet-isRobot:checked~ div.sheet-warrior,
 .charsheet .sheet-isRobot:checked~ div.sheet-wizard,
+.charsheet .sheet-isSavage:checked~ div.sheet-cleric,
 .charsheet .sheet-isSavage:checked~ div.sheet-dwarf,
 .charsheet .sheet-isSavage:checked~ div.sheet-elf,
 .charsheet .sheet-isSavage:checked~ div.sheet-halfling,
@@ -1002,6 +1025,7 @@ div[data-groupname^="repeating_classactions"] .repitem,
 .charsheet .sheet-isSavage:checked~ div.sheet-thief,
 .charsheet .sheet-isSavage:checked~ div.sheet-warrior,
 .charsheet .sheet-isSavage:checked~ div.sheet-wizard,
+.charsheet .sheet-isSentinel:checked~ div.sheet-cleric,
 .charsheet .sheet-isSentinel:checked~ div.sheet-dwarf,
 .charsheet .sheet-isSentinel:checked~ div.sheet-elf,
 .charsheet .sheet-isSentinel:checked~ div.sheet-halfling,
@@ -1014,6 +1038,7 @@ div[data-groupname^="repeating_classactions"] .repitem,
 .charsheet .sheet-isSentinel:checked~ div.sheet-thief,
 .charsheet .sheet-isSentinel:checked~ div.sheet-warrior,
 .charsheet .sheet-isSentinel:checked~ div.sheet-wizard,
+.charsheet .sheet-isTechnologist:checked~ div.sheet-cleric,
 .charsheet .sheet-isTechnologist:checked~ div.sheet-dwarf,
 .charsheet .sheet-isTechnologist:checked~ div.sheet-elf,
 .charsheet .sheet-isTechnologist:checked~ div.sheet-halfling,
@@ -1026,11 +1051,10 @@ div[data-groupname^="repeating_classactions"] .repitem,
 .charsheet .sheet-isTechnologist:checked~ div.sheet-thief,
 .charsheet .sheet-isTechnologist:checked~ div.sheet-warrior,
 .charsheet .sheet-isTechnologist:checked~ div.sheet-wizard,
-.charsheet .sheet-isThief:checked~ div.sheet-wizard,
 .charsheet .sheet-isThief:checked~ div.sheet-cleric,
-.charsheet .sheet-isThief:checked~ div.sheet-halfling,
 .charsheet .sheet-isThief:checked~ div.sheet-dwarf,
 .charsheet .sheet-isThief:checked~ div.sheet-elf,
+.charsheet .sheet-isThief:checked~ div.sheet-halfling,
 .charsheet .sheet-isThief:checked~ div.sheet-morlock,
 .charsheet .sheet-isThief:checked~ div.sheet-mutant,
 .charsheet .sheet-isThief:checked~ div.sheet-reptilian,
@@ -1039,6 +1063,7 @@ div[data-groupname^="repeating_classactions"] .repitem,
 .charsheet .sheet-isThief:checked~ div.sheet-sentinel,
 .charsheet .sheet-isThief:checked~ div.sheet-technologist,
 .charsheet .sheet-isThief:checked~ div.sheet-warrior,
+.charsheet .sheet-isThief:checked~ div.sheet-wizard,
 .charsheet .sheet-isWarrior:checked~ div.sheet-cleric,
 .charsheet .sheet-isWarrior:checked~ div.sheet-thief,
 .charsheet .sheet-isWarrior:checked~ div.sheet-halfling,
