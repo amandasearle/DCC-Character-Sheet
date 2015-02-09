@@ -1,7 +1,7 @@
 <div class="sheet-overall-wrapper">
     
     <!-- PC / 0-level toggle -->
-	<input class="sheet-is-zero" type="checkbox" name="attr_is_zero" value="0"><span class="sheet-is-zero-tab"></span>
+    <input class="sheet-is-zero" type="checkbox" name="attr_is_zero" value="0"><span class="sheet-is-zero-tab"></span>
 	
 	<div class="sheet-core-header sheet-padb">
 		<div class="sheet-row">
@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>7th Feb 2015</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>8th Feb 2015</p></div>
 		</div>
 
 	</div>
@@ -145,8 +145,8 @@
 
 						<div class="sheet-row">
 							<div class="sheet-col-2-7 sheet-right sheet-hd-row">Initiative : </br></div>
-							<div class="sheet-col-1-7 sheet-small-label sheet-center" title="Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button"><input class="sheet-underlined sheet-center" type="number" name="attr_INIT" value="0" step="1"><br/>Bonus</div>
-							<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_INIT_overall" value="@{AGI} + @{INIT}" disabled="disabled"><br/>Total</div>
+							<div class="sheet-col-1-7 sheet-small-label sheet-center" title="Only enter additional bonuses to initiative here. Your Dex and Class mods are already included in the macro button"><input class="sheet-underlined sheet-center" type="number" name="attr_INIT" value="0" step="1"><br/>Bonus</div>
+							<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_INIT_overall" value="(@{AGI} + @{WarriorClassInit} + @{INIT})" disabled="disabled"><br/>Total</div>
 							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-initiative sheet-large-button" name="roll_INIT" value="@{selected|token_name} rolls a [[1d20 + @{selected|INIT_overall} [Initiative Mod] &{tracker}]] for initiative!">Initiative</button></div>
 							<div class="sheet-col-1-7 sheet-center sheet-padl"><button type="roll" class="sheet-initiative sheet-large-button" name="roll_INIT2Hand" value="@{selected|token_name} rolls a [[1d16 + @{selected|INIT_overall} [Initiative Mod] &{tracker}]] for initiative!">Init(2H)</button></div>
 						</div>
@@ -2311,39 +2311,52 @@
 					<h3>Warrior Abilities</h3>
 
 					<div class="sheet-row">
-							<div class="sheet-col-1-5 sheet-hd-row">Mighty Deeds of Arms : </br></div>
-							<div class="sheet-col-1-10 sheet-right">
-								<select name="attr_DeedDie">
-									<option value="d0" selected="selected">--</option>
-									<option value="d3">d3</option>
-									<option value="d4">d4</option>
-									<option value="d5">d5</option>
-									<option value="d6">d6</option>
-									<option value="d7">d7</option>
-									<option value="d8">d8</option>
-									<option value="d10">d10</option>
-									<option value="d10+1">d10+1</option>
-									<option value="d10+2">d10+2</option>
-									<option value="d10+3">d10+3</option>
-									<option value="d10+4">d10+4</option>
-								</select>
-							</div>
-							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_DeedDie" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]">Deed Die</button></div>
+						<div class="sheet-col-1-5 sheet-hd-row">Mighty Deeds of Arms : </br></div>
+						<div class="sheet-col-1-10 sheet-right">
+							<select name="attr_DeedDie">
+								<option value="d0" selected="selected">--</option>
+								<option value="d3">d3</option>
+								<option value="d4">d4</option>
+								<option value="d5">d5</option>
+								<option value="d6">d6</option>
+								<option value="d7">d7</option>
+								<option value="d8">d8</option>
+								<option value="d10">d10</option>
+								<option value="d10+1">d10+1</option>
+								<option value="d10+2">d10+2</option>
+								<option value="d10+3">d10+3</option>
+								<option value="d10+4">d10+4</option>
+							</select>
+						</div>
+						<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_DeedDie" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]">Deed Die</button></div>
 					</div>
 
 					<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 					<div class="sheet-row">
-
-								<div class="sheet-col-1-8 sheet-hd-row">Lucky Weapon: <br/></div>
-								<div class="sheet-col-1-4 sheet-right" title="The weapon must be specific ie Longsword or Shortsword instead of just swords"><input class="sheet-underline sheet-center" type="text" name="attr_LuckyWeapon"/></div>			
+						<div class="sheet-col-1-8 sheet-hd-row">Lucky Weapon: <br/></div>
+						<div class="sheet-col-1-4 sheet-right" title="The weapon must be specific ie Longsword or Shortsword instead of just swords"><input class="sheet-underline sheet-center" type="text" name="attr_LuckyWeapon"/></div>
 					</div>
 
 					<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>			
 					
 					<div class="sheet-row">
-								<div class="sheet-col-1-4 sheet-hd-row">Add Class level to Initiative: <br/></div>
-								<div class="sheet-col-1-12 sheet-right"><input class="sheet-center sheet-underline" type="text" name="attr_ClassInitiative"></div>
+						<div class="sheet-col-1-4 sheet-hd-row">Add Class level to Initiative: <br/></div>
+						<div class="sheet-col-1-10 sheet-right">
+							<select name="attr_WarriorClassInit">
+								<option value="0" selected="selected">--</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+						</div>	
 					</div>
 
 				</div>
@@ -4922,10 +4935,10 @@
 
 						<div class="sheet-row">
 							<div class="sheet-col-2-7 sheet-right sheet-hd-row">Initiative : </br></div>
-							<div class="sheet-col-1-7 sheet-small-label sheet-center" title="Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button"><input class="sheet-underlined sheet-center" type="number" name="attr_INIT" value="0" step="1"><br/>Bonus</div>
-							<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_INIT_overall" value="@{AGI} + @{INIT}" disabled="disabled"><br/>Total</div>
-							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-initiative sheet-large-button" name="roll_INIT" value="@{selected|token_name} rolls a [[1d20 + @{selected|INIT_overall} [Initiative Mod] &{tracker}]] for initiative!">Initiative</button></div>
-							<div class="sheet-col-1-7 sheet-center sheet-padl"><button type="roll" class="sheet-initiative sheet-large-button" name="roll_INIT2Hand" value="@{selected|token_name} rolls a [[1d16 + @{selected|INIT_overall} [Initiative Mod] &{tracker}]] for initiative!">Init(2H)</button></div>
+							<div class="sheet-col-1-7 sheet-small-label sheet-center" title="Only enter additional bonuses to initiative here. Your Dex mod is already included in the macro button"><input class="sheet-underlined sheet-center" type="number" name="attr_INITZero" value="0" step="1"><br/>Bonus</div>
+							<div class="sheet-col-1-7 sheet-small-label sheet-center"><input class="sheet-underlined" type="number" name="attr_INIT_overallZero" value="(@{AGI} + @{INITZero})" disabled="disabled"><br/>Total</div>
+							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-initiative sheet-large-button" name="roll_INITZero" value="@{selected|token_name} rolls a [[1d20 + @{selected|INIT_overallZero} [Initiative Mod] &{tracker}]] for initiative!">Initiative</button></div>
+							<div class="sheet-col-1-7 sheet-center sheet-padl"><button type="roll" class="sheet-initiative sheet-large-button" name="roll_INIT2HandZero" value="@{selected|token_name} rolls a [[1d16 + @{selected|INIT_overallZero} [Initiative Mod] &{tracker}]] for initiative!">Init(2H)</button></div>
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
