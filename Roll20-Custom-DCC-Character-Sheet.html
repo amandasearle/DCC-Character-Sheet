@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>9th Feb 2015</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>10th Feb 2015</p></div>
 		</div>
 
 	</div>
@@ -805,7 +805,6 @@
 									<option value="d6">d6</option>
 									<option value="d7">d7</option>
 									<option value="d8">d8</option>
-									<option value="d10">d10</option>
 									<option value="d10+1">d10+1</option>
 									<option value="d10+2">d10+2</option>
 									<option value="d10+3">d10+3</option>
@@ -1597,133 +1596,90 @@
 				</div> -->
 
 				<!-- Savage -->
-				<!--<div class="sheet-savage">
-					<h2>Savage Abilities</h2>
-					<div>
-						<div class="sheet-statblock">
-							<div class="sheet-item sheet-med">
-								<label>Mighty Deeds of Arms:</label>
+				<div class="sheet-savage">
+					<h3>Savage Abilities</h3>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-5 sheet-hd-row">Hard To Kill : </br></div>
+							<div class="sheet-col-1-10 sheet-right">
+								<select name="attr_SaveDeedDie">
+									<option value="d0" selected="selected">--</option>
+									<option value="d3">d3</option>
+									<option value="d4">d4</option>
+									<option value="d5">d5</option>
+									<option value="d6">d6</option>
+									<option value="d7">d7</option>
+									<option value="d8">d8</option>
+									<option value="d10">d10</option>
+									<option value="d10+1">d10+1</option>
+									<option value="d10+2">d10+2</option>
+									<option value="d10+3">d10+3</option>
+								</select>
 							</div>
-							<div class="sheet-item sheet-tiny">
-					            <select name="attr_DeedDie">
-										<option value="d0" selected="selected">--</option>
-										<option value="d3">d3</option>
-										<option value="d4">d4</option>
-										<option value="d5">d5</option>
-										<option value="d6">d6</option>
-										<option value="d7">d7</option>
-										<option value="d8">d8</option>
-										<option value="d10">d10</option>
-										<option value="d10+1">d10+1</option>
-					            </select>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-square" type="roll" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]" name="roll_DeedDie"/>
-							</div>
+							<div class="sheet-col-1-7 sheet-center"><button type="roll" class="sheet-roll" name="roll_SaveDeedDie" value="@{character_name} is hard to kill and adds [[@{SaveDeedDie}]] to their saving throw!">Save Deed Die</button></div>
 						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Ranger Path:</label>
-							</div>
-							<div class="sheet-item sheet-large">
-					            <select name="attr_RangerPath">
-										<option value="None" selected="selected">None</option>
-										<option value="Archery">Archery Expert</option>
-										<option value="Two Weapon">Two-Weapon Expert</option>
-					            </select>
-							</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-4 sheet-hd-row"><b>Character Options: </b> Choose two<br/> </div>
 						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Favored Enemy:</label>
-							</div>
-							<div class="sheet-item sheet-large">
-								<input type="text" name="attr_RangerFavoredEnemy"/>
-							</div>
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+						<div class="sheet-row">
+							<div class="sheet-col-1-24 sheet-left sheet-vert-top sheet-checkbox-row"><input type="checkbox" name="attr_SavageOptionFather" value="Sword of my Father" /></div>
+							<div class="sheet-col-23-24 sheet-vert-middle sheet-left sheet-small-text"><b>The Sword of my Father: </b>Some Savages come from famous lineages of heroes, shamans, tricksters, and the like, and often bear a token of that lineage, handed down through the generations. It could be a mighty sword, a lucky fetish, a golden torque, or any other object. When using this object, the Savage character may apply a +1d3 modifier to a single kind of roll (attack, Luck, a single type of save, etc.). However, the loss of the object will result in a loss of 1d6 Luck, permanently. The GM work with the player to determine what the item is, and also should determine what happens if the object is destroyed.</div>
+							<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+							<div class="sheet-col-1-24 sheet-left sheet-vert-top sheet-checkbox-row"><input type="checkbox" name="attr_SavageOptionBeast" value="Companion Beast" /></div>
+							<div class="sheet-col-23-24 sheet-vert-middle sheet-left sheet-small-text"><b>Companion Beast: </b>You have an animal companion. The companion is a prime (see p. 382 of DCC Core Rulebook) of a mundane species such as a dingo, coyote, wolf, wildcat, bear, bird, horse, or other such creature of no more than 3HD. The creature is a boon companion, smarter than others of its ilk, and fiercely protective. But you must guard your companion’s back, for such friends are not bought but earned. The loss of an animal companion results in the loss of 2 points of Luck, permanently, and the savage character must quest for a new one.</div>
+							<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+							<div class="sheet-col-1-24 sheet-left sheet-vert-top sheet-checkbox-row"><input type="checkbox" name="attr_SavageOptionMighty" value="Mighty Thews" /></div>
+							<div class="sheet-col-23-24 sheet-vert-middle sheet-left sheet-small-text"><b>Mighty Thews: </b>You are incredibly strong for your size. You may roll an additional 1d6 for your Strength attribute and add the result permanently (up to 18 max).</div>
+							<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+							<div class="sheet-col-1-24 sheet-left sheet-vert-top sheet-checkbox-row"><input type="checkbox" name="attr_SavageOptionGrace" value="Dancer's Grace" /></div>
+							<div class="sheet-col-23-24 sheet-vert-middle sheet-left sheet-small-text"><b>Dancer's Grace: </b>You are light on your feet and incredibly agile. You may roll an additional 1d6 for your Agility attribute and add the result permanently (up to 18 max).</div>
+							<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+							<div class="sheet-col-1-24 sheet-left sheet-vert-top sheet-checkbox-row"><input type="checkbox" name="attr_SavageOptionShaman" value="Shaman" /></div>
+							<div class="sheet-col-23-24 sheet-vert-middle sheet-left sheet-small-text"><b>Shaman: </b>You have congress with mystical beings drawing upon their fell powers. You may learn Patron Bond and Invoke Patron, along with the relevant patron spells (as Wizard of equivalent level). You may bond more than one patron, but will be subject to all effects of patron taint and any other obligations incurred, and may not learn more spells than a wizard of your level, minus 1.</div>
 						</div>
-						<div class="sheet-statblock">
-							<div class="sheet-header">
-								<div class="sheet-item sheet-med">
-									<label>Ability</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<label>Base</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<label>Check</label>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Climb</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerClimb" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} climbs: [[@{ActionDie}+@{RangerClimbheck}]]" name="roll_RangerClimb">
-										<input type="number" class="sheet-square" name="attr_RangerClimbCheck" value="@{RangerClimb}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Find Traps</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerTraps" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} finds and/or neutralizes a trap: [[@{ActionDie}+@{RangerTrapsCheck}]]" name="roll_RangerTraps">
-										<input type="number" class="sheet-square" name="attr_RangerTrapsCheck" value="@{RangerTraps}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Sneak and Hide</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerSneak" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently and hides: [[@{ActionDie}+@{RangerSneakCheck}]]" name="roll_RangerSneak">
-										<input type="number" class="sheet-square" name="attr_RangerSneakCheck" value="@{RangerSneak}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Strider</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerStrider" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} walks or even runs without leaving tracks or being hampered by difficult terrain: [[@{ActionDie}+@{RangerStriderCheck}]]" name="roll_RangerStrider">
-										<input type="number" class="sheet-square" name="attr_RangerStriderCheck" value="@{RangerStrider}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Survival</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerSurvival" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} uses wilderness skills: [[@{ActionDie}+@{RangerSurvivalCheck}]]" name="roll_RangerSurvival">
-										<input type="number" class="sheet-square" name="attr_RangerSurvivalCheck" value="@{RangerSurvival}+@{PER}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-						</div>
-						<div>
-							<label>Luck check to avoid being surprised outdoors</label>
-						</div>
-					</div>
-				</div>-->
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+		
+						<ul>
+  							<li><b>Hit Points: </b>1d10 per level<br/> </li>
+  							<li><b>Weapons: </b> Dagger, club, spear, short sword, long sword, mace, battle axe, dart, hand axe, javelin, short bow, long bow, sling, blowgun, and staff<br/></li>
+  							<li><b>Armor: </b> Any, but prefers going unArmored or with no better than Hide<br/></li>
+  							<li><b>Alignment: </b> Law (uncommon), Neutral (common), Chaos (common)<br/></li>
+  							<li><b>Reasonable Armor </b><br/>
+    							<ul>
+      								<li><b>Wears No Armor </b><br/>
+      									<ul>
+      										<li>Armor bonus equal to Class Level <br/></li>
+      										<li>Additional armor bonus of +2 <br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Wears Hide Armor or below</b><br/>
+      									<ul>
+      										<li>Armor bonus equal to Class Level <br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Wears Heavier than Hide Armor </b><br/>
+      									<ul>
+      										<li>No Armor Bonus <br/></li>
+      									</ul>
+      								</li>
+    							</ul>
+  							</li>
+  							<li><b>Child of Nature </b><br/>
+    							<ul>
+      								<li>+5 to Lore of Plants or Animals<br/></li>
+      								<li>+5 to Stealth checks outdoors<br/></li>
+      								<li>+5 to Climb checks<br/></li>
+      								<li>+5 to Find food or water outdoors<br/></li>
+      								<li>+5 to Tracking outdoors<br/></li>
+    							</ul>
+  							</li>
+						</ul>
+				</div>
 
 				<!-- Sentinel -->
 				<!--<div class="sheet-sentinel">
@@ -2352,7 +2308,6 @@
 								<option value="d6">d6</option>
 								<option value="d7">d7</option>
 								<option value="d8">d8</option>
-								<option value="d10">d10</option>
 								<option value="d10+1">d10+1</option>
 								<option value="d10+2">d10+2</option>
 								<option value="d10+3">d10+3</option>
