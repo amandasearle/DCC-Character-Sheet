@@ -651,7 +651,7 @@
 							<input type="hidden" name="attr_TurnUnholyLevel" value="(@{Level})" />
 							<div class="sheet-col-1-14 sheet-small-label sheet-center" Title="Bonus is Luck Mod + Perception Mod + Caster Level"><input class="sheet-underlined" type="number" name="attr_TurnUnholyCheck" value="(@{LCK} + @{PER} + @{Level})" disabled="disabled"><br/>Bonus</div>
 							<div class="sheet-col-1-9 sheet-center">
-								<button type="roll" class="sheet-roll" name="roll_TurnUnholy" value="@{character_name} attempts to turn Unholy Creatures of their God with a [[@{ActionDie1} + @{TurnUnholyCheck} + @{TurnUnholyLuckyRoll}]].">Turn Unholy</button>
+								<button type="roll" class="sheet-roll" name="roll_TurnUnholy" value="@{character_name} attempts to turn Unholy Creatures in the name of @{ClericDeity} with a [[@{ActionDie1} + @{TurnUnholyCheck} + @{TurnUnholyLuckyRoll}]].">Turn Unholy</button>
 							</div>
 
 							<div class="sheet-col-1-10 sheet-right sheet-vert-middle">Lucky Roll?</div>
@@ -663,7 +663,7 @@
 							<input type="hidden" name="attr_DivineAidLevel" value="(@{Level})" />
 							<div class="sheet-col-1-14 sheet-small-label sheet-center" Title="Bonus is Perception Mod + Caster Level"><input class="sheet-underlined" type="number" name="attr_DivineAidCheck" value="(@{PER} + @{Level})" disabled="disabled"><br/>Bonus</div>
 							<div class="sheet-col-1-9 sheet-center">
-								<button type="roll" class="sheet-roll" name="roll_DivineAid" value="@{character_name} beseeches their God for help with a [[@{ActionDie1} + @{DivineAidCheck}]].">Divine Aid</button>
+								<button type="roll" class="sheet-roll" name="roll_DivineAid" value="@{character_name} beseeches @{ClericDeity} for help with a [[@{ActionDie1} + @{DivineAidCheck}]].">Divine Aid</button>
 							</div>
 						</div>
 
@@ -672,7 +672,7 @@
 							<input type="hidden" name="attr_LayOnHandsLevel" value="(@{Level})" />
 							<div class="sheet-col-1-14 sheet-small-label sheet-center" Title="Bonus is Perception Mod + Caster Level"><input class="sheet-underlined" type="number" name="attr_LayOnHandsCheck" value="(@{PER} + @{Level})" disabled="disabled"><br/>Bonus</div>
 							<div class="sheet-col-1-8 sheet-center">
-								<button type="roll" class="sheet-roll" name="roll_LayOnHands" value="@{character_name} attempts to heal someone with the power of their God [[@{ActionDie1} + @{LayOnHandsCheck} + @{LayOnHandsLuckyRoll}]].">Lay On Hands</button>
+								<button type="roll" class="sheet-roll" name="roll_LayOnHands" value="@{character_name} attempts to heal someone with the power of @{ClericDeity} [[@{ActionDie1} + @{LayOnHandsCheck} + @{LayOnHandsLuckyRoll}]].">Lay On Hands</button>
 							</div>
 
 							<div class="sheet-col-1-10 sheet-right sheet-vert-middle">Lucky Roll?</div>
