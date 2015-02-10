@@ -712,6 +712,11 @@ div[data-groupname^="repeating_classactions"] .repitem,
 	font-size: 10px;
 }
 
+.charsheet .sheet-small-text {
+	font-family: Arial;
+	font-size: 10px;
+}
+
 .charsheet select {
 	font-size: 90%;
 }
