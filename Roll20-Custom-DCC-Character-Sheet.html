@@ -2,7 +2,7 @@
     
     <!-- PC / 0-level toggle -->
     <input class="sheet-is-zero" type="checkbox" name="attr_is_zero" value="0"><span class="sheet-is-zero-tab"></span>
-	
+    
 	<div class="sheet-core-header sheet-padb">
 		<div class="sheet-row">
 			<div class="sheet-col-1-1 sheet-margin-top sheet-center"><img src="http://i.imgur.com/HBgERqb.png" alt="Dungeon Crawl Classics Character Record Sheet"></div>
@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>12th Feb 2015</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>24th Feb 2015</p></div>
 		</div>
 
 	</div>
@@ -1961,133 +1961,241 @@
 				</div>-->
 
 				<!-- Technologist -->
-				<!--<div class="sheet-technologist">
+				<div class="sheet-technologist">
 					<h2>Technologist Abilities</h2>
-					<div>
-						<div class="sheet-statblock">
-							<div class="sheet-item sheet-med">
-								<label>Mighty Deeds of Arms:</label>
+
+						<input type="hidden" name="attr_JuryRig_Die" value="d20" />
+						<input type="hidden" name="attr_JuryRigFailure_Die" value="d16" />
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">Weapon Tinkering : </br></div>
+							<div class="sheet-col-1-13 sheet-right">
+								<select name="attr_WeaponTinker_Bonus">
+									<option value="0" selected="selected">+0</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+									<option value="6">+6</option>
+									<option value="7">+7</option>
+									<option value="8">+8</option>
+									<option value="9">+9</option>
+									<option value="10">+10</option>
+									<option value="11">+11</option>
+									<option value="12">+12</option>
+									<option value="13">+13</option>
+									<option value="14">+14</option>
+									<option value="15">+15</option>
+								</select>
 							</div>
-							<div class="sheet-item sheet-tiny">
-					            <select name="attr_DeedDie">
-										<option value="d0" selected="selected">--</option>
-										<option value="d3">d3</option>
-										<option value="d4">d4</option>
-										<option value="d5">d5</option>
-										<option value="d6">d6</option>
-										<option value="d7">d7</option>
-										<option value="d8">d8</option>
-										<option value="d10">d10</option>
-										<option value="d10+1">d10+1</option>
-					            </select>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-square" type="roll" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]" name="roll_DeedDie"/>
-							</div>
+							<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_WeaponTinker" value="@{character_name} attempts to repair (or build) a weapon and gets: DC[[@{JuryRig_Die} + @{WeaponTinker_Bonus}]]">Weapon Tinkering</button></div>
+							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_WeaponTinker_Failure" value="@{character_name} was unsure of how to fix this weapon: [[@{JuryRigFailure_Die} + @{LCK}]]">Failure</button></div>
 						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Ranger Path:</label>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">Bot Repair : </br></div>
+							<div class="sheet-col-1-13 sheet-right">
+								<select name="attr_BotRepair_Bonus">
+									<option value="0" selected="selected">+0</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+									<option value="6">+6</option>
+									<option value="7">+7</option>
+									<option value="8">+8</option>
+									<option value="9">+9</option>
+									<option value="10">+10</option>
+									<option value="11">+11</option>
+									<option value="12">+12</option>
+									<option value="13">+13</option>
+								</select>
 							</div>
-							<div class="sheet-item sheet-large">
-					            <select name="attr_RangerPath">
-										<option value="None" selected="selected">None</option>
-										<option value="Archery">Archery Expert</option>
-										<option value="Two Weapon">Two-Weapon Expert</option>
-					            </select>
-							</div>
+							<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_BotRepair" value="@{character_name} attempts to fix (or reprogram) a robot and gets: DC[[@{JuryRig_Die} + @{BotRepair_Bonus}]]">Bot Repair</button></div>
+							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_BotRepair_Failure" value="@{character_name} beat on the robot with a wrench: [[@{JuryRigFailure_Die} + @{LCK}]]">Failure</button></div>
 						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Favored Enemy:</label>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">Computer Use : </br></div>
+							<div class="sheet-col-1-13 sheet-right">
+								<select name="attr_ComputerUse_Bonus">
+									<option value="0" selected="selected">+0</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+									<option value="6">+6</option>
+									<option value="7">+7</option>
+									<option value="8">+8</option>
+									<option value="9">+9</option>
+									<option value="10">+10</option>
+									<option value="11">+11</option>
+									<option value="12">+12</option>
+									<option value="13">+13</option>
+								</select>
 							</div>
-							<div class="sheet-item sheet-large">
-								<input type="text" name="attr_RangerFavoredEnemy"/>
-							</div>
+							<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_ComputerUse" value="@{character_name} tries to interact with a computer with a: DC[[@{JuryRig_Die} + @{ComputerUse_Bonus}]]">Computer Use</button></div>
+							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_ComputerUse_Failure" value="@{character_name} pawed at the computer unsuccessfully: [[@{JuryRigFailure_Die} + @{LCK}]]">Failure</button></div>
 						</div>
-						<div class="sheet-statblock">
-							<div class="sheet-header">
-								<div class="sheet-item sheet-med">
-									<label>Ability</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<label>Base</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<label>Check</label>
-								</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">Vehicle Repair : </br></div>
+							<div class="sheet-col-1-13 sheet-right">
+								<select name="attr_VehicleRepair_Bonus">
+									<option value="0" selected="selected">+0</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+									<option value="6">+6</option>
+									<option value="7">+7</option>
+									<option value="8">+8</option>
+									<option value="9">+9</option>
+									<option value="10">+10</option>
+									<option value="11">+11</option>
+									<option value="12">+12</option>
+									<option value="13">+13</option>
+									<option value="14">+14</option>
+									<option value="15">+15</option>
+								</select>
 							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Climb</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerClimb" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} climbs: [[@{ActionDie}+@{RangerClimbheck}]]" name="roll_RangerClimb">
-										<input type="number" class="sheet-square" name="attr_RangerClimbCheck" value="@{RangerClimb}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Find Traps</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerTraps" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} finds and/or neutralizes a trap: [[@{ActionDie}+@{RangerTrapsCheck}]]" name="roll_RangerTraps">
-										<input type="number" class="sheet-square" name="attr_RangerTrapsCheck" value="@{RangerTraps}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Sneak and Hide</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerSneak" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently and hides: [[@{ActionDie}+@{RangerSneakCheck}]]" name="roll_RangerSneak">
-										<input type="number" class="sheet-square" name="attr_RangerSneakCheck" value="@{RangerSneak}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Strider</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerStrider" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} walks or even runs without leaving tracks or being hampered by difficult terrain: [[@{ActionDie}+@{RangerStriderCheck}]]" name="roll_RangerStrider">
-										<input type="number" class="sheet-square" name="attr_RangerStriderCheck" value="@{RangerStrider}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Survival</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerSurvival" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} uses wilderness skills: [[@{ActionDie}+@{RangerSurvivalCheck}]]" name="roll_RangerSurvival">
-										<input type="number" class="sheet-square" name="attr_RangerSurvivalCheck" value="@{RangerSurvival}+@{PER}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
+							<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_VehicleRepair" value="@{character_name} goes under the hood of the vehicle: DC[[@{JuryRig_Die} + @{VehicleRepair_Bonus}]]">Vehicle Repair</button></div>
+							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_VehicleRepair_Failure" value="@{character_name} curses a lot when the vehicle repairs go awry: [[@{JuryRigFailure_Die} + @{LCK}]]">Failure</button></div>
 						</div>
-						<div>
-							<label>Luck check to avoid being surprised outdoors</label>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">General Tech : </br></div>
+							<div class="sheet-col-1-13 sheet-right">
+								<select name="attr_GeneralTech_Bonus">
+									<option value="0" selected="selected">+0</option>
+									<option value="1">+1</option>
+									<option value="2">+2</option>
+									<option value="3">+3</option>
+									<option value="4">+4</option>
+									<option value="5">+5</option>
+									<option value="6">+6</option>
+									<option value="7">+7</option>
+									<option value="8">+8</option>
+									<option value="9">+9</option>
+									<option value="10">+10</option>
+									<option value="11">+11</option>
+									<option value="12">+12</option>
+									<option value="13">+13</option>
+									<option value="14">+14</option>
+									<option value="15">+15</option>
+								</select>
+							</div>
+							<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_GeneralTech" value="@{character_name} tries working with the thingamabob or doohickey: DC[[@{JuryRig_Die} + @{GeneralTech_Bonus}]]">General Tech</button></div>
+							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_GeneralTech_Failure" value="@{character_name} realizes that MacGuyver made it look easy: [[@{JuryRigFailure_Die} + @{LCK}]]">Failure</button></div>
 						</div>
-					</div>
-				</div>-->
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">Use Alien Tech : </br></div>
+							<div class="sheet-col-1-13 sheet-right">
+								<select name="attr_AlienTech_Die">
+									<option value="d0" selected="selected">--</option>
+									<option value="d10">d10</option>
+									<option value="d12">d12</option>
+									<option value="d14">d14</option>
+									<option value="d16">d16</option>
+									<option value="d20">d20</option>
+									<option value="d24">d24</option>
+								</select>
+							</div>
+							<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_AlienTech_Die" value="@{character_name} totally knows how this Alien Technology works: [[@{AlienTech_Die} + @{Level} + @{LCK}]]">Use Alien Tech</button></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+		
+						<ul>
+  							<li><b>Hit Points:</b>1d6 per level<br/> </li>
+  							<li><b>Weapons: </b> Daggers, Clubs, Staves, Hand Axes, Crossbows, Pistols and Rifles of any Era, Grenades and Explosives of any Era<br/></li>
+  							<li><b>Armor: </b> Any<br/></li>
+  							<li><b>Alignment: </b><br/>
+  								<ul>
+      								<li><b>Neutral (common):</b> Has unbiased nature of scientific understanding<br/>
+      									<ul>
+      										<li>Great at: Vehicle Repair<br/></li>
+      										<li>Good at: Use Alien Tech, Weapon Tinkering<br/></li>
+      										<li>Average at: Computer Use, General Tech<br/></li>
+      										<li>Okay at: Bot Repair<br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Lawful (uncommon):</b> Obsessed with theoretical science<br/>
+      									<ul>
+      										<li>Great at: General Tech, Use Alien Tech<br/></li>
+      										<li>Good at: Computer Use<br/></li>
+      										<li>Average at: Bot Repair, Vehicle Repair<br/></li>
+      										<li>Okay at: Weapon Tinkering<br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Chaotic (uncommon):</b> Prone to be called mad scientists<br/>
+      									<ul>
+      										<li>Great at: Weapon Tinkering<br/></li>
+      										<li>Good at: Bot Repair<br/></li>
+      										<li>Average at: Computer Use, Vehicle Repair, Use Alien Tech<br/></li>
+      										<li>Okay at: General Tech<br/></li>
+      									</ul>
+      								</li>
+    							</ul>
+    						</li>
+  							<li><b>Jury Rigging Skills</b><br/>
+    							<ul>
+      								<li><b>Weapon Tinkering DC Checks:</b> With this you can repair damaged weapons so that they will work again, for a while<br/>
+      									<ul>
+      										<li><b>DC 5:</b> Clearing gun jams, sharpening blades, and heavy maintenance<br/></li>
+      										<li><b>DC 10/15:</b> Fixing broken weapons with kit bashed parts, DC changes depending on the severity of the damage and what parts are available<br/></li>
+      										<li><b>DC 25-35:</b> Building a gun entirely out of scrap. You can also attempt to manufacture functional ammunition for guns<br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Bot Repair DC Checks:</b> While creating a robot from scratch is beyond the ken of most people, you can fix and reprogram them with some success<br/>
+      									<ul>
+      										<li><b>DC 5:</b> Reprogramming a simple servant bot<br/></li>
+      										<li><b>DC 10:</b> Reprogramming a construction or manufacturing class bot; Fixing minor damage (less than 25% of the total hp for the bot) and requires access to good scrap; Salvaging useful parts from Bots<br/></li>
+      										<li><b>DC 15:</b> Reprogramming a security and combat bot; Fixing major damage (between 25% to 75% of the total hp for the bot) also requires specialized parts, tools, and lots of time<br/></li>
+      										<li><b>DC 20+:</b> Reprogramming a self aware bot; Bots damaged beyond 75% of their hp, depending on the damage done to them, again requiring specialized parts, tools, and lots of time<br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Computer Use DC Checks:</b> Despite the variety of cosmic radiation and electromagnetic disturbances caused by the cataclysm, many computers survived. This skill allows you to attempt to hack into, utilize, and program computers you encounter<br/>
+      									<ul>
+      										<li><b>DC 10+:</b> Programming a computer increases based on what the program does and how many computer resources it needs to run<br/></li>
+      										<li><b>DC 10-15:</b> Accessing personal or public computers depending of the level of security running<br/></li>
+      										<li><b>DC 15-20:</b> Accessing Mainframes and supercomputers depending of the level of security running<br/></li>
+      										<li><b>DC 20+:</b> Accessing Self aware systems depending of the level of security running<br/></li>
+      										<li>If the computer is being actively monitored for suspicious activity, add <b>+1d5 to the DC</b><br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Vehicle Repair DC Checks:</b> Although many no longer run on petroleum fuels, motor vehicles are still widely used by many societies that can keep them functional. Despite not being considered “high science”, you are capable of acting as a mechanic, if only to earn room and board<br/>
+      									<ul>
+      										<li><b>DC 5:</b> Basic vehicle maintenance<br/></li>
+      										<li><b>DC 10:</b> Fixing minor damage (less than 30% of the total hp for the vehicle) and requires access to good scrap; Salvaging useful parts from Vehicles<br/></li>
+      										<li><b>DC 15-20:</b> Fixing major damage (between 30% to 90% of the total hp for the vehicle) or changing what kind of fuel it uses requires specialized parts, tools, and lots of time<br/></li>
+      										<li><b>DC 20+:</b> Vehicles damaged beyond 90% of their hp, depending on the damage done to them, again requiring specialized parts, tools, and lots of time<br/></li>
+      									</ul>
+      								</li>
+      								<li><b>General Tech DC Checks:</b> This is the catch-all category for any terrestrial technology that you might encounter that is not already covered by another skill<br/>
+      									<ul>
+      										<li>The DC for working on a device will depend on how complex the device is, how common the device is, and if it requires specialized parts or tools</li>
+      									</ul>
+      								</li>
+    							</ul>
+  							</li>
+						</ul>
+				</div>
 
 				<!-- Thief -->
 				<!--<div class="sheet-thief">
