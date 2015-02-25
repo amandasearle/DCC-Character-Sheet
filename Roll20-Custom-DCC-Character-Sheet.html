@@ -1440,161 +1440,164 @@
 				</div>-->
 
 				<!-- Robot -->
-				<!--<div class="sheet-robot">
-					<h2>Robot Spells &amp; Abilities</h2>		
-					<div class="sheet-statblock">
-						<div class="sheet-item sheet-med">
-							<label>Trick Die</label>
+				<div class="sheet-robot">
+					<h3>Robot Abilities</h3>	
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-8 sheet-hd-row">Patron: <br/></div>
+							<div class="sheet-col-1-4 sheet-right" title="Enter your Patron (if you have one)"><input class="sheet-underline sheet-center" type="text" name="attr_RobotPatron"></div>
 						</div>
-						<div class="sheet-item sheet-tiny">
-							<select name="attr_TrickDie">
-									<option value="d0" selected="selected">--</option>
-									<option value="d3">d3</option>
-									<option value="d4">d4</option>
-									<option value="d5">d5</option>
-									<option value="d6">d6</option>
-									<option value="d7">d7</option>
-				            </select>
-						</div>
-					</div>
-					
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Magic Resistance</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-hidden-roll sheet-square" type="roll" value="/roll 1d100<@{MagicResistance} to resist Magic." name="roll_MagicResistance">
-								<input type="number" class="sheet-square" name="attr_MagicResistance" value="10*@{Level}" disabled="true"/>
-							</button>&#37;
-						</div>
-					</div>
-					
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Sturdy Illusionist Trick</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} performs an illusionary trick: [[@{TrickDie}]]" name="roll_IllusionTrick">
-								<input type="number" class="sheet-square" name="attr_IllusionTrick" value="@{TrickDie}" disabled="true"/>
-							</button>
-						</div>
-					</div>
-					
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Animal Trick</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} befriends an animal: [[@{TrickDie}]]" name="roll_AnimalTrick">
-								<input type="number" class="sheet-square" name="attr_AnimalTrickDie" value="@{TrickDie}" disabled="true"/>
-							</button>
-						</div>
-					</div>
-					
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Gem Affinity</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-hidden-roll sheet-square" type="roll" value="/roll 1d100<@{GemAffinity} to detect gems." name="roll_GemAffinity">
-								<input type="number" class="sheet-square" name="attr_GemAffinity" value="10*@{Level}" disabled="true"/>
-							</button>&#37;
-						</div>
-					</div>
-				
-					<div>
-						<label>Gnome traits: night vision, Luck mod vs. magic saves</label>
-					</div>
-					
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Corruption:</label>
-						</div>
-						<div class="sheet-item sheet-large">
-							<input type="text" name="attr_WizardCorruption"/>
-						</div>
-					</div>
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Other notes:</label>
-						</div>
-						<div class="sheet-item sheet-large">
-							<input type="text" name="attr_WizardNotes"/>
-						</div>
-					</div>
-					<div class="sheet-statblock">
-						<div class="sheet-item sheet-med">
-							<label>Momentum:</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<select name="attr_Momentum" class="sheet-square">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10" selected="selected">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-								<option value="16">16</option>
-								<option value="17">17</option>
-								<option value="18">18</option>
-								<option value="19">19</option>
-								<option value="20">20</option>
-							</select>
-						</div>
-					</div>
-					<div>
-						<label>Spells:</label>
-					</div>
-					<div class="sheet-statblock">
-						<div class="sheet-header">
-							<div class="sheet-item sheet-small">
-								<label>Spell Name</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Level</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Misc Mods</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Check</label>
-							</div>
-							<div class="sheet-item sheet-med">
-								<label>Mercurial Effect &amp; Notes</label>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-7 sheet-left sheet-hd-row">Esoteric Repair :</br></div>
+							<div class="sheet-col-1-14 sheet-small-label sheet-center" Title="Bonus is Intelligence Mod + Caster Level + Luck Mod"><input class="sheet-underlined" type="number" name="attr_EsotericRepair_Bonus" value="(@{INT} + @{Level} + @{LCK})" disabled="disabled"><br/>Bonus</div>
+							<div class="sheet-col-1-6 sheet-center">
+								<button type="roll" class="sheet-roll" name="roll_EsotericRepair" value="@{character_name} attempts to repair itself or another machine [[@{ActionDie1} + @{EsotericRepair_Bonus}]].">Esoteric Repair</button>
 							</div>
 						</div>
-						<fieldset class="repeating_gnomespells">
-							<div class="sheet-row">
-								<div class="sheet-item sheet-small">
-									<input type="text" name="attr_GnomeSpell"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="number" name="attr_GnomeSpellLevel" value="1"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="number" name="attr_GnomeSpellCheckMisc" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} casts @{GnomeSpell}: [[@{ActionDie}+@{GnomeSpellCheck}]]" name="roll_GnomeSpell">
-										<input type="number" name="attr_GnomeSpellCheck" value="@{INT}+@{GnomeSpellCheckMisc}" disabled="true"/>
-									</button>
-								</div>
-								<div class="sheet-item sheet-med">
-									<input type="text" name="attr_GnomeSpellMercurial"/>
-								</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div><label>Esoteric Repair Results Table</label>
+							<table>
+								<tr>
+									<th> Check Roll </th>
+									<th> Technological Components </th>
+									<th> Technological Components & Raw Materials </th>
+									<th> Raw Materials </th>
+								</tr>
+								<tr>
+									<td> 1 </td>
+									<td> Failure, materials consumed, and malfunction </td>
+									<td> Failure, materials consumed, and malfunction </td>
+									<td> Failure, materials consumed, and malfunction </td>
+								</tr>
+								<tr>
+									<td> 2-11 </td>
+									<td> Failure and materials consumed </td>
+									<td> Failure and materials consumed </td>
+									<td> Failure and materials consumed </td>
+								</tr>
+								<tr>
+									<td> 12-13 </td>
+									<td> 2 dice </td>
+									<td> 1 die </td>
+									<td> Stabilized </td>
+								</tr>
+								<tr>
+									<td> 14-16 </td>
+									<td> 3 dice </td>
+									<td> 2 dice </td>
+									<td> 1 die </td>
+								</tr>
+								<tr>
+									<td> 17-19 </td>
+									<td> 4 dice </td>
+									<td> 3 dice </td>
+									<td> 2 dice </td>
+								</tr>
+								<tr>
+									<td> 20+ </td>
+									<td> 5 dice </td>
+									<td> 4 dice </td>
+									<td> 2 dice </td>
+								</tr>
+							</table>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<ul>
+							<li><b>Hit Points:</b> 1d6 per level<br/> </li>
+  							<li><b>Weapons: </b> A robot is trained in no conventional weapons, though it may use its various tools and attachments to fight with. As a robot gains levels, these weapons are improved.<br/></li>
+  							<li><b>Armor: </b> None<br/></li>
+  							<li><b>Alignment: </b> Neutral<br/></li>
+  							<li><b>Robot Nature </b><br/>
+    							<ul>
+      								<li>Robots cannot be healed, only repaired<br/></li>
+      								<li>At low levels, Robots are immune to mind affecting spells and effects, though as the robot advances, its positronic brain becomes more sentient, making it more vulnerable to such effects.<br/></li>
+      								<li>Robots suffer double damage from spells or effects that specifically damage metal or other inanimate substances.<br/></li>
+      								<li>Robots receive a -4 penalty to saving throws for spells or effects that specifically damage metal or other inanimate substances.<br/></li>
+    							</ul>
+  							</li>
+  							<li><b>Technomancy: </b>Appearing as somewhere between science and magic, robots wield powers (protocols) from ages beyond the ancestors of men<br/>
+    							<ul>
+      								<li>Robots receive two starting protocols><br/></li>
+      								<li>Additional protocols must be found and integrated into the robot’s positronic brain, though as that brain expands through experience, robots receive additional memory with which to store these complex processes.<br/></li>
+      								<li>Patrons <b>must</b> be chosen from the supernatural beings from the dimension of Mechanix.<br/></li>
+      								<li>Manifestation of protocols is decidedly technological.<br/></li>
+    							</ul>
+  							</li>
+  							<li><b>Esoteric Repair: </b>A robot may repair itself, other robots, and even other technological devices, provided it has the materials available to do so.<br/>
+    							<ul>
+      								<li><b>Materials Needed </b><br/>
+      									<ul>
+      										<li>Technological Components: 1 pound <br/></li>
+      										<li>Raw Materials: 2 pounds <br/>
+      											<ul>
+      												<li>Metal <br/></li>
+      												<li>Tar <br/></li>
+      												<li>Glass <br/></li>
+      											</ul>
+      										</li>
+      										<li>Combination of Technological Components and Raw Materials</li>
+      									</ul>
+      								</li>
+      								<li>A typical repair (up to 3 dice) requires 1 full turn of repair.<br/></li>
+      								<li><b>Required Levels of Repair: </b>To repair technological devices, or to correct specific failures<br/>
+      									<ul>
+      										<li><b>2 dice: </b> Malfunction (Loss of subsystems such as ocular or auditory units, single limb, or minor malfunction/damage to any technological device) <br/></li>
+      										<li><b>3 dice: </b>Major Malfunction (Recover from deactivation, major positronic brain damage, multiple limb loss, magical damage to multiple components, full failure of any technological device) <br/></li>
+      										<li><b>5 dice: </b>Cybernetic Healing (healing a “meat unit” by technological means) <br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Cybernetic Healing: </b> Using your Esoteric Repair function to “heal” living things<br/>
+      									<ul>
+      										<li>Available starting at 5th level <br/></li>
+      										<li>Requires Technological Components: 25 pounds <br/></li>
+      										<li>Heals up to 5 dice of hit points in the living thing <br/></li>
+      										<li>Causes a temporary loss of 1 Stamina point and 1 Personality point per application to the living thing’s body<br/></li>
+      										<li>On a malfunction (natural 1), the living thing takes 2d6 damage to hit points, and if still living, takes 1d3 permanent Stamina and Personality damage.<br/></li>
+      									</ul>
+      								</li>
+    							</ul>
+  							</li>
+						</ul>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-5 sheet-hd-row">Momentum : </br></div>
+							<div class="sheet-col-1-10 sheet-right">
+								<select name="attr_Momentum" value="10">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10" selected="selected">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+								</select>
 							</div>
-						</fieldset>
-					</div>
-				</div> -->
+						</div>
+				</div>
 
 				<!-- Savage -->
 				<div class="sheet-savage">
