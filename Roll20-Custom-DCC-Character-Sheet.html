@@ -14,7 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>24th Feb 2015</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>10th Mar 2015</p></div>
 		</div>
 
 	</div>
@@ -122,9 +122,13 @@
 								<div class="sheet-col-1-4 sheet-right sheet-vert-middle">Lucky Roll?</div>
 								<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for HP"><input type="checkbox" value="@{LCK_Starting}" name="attr_HPLuckyRoll"></div>
 
-								<div class="sheet-col-1-20 sheet-center sheet-small-label">&nbsp;</div>
+								<div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
 
-								<div class="sheet-col-2-7 sheet-center" title="Use this button to roll for your Hit Points when your character levels."><button type="roll" class="sheet-initiative" name="roll_HPDie" value="@{character_name} rolls their Hit Points for the next level. [[@{HPDie} + @{STA} + @{HPLuckyRoll}]]">Roll for HP</button></div>
+								<div class="sheet-col-1-7 sheet-center" title="Use this button to roll for your Hit Points when your character levels."><button type="roll" class="sheet-initiative" name="roll_HPDieLevel" value="@{character_name} rolls their Hit Points for the next level. [[@{HPDie} + @{STA} + @{HPLuckyRoll}]]">Level</button></div>
+
+                                <div class="sheet-col-1-24 sheet-center sheet-small-label">&nbsp;</div>
+
+                                <div class="sheet-col-1-7 sheet-center" title="Use this button to roll for your Hit Points when you are healed."><button type="roll" class="sheet-initiative" name="roll_HPDieHeal" value="@{character_name} is healed for [[@{HPDie}]] hit points.">Heal</button></div>
 
 							</div>
 
@@ -1149,295 +1153,140 @@
 				</div>
 
 				<!-- Mutant -->
-				<!--<div class="sheet-mutant">
-					<h2>Mutant &amp; Abilities</h2>
-					<div class="sheet-statblock">
-						<div class="sheet-item sheet-med">
-							<label>Talent Die</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<select name="attr_TalentDie">
-									<option value="d0" selected="selected">--</option>
-									<option value="d14">d14</option>
-									<option value="d16">d16</option>
-									<option value="d20">d20</option>
-									<option value="d24">d24</option>
-									<option value="d30">d30</option>
-									<option value="d30+1">d30+1</option>
-									<option value="d30+2">d30+2</option>
-									<option value="d30+3">d30+3</option>
-				            </select>
-						</div>
-					</div>
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Call to Arms</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<input type="text" class="sheet-square" name="attr_BardCalltoArms" value="0"/>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} makes a Call to Arms: [[@{TalentDie}+@{BardCalltoArmsCheck}]]" name="roll_TalentDie">
-								<input type="number" class="sheet-square" name="attr_BardCalltoArmsCheck" value="@{PER}+@{BardCalltoArms}" disabled="true"/>
-							</button>
-						</div>
-					</div>
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Challenge</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<input type="text" class="sheet-square"  name="attr_BardChallenge" value="0"/>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} performs a Challenge: [[@{TalentDie}+@{BardChallengeCheck}]]" name="roll_TalentDie">
-								<input type="number" class="sheet-square" name="attr_BardChallengeCheck" value="@{PER}+@{BardChallenge}" disabled="true"/>
-							</button>
-						</div>
-					</div><div>
-						<div class="sheet-item sheet-med">
-							<label>Calm</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<input type="text" class="sheet-square"  name="attr_BardCalm" value="0"/>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} performs Calm: [[@{TalentDie}+@{BardCalmCheck}]]" name="roll_TalentDie">
-								<input type="number" class="sheet-square" name="attr_BardCalmCheck" value="@{PER}+@{BardCalm}" disabled="true"/>
-							</button>
-						</div>
-					</div><div>
-						<div class="sheet-item sheet-med">
-							<label>Lore</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<input type="text" class="sheet-square"  name="attr_BardLore" value="0"/>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} uses Lore: [[@{TalentDie}+@{BardLoreCheck}]]" name="roll_TalentDie">
-								<input type="number" class="sheet-square" name="attr_BardLoreCheck" value="@{INT}+@{BardLore}" disabled="true"/>
-							</button>
-						</div>
-					</div>
-					
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Corruption:</label>
-						</div>
-						<div class="sheet-item sheet-large">
-							<input type="text" name="attr_WizardCorruption"/>
-						</div>
-					</div>
-					<div>
-						<div class="sheet-item sheet-med">
-							<label>Other notes:</label>
-						</div>
-						<div class="sheet-item sheet-large">
-							<input type="text" name="attr_WizardNotes"/>
-						</div>
-					</div>
-					<div class="sheet-statblock">
-						<div class="sheet-item sheet-med">
-							<label>Momentum:</label>
-						</div>
-						<div class="sheet-item sheet-tiny">
-							<select name="attr_Momentum" class="sheet-square">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
-								<option value="6">6</option>
-								<option value="7">7</option>
-								<option value="8">8</option>
-								<option value="9">9</option>
-								<option value="10" selected="selected">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-								<option value="13">13</option>
-								<option value="14">14</option>
-								<option value="15">15</option>
-								<option value="16">16</option>
-								<option value="17">17</option>
-								<option value="18">18</option>
-								<option value="19">19</option>
-								<option value="20">20</option>
-							</select>
-						</div>
-					</div>
-					<div>
-						<label>Spells:</label>
-					</div>
-					<div class="sheet-statblock">
-						<div class="sheet-header">
-							<div class="sheet-item sheet-small">
-								<label>Spell Name</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Level</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Misc Mods</label>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<label>Check</label>
-							</div>
-							<div class="sheet-item sheet-med">
-								<label>Mercurial Effect &amp; Notes</label>
-							</div>
-						</div>
-						<fieldset class="repeating_bardspells">
-							<div class="sheet-row">
-								<div class="sheet-item sheet-small">
-									<input type="text" name="attr_BardSpell"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="number" name="attr_BardSpellLevel" value="1"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="number" name="attr_BardSpellCheckMisc" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} casts @{BardSpell}: [[@{ActionDie}+@{BardSpellCheck}]]" name="roll_BardSpell">
-										<input type="number" name="attr_BardSpellCheck" value="@{Level}+@{INT}+@{BardSpellCheckMisc}" readonly="true"/>
-									</button>
-								</div>
-								<div class="sheet-item sheet-med">
-									<input type="text" name="attr_BardSpellMercurial"/>
-								</div>
-							</div>
-						</fieldset>
-					</div>
-				</div>-->
+				<div class="sheet-mutant">
 
-				<!-- Reptilian -->
-				<!--<div class="sheet-reptilian">
-					<h2>Reptilian Abilities</h2>
-					<div>
-						<div class="sheet-statblock">
-							<div class="sheet-item sheet-med">
-								<label>Mighty Deeds of Arms:</label>
+					<h3>Mutant Abilities</h3>
+
+						<ul>
+  							<li><b>Hit Points: </b>2d4 per level<br/> </li>
+  							<li><b>Weapons: </b> Any<br/></li>
+  							<li><b>Armor: </b> Any, but must be customized for the Mutant<br/></li>
+  							<li><b>Alignment: </b> Law (uncommon), Neutral (common), Chaos (common)<br/></li>
+						</ul>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-col-1-1 sheet-hd-row"><b>Survival :</b> Add your Survival Die to all non-combat tasks related to surviving in the wilds and wastes such as finding safe food, finding clean water, avoiding environmental hazards, identifying dangerous creatures, navigation through the wastes, etc.. In addition, the mutant can add their Survival Die to all Saves involving toxins, radiation, and environmental effects. </br></div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-10 sheet-right">
+								<select name="attr_SurvivalDeedDie">
+									<option value="d0" selected="selected">--</option>
+									<option value="d3">d3</option>
+									<option value="d4">d4</option>
+									<option value="d5">d5</option>
+									<option value="d6">d6</option>
+									<option value="d7">d7</option>
+									<option value="d8">d8</option>
+									<option value="d10">d10</option>
+									<option value="d10+1">d10+1</option>
+									<option value="d10+2">d10+2</option>
+									<option value="d10+3">d10+3</option>
+								</select>
 							</div>
-							<div class="sheet-item sheet-tiny">
-					            <select name="attr_DeedDie">
-										<option value="d0" selected="selected">--</option>
-										<option value="d3">d3</option>
-										<option value="d4">d4</option>
-										<option value="d5">d5</option>
-										<option value="d6">d6</option>
-										<option value="d7">d7</option>
-										<option value="d8">d8</option>
-										<option value="d10">d10</option>
-										<option value="d10+1">d10+1</option>
-					            </select>
-							</div>
-							<div class="sheet-item sheet-tiny">
-								<button class="sheet-square" type="roll" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]" name="roll_DeedDie"/>
-							</div>
+							<div class="sheet-col-1-5 sheet-center"><button type="roll" class="sheet-roll" name="roll_SurvivalDeedDie" value="@{character_name} was made for survival in this place and adds [[@{SurvivalDeedDie}]] to their survival checks and certain saving throws!">Survival Deed Die</button></div>
 						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Ranger Path:</label>
-							</div>
-							<div class="sheet-item sheet-large">
-					            <select name="attr_RangerPath">
-										<option value="None" selected="selected">None</option>
-										<option value="Archery">Archery Expert</option>
-										<option value="Two Weapon">Two-Weapon Expert</option>
-					            </select>
-							</div>
-						</div>
-						<div>
-							<div class="sheet-item sheet-med">
-								<label>Favored Enemy:</label>
-							</div>
-							<div class="sheet-item sheet-large">
-								<input type="text" name="attr_RangerFavoredEnemy"/>
-							</div>
-						</div>
-						<div class="sheet-statblock">
-							<div class="sheet-header">
-								<div class="sheet-item sheet-med">
-									<label>Ability</label>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>	
+
+						<!-- BEGIN new spell page -->
+						<div class="sheet-col-1 sheet-vert-bottom sheet-center sheet-hd-row">Character Mutations</div>
+						<p class="sheet-small-note">All mutant characters have one or more mutations. Roll on table MU-2 (on Mutant Handout) to determine what type of mutation you have. Then roll to determine the sub-table under the type of mutation. Finally, roll on the sub-table to determine the mutation. Once you have determined what mutation you have, roll the percentage chance for each item listed. Yes, it is possible to receive no benefits or penalties for the mutation.</p>
+			
+			
+							<fieldset class="repeating_mutations">
+							<!-- BEGIN spell row -->
+								<div class="sheet-margin-bottom sheet-padr sheet-padl">
+									<div class="sheet-row">
+										<div class="sheet-col-1-6 sheet-vert-bottom sheet-center sheet-small-label">Base Mutation</div>
+										<div class="sheet-col-1-3 sheet-vert-bottom sheet-center sheet-small-label">Mutation</div>
+										<div class="sheet-col-1-6 sheet-vert-bottom sheet-center sheet-small-label">Sub-Mutation</div>
+										<div class="sheet-col-1-8 sheet-vert-bottom sheet-center sheet-small-label"># of Benefits/Penalties</div>
+									</div>
+				
+									<div class="sheet-row">
+										<div class="sheet-col-1-6 sheet-vert-middle" title="Select your Base Mutation">
+											<select name="attr_BaseMutation">
+												<option value="1">Hybridization</option>
+												<option value="0">Physiology</option>
+												<option value="0.0001" selected="selected">--</option>
+											</select>
+										</div>	
+										<div class="sheet-col-1-3 sheet-vert-middle"><input type="text" class="sheet-center" name="attr_Mutation"></div>
+										<div class="sheet-col-1-6 sheet-vert-middle"><input type="text" class="sheet-center" name="attr_SubMutation"></div>
+										<div class="sheet-col-1-8 sheet-vert-middle"><input type="text" class="sheet-center" name="attr_NumberSubMutation"></div>
+									</div>
+				
+				
+									<span class="sheet-spacer"></span>
+									<span class="sheet-small-label">Show :</span>
+									<input type="checkbox" name="attr_SubMutation1" class="sheet-spelltypetab sheet-SubMutation1" value="1"/><span class="sheet-spelltypetab sheet-SubMutation1">Sub-Mutation 1</span> 
+									<input type="checkbox" name="attr_SubMutation2" class="sheet-spelltypetab sheet-SubMutation2" value="1"/><span class="sheet-spelltypetab sheet-SubMutation2">Sub-Mutation 2</span> |
+									<input type="checkbox" name="attr_SubMutation3" class="sheet-spelltypetab sheet-SubMutation3" value="1"/><span class="sheet-spelltypetab sheet-SubMutation3">Sub-Mutation 3</span> |
+									<input type="checkbox" name="attr_SubMutation4" class="sheet-spelltypetab sheet-SubMutation4" value="1"/><span class="sheet-spelltypetab sheet-SubMutation4">Sub-Mutation 4</span>
+									<span class="sheet-spacer"></span>
+				
+									<div class="sheet-spell-type-SubMutation1">
+										<div class="sheet-row">
+											<div class="sheet-col-1-3 sheet-vert-bottom sheet-center sheet-small-label">Sub-Mutation Ability/Disablity Name</div>
+											<div class="sheet-col-1-2 sheet-vert-bottom sheet-center sheet-small-label">Ability/Disability Description</div>
+											<div class="sheet-col-1-6 sheet-vert-bottom sheet-center sheet-small-label">&nbsp;</div>
+										</div>
+					
+										<div class="sheet-row">
+											<div class="sheet-col-1-3 sheet-small-label sheet-center"><input type="text" class="sheet-center" name="attr_SubMutationName"></div>
+											<div class="sheet-col-1-2 sheet-small-label sheet-center"><textarea name="attr_SubMutationDescription" class="sheet-medium-textarea"></textarea></div>
+											<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_MutationInfo" value="/em explains the details of their @{SubMutationName} mutation\n\nDescription : \n@{SubMutationDescription}">Mutation Info</button></div>
+										</div>
+									</div>
+		
+									<div class="sheet-spell-type-SubMutation2">
+										<div class="sheet-row">
+											<div class="sheet-col-1-3 sheet-vert-bottom sheet-center sheet-small-label">Sub-Mutation Ability/Disablity Name</div>
+											<div class="sheet-col-1-2 sheet-vert-bottom sheet-center sheet-small-label">Ability/Disability Description</div>
+											<div class="sheet-col-1-6 sheet-vert-bottom sheet-center sheet-small-label">&nbsp;</div>
+										</div>
+					
+										<div class="sheet-row">
+											<div class="sheet-col-1-3 sheet-small-label sheet-center"><input type="text" class="sheet-center" name="attr_SubMutation2Name"></textarea></div>
+											<div class="sheet-col-1-2 sheet-small-label sheet-center"><textarea name="attr_SubMutation2Description" class="sheet-medium-textarea"></textarea></div>
+											<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_Mutation2Info" value="/em explains the details of their @{SubMutation2Name} mutation\n\nDescription : \n@{SubMutation2Description}">Mutation Info</button></div>
+										</div>
+									</div>
+
+									<div class="sheet-spell-type-SubMutation3">
+										<div class="sheet-row">
+											<div class="sheet-col-1-3 sheet-vert-bottom sheet-center sheet-small-label">Sub-Mutation Ability/Disablity Name</div>
+											<div class="sheet-col-1-3 sheet-vert-bottom sheet-center sheet-small-label">Ability/Disability Description</div>
+											<div class="sheet-col-1-6 sheet-vert-bottom sheet-center sheet-small-label">&nbsp;</div>
+										</div>
+					
+										<div class="sheet-row">
+											<div class="sheet-col-1-3 sheet-small-label sheet-center"><input type="text" class="sheet-center" name="attr_SubMutation3Name"></textarea></div>
+											<div class="sheet-col-1-2 sheet-small-label sheet-center"><textarea name="attr_SubMutation3Description" class="sheet-medium-textarea"></textarea></div>
+											<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_Mutation3Info" value="/em explains the details of their @{SubMutation3Name} mutation\n\nDescription : \n@{SubMutation3Description}">Mutation Info</button></div>
+										</div>
+									</div>
+
+									<div class="sheet-spell-type-SubMutation4">
+										<div class="sheet-row">
+											<div class="sheet-col-1-3 sheet-vert-bottom sheet-center sheet-small-label">Sub-Mutation Ability/Disablity Name</div>
+											<div class="sheet-col-1-2 sheet-vert-bottom sheet-center sheet-small-label">Ability/Disability Description</div>
+											<div class="sheet-col-1-6 sheet-vert-bottom sheet-center sheet-small-label">&nbsp;</div>
+										</div>
+					
+										<div class="sheet-row">
+											<div class="sheet-col-1-3 sheet-small-label sheet-center"><input type="text" class="sheet-center" name="attr_SubMutation4Name"></textarea></div>
+											<div class="sheet-col-1-2 sheet-small-label sheet-center"><textarea name="attr_SubMutation4Description" class="sheet-medium-textarea"></textarea></div>
+											<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_Mutation4Info" value="/em explains the details of their @{SubMutation4Name} mutation\n\nDescription : \n@{SubMutation4Description}">Mutation Info</button></div>
+										</div>
+									</div>
+
 								</div>
-								<div class="sheet-item sheet-tiny">
-									<label>Base</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<label>Check</label>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Climb</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerClimb" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} climbs: [[@{ActionDie}+@{RangerClimbheck}]]" name="roll_RangerClimb">
-										<input type="number" class="sheet-square" name="attr_RangerClimbCheck" value="@{RangerClimb}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Find Traps</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerTraps" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} finds and/or neutralizes a trap: [[@{ActionDie}+@{RangerTrapsCheck}]]" name="roll_RangerTraps">
-										<input type="number" class="sheet-square" name="attr_RangerTrapsCheck" value="@{RangerTraps}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Sneak and Hide</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerSneak" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} sneaks silently and hides: [[@{ActionDie}+@{RangerSneakCheck}]]" name="roll_RangerSneak">
-										<input type="number" class="sheet-square" name="attr_RangerSneakCheck" value="@{RangerSneak}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Strider</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerStrider" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} walks or even runs without leaving tracks or being hampered by difficult terrain: [[@{ActionDie}+@{RangerStriderCheck}]]" name="roll_RangerStrider">
-										<input type="number" class="sheet-square" name="attr_RangerStriderCheck" value="@{RangerStrider}+@{AGI}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-							<div>
-								<div class="sheet-item sheet-med">
-									<label>Survival</label>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<input type="text" class="sheet-square"  name="attr_RangerSurvival" value="0"/>
-								</div>
-								<div class="sheet-item sheet-tiny">
-									<button class="sheet-hidden-roll sheet-square" type="roll" value="@{character_name} uses wilderness skills: [[@{ActionDie}+@{RangerSurvivalCheck}]]" name="roll_RangerSurvival">
-										<input type="number" class="sheet-square" name="attr_RangerSurvivalCheck" value="@{RangerSurvival}+@{PER}+@{Level}" disabled="true"/>
-									</button>
-								</div>
-							</div>
-						</div>
-						<div>
-							<label>Luck check to avoid being surprised outdoors</label>
-						</div>
-					</div>
-				</div>-->
+		
+							<!-- END spell row -->	
+							</fieldset>
+				</div>
 
 				<!-- Robot -->
 				<div class="sheet-robot">
