@@ -305,6 +305,7 @@
 /* Borders for spell page and class action repeating section rows */
 div[data-groupname^="repeating_spellbook"] .repitem,
 div[data-groupname^="repeating_classactions"] .repitem,
+div[data-groupname^="repeating_mutations"] .repitem,
 .sheet-zero-row {
     border: 1px solid #000000;
 	border-radius: 12px;
@@ -375,6 +376,29 @@ div[data-groupname^="repeating_classactions"] .repitem,
 }
 
 /* END spell type tab Settings */
+
+/* Mutation tab Settings */
+.charsheet input.sheet-SubMutation1:checked ~ div.sheet-spell-type-SubMutation1,
+.charsheet input.sheet-SubMutation2:checked ~ div.sheet-spell-type-SubMutation2,
+.charsheet input.sheet-SubMutation3:checked ~ div.sheet-spell-type-SubMutation3,
+.charsheet input.sheet-SubMutation4:checked ~ div.sheet-spell-type-SubMutation4 {
+	max-height: 999999px;
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 0.5s linear 0s;
+}
+
+.charsheet input.sheet-SubMutation1:checked ~ span.sheet-SubMutation1,
+.charsheet input.sheet-SubMutation2:checked ~ span.sheet-SubMutation2,
+.charsheet input.sheet-SubMutation3:checked ~ span.sheet-SubMutation3,
+.charsheet input.sheet-SubMutation4:checked ~ span.sheet-SubMutation4 {
+    background: #879a6a;     
+    color: white;
+	border-radius: 4px;
+}
+
+/* END Mutation tab Settings */
+
 
 /* Table Settings */
 .charsheet table {
