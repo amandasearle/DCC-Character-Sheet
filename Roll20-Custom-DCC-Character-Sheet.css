@@ -1122,6 +1122,25 @@ div[data-groupname^="repeating_mutations"] .repitem,
 	display: none;
 } 
 
+/* Thief Tab */
+
+.charsheet input.sheet-CoreThief,
+.charsheet input.sheet-BetaThief,
+.charsheet label.sheet-subtab {
+    display: inline;
+	width:24px;
+	height: 22px;
+}
+
+.charsheet label.sheet-subtab {
+	width:40px;
+	height: 22px;
+} 
+
+.charsheet .sheet-CoreThief:checked~ div.sheet-BetaThief,
+.charsheet .sheet-BetaThief:checked~ div.sheet-CoreThief {
+	display: none;
+}
 
 /* Zero Level Character specific sections */
 
