@@ -863,72 +863,181 @@
 				</div>
 
 				<!-- Elf -->
-				<!--<div class="sheet-elf">	
-					<h3>Elven Abilities</h3>
+				<div class="sheet-elf">	
+					<h3>Elf Abilities</h3>
+					
 
 						<div class="sheet-row">
-							<div class="sheet-col-1-8 sheet-hd-row">Stealth Bonus : </br></div>
-							<div class="sheet-col-1-14 sheet-right">
-								<select name="attr_HalflingStealth" title="Select your bonus for Sneak and Hide based on your level">
-									<option value="3" selected="selected">+3</option>
-									<option value="5">+5</option>
-									<option value="7">+7</option>
-									<option value="8">+8</option>
-									<option value="9">+9</option>
-									<option value="11">+11</option>
-									<option value="12">+12</option>
-									<option value="13">+13</option>
-									<option value="14">+14</option>
-									<option value="15">+15</option>
-								</select>
+							<div class="sheet-col-1-6 sheet-hd-row">Heightened Senses : <br/></div>
+							<div class="sheet-col-1-6 sheet-center"><button type="roll" class="sheet-roll" name="roll_Elf_Secret_Doors" value="/me thinks they notice something. Secret Door Check: [[d20 + 4]]">Secret Door Check</button></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-4 sheet-hd-row">Luck Modifier (1st level): <br/></div>
+							<div class="sheet-col-1-16 sheet-left" title="Enter your Luck modifier at level 1"><input class="sheet-underline sheet-center" type="text" placeholder="0" name="attr_Elf_Luck_Mod"></div>
+							<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+							<div class="sheet-col-1-4 sheet-hd-row">Lucky Spell (1st level): <br/></div>
+							<div class="sheet-col-1-3 sheet-right" title="Enter your Lucky Spell"><input class="sheet-underline sheet-center" type="text" placeholder="Choose 1st level spell (if any)" name="attr_Elf_Lucky_Spell"></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row sheet-sub-header">
+							<div class="sheet-col-1-5 sheet-center sheet-inspiration-label">Familiar</div>
+						</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-4 sheet-hd-row">Find Familiar Spell Check Roll: <br/></div>
+							<div class="sheet-col-1-16 sheet-right" title="Enter your Find Familiar Spell Check Roll"><input class="sheet-underline sheet-center" type="text" placeholder="0" name="attr_Elf_Familiar_Check"></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-8 sheet-hd-row">Name: <br/></div>
+							<div class="sheet-col-1-4 sheet-right" title="Enter your Familiar's Name"><input class="sheet-underline sheet-center" type="text" placeholder="Familiar Name" name="attr_Elf_Familiar_Name"></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-8 sheet-hd-row">Type: <br/></div>
+							<div class="sheet-col-1-4 sheet-right" title="Enter your Familiar Type"><input class="sheet-underline sheet-center" type="text" placeholder="Type of Familiar" name="attr_ElfFamiliar"></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-8 sheet-hd-row">Physical Look: <br/></div>
+							<div class="sheet-col-1-4 sheet-right" title="Enter your Familiar's Physical Look" ><input class="sheet-underline sheet-center" type="text" placeholder="Physical Look" name="attr_Elf_Familiar_Look"></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+								<div class="sheet-col-1-8 sheet-hd-row">Benefit(s): <br/></div>
+								<div class="sheet-col-1-2 sheet-right" title="Enter your Familiar's Benefits" ><input class="sheet-underline sheet-center" type="text" placeholder="Enter your familiar's benefits to you here" name="attr_Elf_Familiar_Benefit"></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-8 sheet-hd-row">Personality: <br/></div>
+							<div class="sheet-col-1-4 sheet-right" title="Enter your Familiar's Personality"><input class="sheet-underline sheet-center" type="text" placeholder="Personality" name="attr_Elf_Familiar_Personality"></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row sheet-sub-header">
+							<div class="sheet-col-1-5 sheet-center sheet-inspiration-label">Patron</div>
+						</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-16 sheet-hd-row">Name: <br/></div>
+							<div class="sheet-col-1-2 sheet-right" title="Enter your Supernatural Patron"><input class="sheet-underline sheet-center" type="text" placeholder="Patron's Name" name="attr_ElfPatron"></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-col-1-1">
+							<div class="sheet-row">
+								<div class="sheet-col-1-6 sheet-hd-row">Taint: <br/></div>
+								<div class="sheet-col-1-1" title="Enter Patron Taints here"><textarea name="attr_Elf_Patron_Taint" placeholder="Enter your Patron Taint(s) here"></textarea></div>
 							</div>
-							<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_HalflingSneak" value="@{character_name} Sneaks: [[@{ActionDie1} + @{HalflingStealth} + @{AGI}]]">Sneak</button></div>
-							<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_HalflingHide" value="@{character_name} Hides: [[@{ActionDie1} + @{HalflingStealth} + @{AGI}]]">Hide</button></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-col-1-1">
+							<div class="sheet-row sheet-sub-header">
+								<div class="sheet-col-1-5 sheet-center sheet-inspiration-label">Spell Corruption</div>
+							</div>
+							<div class="sheet-row">
+								<div class="sheet-col-1-1" title="Enter Spell Corruptions Here"><textarea name="attr_ElfCorruption" placeholder="Enter your Spell Corruption(s) here"></textarea></div>
+							</div>
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<ul>
-							<li><b>Hit Points:</b> 1d6 per level<br/> </li>
-  							<li><b>Weapons: </b> Club, dagger, handaxe, staff, short sword, crossbow, javelin, shortbow, and sling<br/></li>
-  							<li><b>Armor: </b> Any<br/></li>
-  							<li><b>Alignment: </b> Law (common), Neutral (uncommon), Chaos (extremely rare)<br/></li>
-  							<li><b>Languages: </b> Knows one additional language<br/></li>
-  							<li><b>Two-weapon fighting </b><br/>
-    							<ul>
-      								<li>Attack Die: d16 + d16<br/></li>
-      								<li>Can fight with two equal sized weapons, such as two handaxes or two short swords<br/></li>
-      								<li>Scores a Critical and Automatic hit on a natural 16<br/></li>
-      								<li>Fumbles only when both dice come up a 1<br/></li>
-      								<li>If AGI &gt;16, use normal two-weapon fighting rules<br/></li>
+  							<li><b>Hit Points:</b> 1d6 per level<br/> </li>
+  							<li><b>Weapons: </b> Dagger, javelin, lance, longbow, longsword, shortbow, short sword, staff, spear, and two-handed sword<br/></li>
+  							<li><b>Armor: </b> Elves often wear Mithril armor, even though it hinders spellcasting.<br/></li>
+  							<li><b>Alignment: </b> Law (rare), Neutral (common), Chaos (common)<br/></li>
+  							<li><b>Languages: </b> Knows Common, Elvish, & one other language.  Also knows one additional language for every point of Int modifier<br/></li>
+  							<li><b>Magic: </b><br/>
+  								<ul>
+      								<li>1st level:  Knows 3 spells, randomly determined; Also knows Invoke Patron and Patron Bond<br/></li>
+      								<li>Max spell level: Based on the level of the Elf<br/></li>
+      								<li>Max spells known: Based on the level of the Elf<br/></li>
+      								<li>New spells:  Can be of any level for which the elf is eligible, must choose the level before randomly rolling for the spell.  Higher level spells are more difficult to cast.<br/></li>
     							</ul>
-  							</li>
-  							<li><b>Infravision 30'</b><br/></li>
-  							<li><b>Good Luck Charm </b><br/>
-    							<ul>
-      								<li><b>Double the bonus of a Luck check </b><br/>
-      									<ul>
-      										<li>For every 1 point of Luck expended, gain a +2 to your roll <br/></li>
-      									</ul>
-      								</li>
-      								<li><b>Recover lost Luck</b><br/>
-      									<ul>
-      										<li>Luck score is restored each night by a number of points equal to level <br/></li>
-      										<li>Luck score cannot be taken past natural maximum <br/></li>
-      									</ul>
-      								</li>
-      								<li><b>Expend Luck for Allies</b><br/>
-      									<ul>
-      										<li>Ally must be nearby and visible <br/></li>
-      										<li>Can act out of Initiative order to burn Luck and apply to Ally's rolls <br/></li>
-      										<li>Luck Modifier can apply to any roll made by an Ally <br/></li>
-      										<li>This trait applies to only <i>one</i> halfling in a party.  More halflings do not make the party more lucky. <br/></li>
-      									</ul>
-      								</li>
+    						</li>
+    						<li><b>Infravision 60'</b><br/></li>
+    						<li><b>Immunities: </b><br/>
+  								<ul>
+      								<li>Immune to Magical Sleep<br/></li>
+      								<li>Immune to Paralysis<br/></li>
     							</ul>
-  							</li>
-						</ul>				
-				</div>-->
+    						</li>
+    						<li><b>Vulnerabilities: </b><br/>
+  								<ul>
+      								<li>Extremely sensitive to the Touch of Iron<br/></li>
+      								<li>Direct contact to iron causes a burning sensation<br/></li>
+      								<li>Exposure at close distances to iron makes elves uncomfortable<br/></li>
+      								<li>Elf may not wear iron armor or bear the touch of iron weapons for extended periods, this will cause 1 HP of damage per day of direct contact<br/></li>
+      								<li>Due to iron sensitivity, Elves at 1st level may purchase one piece of armor and one weapon made from mithril at no additional cost.<br/></li>
+    							</ul>
+    						</li>
+    						<li><b>Heightened Senses: </b><br/>
+  								<ul>
+      								<li>+4 bonus to detect secret doors<br/></li>
+      								<li>Passing within 10' of a secret door, entitles an elf to check for it<br/></li>
+    							</ul>
+    						</li>
+    						</li><b>Luck: </b> <br/>
+    							<ul>
+      								<li>At 1st level, elf may choose to apply luck modifier to spell checks for ONE spell of their choosing<br/></li>
+      								<li>This modifier will not change as the elf's luck changes<br/></li>
+    							</ul>
+    						</li>
+  							<li><b>Action Dice: </b> An elf’s action die can be used for attacks or spell checks at any level. At 5th level, an elf can cast two spells in a single round, the first with a d20 spell check and the second with a d14; or they can make two attacks, the first with a d20 attack roll and the second with a d14; or they may combine an attack with a spell check. Note that the results of mercurial magic may modify the action dice based on the dice chain.<br/></li>
+						</ul>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-5 sheet-hd-row">Momentum : </br></div>
+							<div class="sheet-col-1-10 sheet-right">
+								<select name="attr_Momentum" value="10">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10" selected="selected">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18">18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+								</select>
+							</div>
+						</div>
+				</div>
 
 				<!-- Halfling -->
 				<div class="sheet-halfling">	
@@ -1290,10 +1399,25 @@
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
-						<div class="sheet-row">
-							<div class="sheet-col-1-8 sheet-hd-row">Patron: <br/></div>
-							<div class="sheet-col-1-4 sheet-right" title="Enter your Patron (if you have one)"><input class="sheet-underline sheet-center" type="text" name="attr_RobotPatron"></div>
+						<div class="sheet-row sheet-sub-header">
+							<div class="sheet-col-1-5 sheet-center sheet-inspiration-label">Patron</div>
 						</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-16 sheet-hd-row">Name: <br/></div>
+							<div class="sheet-col-1-2 sheet-right" title="Enter your Supernatural Patron"><input class="sheet-underline sheet-center" type="text" placeholder="Patron's Name" name="attr_RobotPatron"></div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-col-1-1">
+							<div class="sheet-row">
+								<div class="sheet-col-1-6 sheet-hd-row">Taint: <br/></div>
+								<div class="sheet-col-1-1" title="Enter Patron Taints here"><textarea name="attr_Robot_Patron_Taint" placeholder="Enter your Patron Taint(s) here"></textarea></div>
+							</div>
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
@@ -3030,6 +3154,14 @@
   							<li><b>Armor: </b> Wizards rarely wear armor, as it hinders spellcasting.<br/></li>
   							<li><b>Alignment: </b> Chaotic wizards study black magic. Neutral or lawful wizards seek control over elements. Wizards of all persuasions practice enchantment.<br/></li>
   							<li><b>Languages: </b> Knows two additional languages for every point of Int modifier<br/></li>
+  							<li><b>Magic: </b><br/>
+  								<ul>
+      								<li>1st level:  Knows 4 spells, randomly determined<br/></li>
+      								<li>Max spell level: Based on the level of the Wizard<br/></li>
+      								<li>Max spells known: Based on the level of the Wizard plus their INT bonus<br/></li>
+      								<li>New spells:  Can be of any level for which the wizard is eligible, must choose the level before randomly rolling for the spell.  Higher level spells are more difficult to cast.<br/></li>
+    							</ul>
+    						</li><b>Luck: </b> A wizard's luck modifier applies to Corruption and Mercurial Magic rolls<br/></li>
   							<li><b>Action Dice: </b> A wizard’s first action die can be used for attacks or spell checks, but his second action die can only be used for spell checks. At 5th level, a wizard can cast two spells in a single round, the first with a d20 spell check and the second with a d14. Note that the results of mercurial magic may modify the action dice based on the dice chain.<br/></li>
 						</ul>
 
@@ -3095,7 +3227,7 @@
 						<div class="sheet-col-1-1">
 							<div class="sheet-row">
 								<div class="sheet-col-1-6 sheet-hd-row">Taint: <br/></div>
-								<div class="sheet-col-1-1" title="Enter Patron Taints here"><textarea name="attr_Patron_Taint" placeholder="Enter your Patron Taint(s) here"></textarea></div>
+								<div class="sheet-col-1-1" title="Enter Patron Taints here"><textarea name="attr_Wizard_Patron_Taint" placeholder="Enter your Patron Taint(s) here"></textarea></div>
 							</div>
 						</div>
 
