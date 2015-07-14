@@ -9,12 +9,12 @@
 		</div>
 
 		<div class="sheet-row">
-			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_player_name"><br/>Player Name</div>
+			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" placeholder="Player Name"name="attr_player_name"><br/>Player Name</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_character_name"><br/>Character Name</div>
-			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Race"><br/>Race</div>
+			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" placeholder="Character Name" name="attr_character_name"><br/>Character Name</div>
+			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" placeholder="Race" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>9th May 2015</p></div>
+			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>14th July 2015</p></div>
 		</div>
 
 	</div>
@@ -49,13 +49,13 @@
      				<h4 class="sheet-center">Character Information </h4>
 
 						<div class="sheet-row">
-							<div class="sheet-col-1-2 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Class Name"><br/>Class</div>
-							<div class="sheet-col-1-2 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Occupation"><br/>Occupation</div>
+							<div class="sheet-col-1-2 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" placeholder="Class" name="attr_Class Name"><br/>Class</div>
+							<div class="sheet-col-1-2 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" placeholder="Occupation" name="attr_Occupation"><br/>Occupation</div>
 						</div>
 
 						<div class="sheet-row">
-							<div class="sheet-col-3-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Title"><br/>Title</div>
-							<div class="sheet-col-3-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Alignment"><br/>Alignment</div>
+							<div class="sheet-col-3-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" placeholder="Title" name="attr_Title"><br/>Title</div>
+							<div class="sheet-col-3-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" Placeholder="Alignment" name="attr_Alignment"><br/>Alignment</div>
 							<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_Level" value="0"<br/>Level</div>
 							<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" name="attr_XP" value="0"<br/>XP</div>
 						</div>
@@ -615,7 +615,7 @@
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-8 sheet-hd-row">Deity: <br/></div>
-							<div class="sheet-col-1-4 sheet-right" title="Enter your Deity"><input class="sheet-underline sheet-center" type="text" name="attr_ClericDeity"></div>
+							<div class="sheet-col-1-4 sheet-right" title="Enter your Deity"><input class="sheet-underline sheet-center" type="text" placeholder="Deity Name" name="attr_ClericDeity"></div>
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
@@ -798,6 +798,21 @@
 
 					<h3>Dwarven Abilities</h3>
 
+						<div class="sheet-col-1-2 sheet-left sheet-vert-middle">Lucky Roll for <b>Harsh Winter (All attack rolls)</b>?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for All attack rolls"><input type="checkbox" value="@{LCK_Starting}" name="attr_AllAtkLuckyRoll"></div>
+
+						<div class="sheet-col-1-2 sheet-left sheet-vert-middle">Lucky Roll for <b>The bull (Melee attack rolls)</b>?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Melee attackrolls"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll"></div>
+
+						<div class="sheet-col-1-2 sheet-left sheet-vert-middle">Lucky Roll for <b>Born on the battlefield (Damage rolls)</b>?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Damage rolls"><input type="checkbox" value="@{LCK_Starting}" name="attr_DmgLuckyRoll"></div>
+
+
+						<div class="sheet-col-1-2 sheet-left sheet-vert-middle">Lucky Roll for <b>Path of the bear (Melee damage rolls)</b>?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Melee damage rolls"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeDmgLuckyRoll"></div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
 						<div class="sheet-row">
 							<div class="sheet-col-1-5 sheet-hd-row">Mighty Deeds of Arms : </br></div>
 							<div class="sheet-col-1-10 sheet-right">
@@ -822,14 +837,14 @@
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-8 sheet-hd-row">Lucky Weapon: <br/></div>
-							<div class="sheet-col-1-4 sheet-right" title="The weapon must be specific ie Longsword or Shortsword instead of just swords"><input class="sheet-underline sheet-center" type="text" name="attr_LuckyWeapon"/></div>
+							<div class="sheet-col-1-4 sheet-right" title="The weapon must be specific ie Longsword or Shortsword instead of just swords"><input class="sheet-underline sheet-center" type="text" placeholder="Choose one Dwarven Weapon" name="attr_LuckyWeapon"/></div>
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-6 sheet-hd-row">Shield bash (d14)<br/></div>
-							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_dwarfShieldBash" value="@{character_name} does a shield bash. Attack roll: [[d14 + @{STR}]] plus Mighty Deed. Damage roll: [[1d3 + @{STR}]] plus Mighty Deed.">Shield Bash</button></div>			
+							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_dwarfShieldBash" value="@{character_name} does a shield bash. Attack roll: [[d14 + @{STR} + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll}]] plus Mighty Deed. Damage roll: [[1d3 + @{STR} + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]] plus Mighty Deed.">Shield Bash</button></div>			
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
@@ -1320,73 +1335,162 @@
 				</div>
 
 				<!-- Reptilian -->
-				<!--<div class="sheet-reptilian">
+				<div class="sheet-reptilian">
 
 					<h3>Reptilian Abilities</h3>
 
+						<div class="sheet-col-1-2 sheet-left sheet-vert-middle">Lucky Roll for <b>Born Under the Loom (Skill Checks)</b>?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Skill Checks"><input type="checkbox" value="@{LCK_Starting}" name="attr_SkillChecksLuckyRoll"></div>
+
+						<div class="sheet-col-1-2 sheet-left sheet-vert-middle">Lucky Roll for <b>Harsh Winter (All attack rolls)</b>?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for All attack rolls"><input type="checkbox" value="@{LCK_Starting}" name="attr_AllAtkLuckyRoll"></div>
+
+						<div class="sheet-col-1-2 sheet-left sheet-vert-middle">Lucky Roll for <b>The bull (Melee attack rolls)</b>?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Melee attackrolls"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeAtkLuckyRoll"></div>
+
+						<div class="sheet-col-1-2 sheet-left sheet-vert-middle">Lucky Roll for <b>Raised by wolves (Unarmed attack rolls)</b>?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Unarmed attack rolls"><input type="checkbox" value="@{LCK_Starting}" name="attr_UnarmedAtkLuckyRoll"></div>
+
+						<div class="sheet-col-1-2 sheet-left sheet-vert-middle">Lucky Roll for <b>Born on the battlefield (Damage rolls)</b>?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Damage rolls"><input type="checkbox" value="@{LCK_Starting}" name="attr_DmgLuckyRoll"></div>
+
+						<div class="sheet-col-1-2 sheet-left sheet-vert-middle">Lucky Roll for <b>Path of the bear (Melee damage rolls)</b>?</div>
+						<div class="sheet-col-1-22 sheet-checkbox-row sheet-vert-middle" title="Check the box if you have the Lucky Roll for Melee damage rolls"><input type="checkbox" value="@{LCK_Starting}" name="attr_MeleeDmgLuckyRoll"></div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
 						<div class="sheet-row">
-							<div class="sheet-col-1-5 sheet-hd-row">Mighty Deeds of Arms : </br></div>
+							<div class="sheet-col-1-10 sheet-hd-row">Magus : </br></div>
 							<div class="sheet-col-1-10 sheet-right">
-								<select name="attr_DeedDie">
+								<select name="attr_MagusDie" title="Select your die for Magus based on your level">
 									<option value="d0" selected="selected">--</option>
-									<option value="d3">d3</option>
-									<option value="d4">d4</option>
-									<option value="d5">d5</option>
-									<option value="d6">d6</option>
-									<option value="d7">d7</option>
-									<option value="d8">d8</option>
-									<option value="d10+1">d10+1</option>
-									<option value="d10+2">d10+2</option>
-									<option value="d10+3">d10+3</option>
-									<option value="d10+4">d10+4</option>
+									<option value="d10">d10</option>
+									<option value="d12">d12</option>
+									<option value="d14">d14</option>
+									<option value="d16">d16</option>
+									<option value="d20">d20</option>
+									<option value="d20+d14">d20+d14</option>
 								</select>
 							</div>
-							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_DeedDie" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]">Deed Die</button></div>
+							<div class="sheet-col-1-10 sheet-right">
+								<select name="attr_MagusBonus" title="Select either INT or PER according to Judge">
+									<option value="d0" selected="selected">--</option>
+									<option value="@{PER}">PER</option>
+									<option value="@{INT}">INT</option>
+								</select>
+							</div>
+							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MagusDie" value="@{character_name} attempts to use the secrets of the Magus: [[@{MagusDie} + @{MagusBonus}]]">Magus Die</button></div>
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<div class="sheet-row">
-							<div class="sheet-col-1-8 sheet-hd-row">Lucky Weapon: <br/></div>
-							<div class="sheet-col-1-4 sheet-right" title="The weapon must be specific ie Longsword or Shortsword instead of just swords"><input class="sheet-underline sheet-center" type="text" name="attr_LuckyWeapon"/></div>
+							<div class="sheet-col-1-8 sheet-hd-row">Surreptitious : </br></div>
+							<div class="sheet-col-1-14 sheet-right">
+								<select name="attr_ReptilianStealth" title="Select your bonus for Surreptitious based on your level">
+									<option value="0" selected="selected">--</option>
+									<option value="1">+1</option>
+									<option value="3">+3</option>
+									<option value="5">+5</option>
+									<option value="7">+7</option>
+									<option value="8">+8</option>
+									<option value="9">+9</option>
+									<option value="10">+10</option>
+									<option value="11">+11</option>
+									<option value="12">+12</option>
+									<option value="13">+13</option>	
+								</select>
+							</div>
+							<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianHide" value="@{character_name} Hides: [[@{ActionDie1} + @{ReptilianStealth} + @{AGI} + @{SkillChecksLuckyRoll}]]">Hide</button></div>
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<div class="sheet-row">
-							<div class="sheet-col-1-6 sheet-hd-row">Shield bash (d14)<br/></div>
-							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_dwarfShieldBash" value="@{character_name} does a shield bash. Attack roll: [[d14 + @{STR}]] plus Mighty Deed. Damage roll: [[1d3 + @{STR}]] plus Mighty Deed.">Shield Bash</button></div>			
+							<div class="sheet-col-1-6 sheet-hd-row">Predator: Bite Attack<br/></div>
+							<div class="sheet-col-1-15 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianBite" value="@{character_name} bites with their powerful jaws. Attack roll: [[d20 + @{STR} + @{LCK} + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]]. Damage roll: [[1d6 + @{STR} + @{LCK} + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]].">Bite</button></div>			
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">Predator: Claw Attack<br/></div>
+							<div class="sheet-col-1-15 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianClaw" value="@{character_name} shreds with their razor sharp claws. Attack roll: [[d20 + @{STR} + @{LCK} + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]]. Damage roll: [[1d8 + @{STR} + @{LCK} + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]].">Claw</button></div>			
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">Predator: Tail Swipe<br/></div>
+							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianTailSwipe" value="@{character_name} swipes with their powerful tail. Attack roll: [[d20 + @{STR} + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]]. Damage roll: [[1d5 + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]].">Tail Swipe</button></div>			
+						</div>
+
+						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
+
+						<div class="sheet-row">
+							<div class="sheet-col-1-6 sheet-hd-row">Predator: Tail Trip<br/></div>
+							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianTailTrip" value="@{character_name} tries to trip with their tail. Attack roll: [[d20 +@{STR} + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]].  Enemy must save against this roll if the attack hits.">Tail Trip</button></div>			
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 		
 						<ul>
-  							<li><b>Hit Points:</b>1d10 per level<br/> </li>
-  							<li><b>Weapons: </b> Battleaxe, club, dagger, handaxe, longsword, mace, short sword, spear, two-handed sword, warhammer, crossbow, javelin, shortbow, and sling<br/></li>
-  							<li><b>Armor: </b> Any<br/></li>
-  							<li><b>Alignment: </b> Law (common), Neutral (uncommon), Chaos (rare)<br/></li>
-  							<li><b>Languages: </b> Knows one additional language<br/></li>
+  							<li><b>Hit Points:</b>1d8 per level<br/> </li>
+  							<li><b>Weapons: </b> Club, Crossbow, Daggers, Javelin, Long Sword, Pole Arms, and Staves<br/></li>
+  							<li><b>Armor: </b> Padded or Leather<br/></li>
+  							<li><b>Alignment: </b> Neutral<br/></li>
+  							<li><b>Languages: </b> Common, Draconic<br/></li>
   							<li><b>Infravision 60'</b><br/></li>
-  							<li><b>Underground Skills </b><br/>
+  							<li><b>Skills </b><br/>
     							<ul>
-      								<li><b>Smell Gold/Gems </b><br/>
+      								<li><b>Luck </b><br/>
       									<ul>
-      										<li>Strong concentration within 100' <br/></li>
-      										<li>Smaller concentrations, down to a single coin, as low as 40' (for a single coin or gem) <br/></li>
+      										<li>When in Melee using only bite or claw, they receive their luck bonus to attack and damage<br/></li>
       									</ul>
       								</li>
-      								<li><b>Find Construction: Bonus equal to Class Level</b><br/>
+      								<li><b>Alacritous </b><br/>
       									<ul>
-      										<li>Detecting Traps <br/></li>
-      										<li>Detecting Slanting Passages <br/></li>
-      										<li>Detecting Shifting Walls <br/></li>
-      										<li>Detecting New Construction <br/></li>
+      										<li>Ground movement of 40' if unemcumbered <br/></li>
+      										<li>Can use the combat maneuver Charge without penalty to AC <br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Surreptitious </b><br/>
+      									<ul>
+      										<li>In wilderness environments (swamps, jungles, etc.), gain a bonus to hide in such surroundings. <br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Predator </b><br/>
+      									<ul>
+      										<li>Bite attack at 1d6 plus modifiers <br/></li>
+      										<li>Claw attack at 1d8 plus modifiers <br/></li>
+      										<li>Tail Swipe attack at 1d5<br/></li>
+      										<li>Tail Trip attack<br/>
+     											<ul>
+      												<li>If the trip attack is successful, the target must make a Reflex save vs. the attack roll <br/></li>
+      												<li>If the save is unsuccessful, the target falls prone, must use movement to stand, and takes a -2 penalty until the next round. <br/></li>
+      											</ul>
+      										</li>
+      									</ul>
+      								</li>
+      								<li><b>Magus </b><br/>
+      									<ul>
+      										<li>May use magical items, artifacts, and scrolls created for Wizards and their ilk <br/></li>
+      										<li>Gains a die roll for spell checks when casting from an item or scroll <br/></li>
+      										<li>The Judge can rule if the player gains an Intelligence or Personality modifier based on the item or spell being used. <br/></li>
+      									</ul>
+      								</li>
+      								<li><b>Cold Blooded</b><br/>
+      									<ul>
+      										<li>You are cold-blooded creatures who prefer warmer and humid climates. <br/></li>
+      										<li>Extended exposure to a cold climate slowly drains energy and strength from you, reducing effectiveness in combat and ability. <br/></li>
+      										<li>For every hour you are exposed to extreme cold, the dice used for checks are reduced by one step until none are left. <br/></li>
+      										<li>Once the dice are reduced below d3, the character cannot move and you will take environmental damage until dead. <br/></li>
       									</ul>
       								</li>
     							</ul>
   							</li>
 						</ul>
-				</div>-->
+				</div>
 
 				<!-- Robot -->
 				<div class="sheet-robot">
@@ -3110,7 +3214,7 @@
 
 					<div class="sheet-row">
 						<div class="sheet-col-1-8 sheet-hd-row">Lucky Weapon: <br/></div>
-						<div class="sheet-col-1-4 sheet-right" title="The weapon must be specific ie Longsword or Shortsword instead of just swords"><input class="sheet-underline sheet-center" type="text" name="attr_LuckyWeapon"/></div>
+						<div class="sheet-col-1-4 sheet-right" title="The weapon must be specific ie Longsword or Shortsword instead of just swords"><input class="sheet-underline sheet-center" type="text" placeholder="Choose one Warrior Weapon" name="attr_LuckyWeapon"/></div>
 					</div>
 
 					<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>			
@@ -3281,6 +3385,9 @@
 		<!-- Weapons -->
 
 		<div class="sheet-section-weapons">
+
+			<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_DeedDie" value="@{character_name} does a Mighty Deed: [[@{DeedDie}]]">Deed Die</button></div>
+			<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 			
 			<!-- BEGIN AUTO GENERATED WEAPON SECTION -->
 			<h4 class="sheet-center">Melee Weapons </h4>
