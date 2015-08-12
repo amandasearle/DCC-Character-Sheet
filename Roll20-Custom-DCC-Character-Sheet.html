@@ -14,12 +14,7 @@
 			<div class="sheet-col-1-4 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" placeholder="Character Name" name="attr_character_name"><br/>Character Name</div>
 			<div class="sheet-col-1-8 sheet-small-label sheet-center"><input class="sheet-underlined sheet-center" type="text" placeholder="Race" name="attr_Race"><br/>Race</div>
 			<div class="sheet-col-1-8 sheet-center sheet-small-label">&nbsp;</div>
-<<<<<<< HEAD
 			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>11th August 2015</p></div>
-=======
-			<div class="sheet-col-1-8 sheet-center sheet-margin-top"><p class="sheet-last-updated">Sheet version<br/>14th July 2015</p></div>
->>>>>>> origin/master
-		</div>
 
 	</div>
 
@@ -743,7 +738,7 @@
 				</div>
 
 				<!-- Cyborg -->
-				<div class="sheet-cyborg">
+				<!--<div class="sheet-cyborg">
 					<h3>Cyborg Abilities</h3>
 
 						<input type="hidden" name="attr_JuryRig_Die" value="d20" />
@@ -982,7 +977,7 @@
     							</ul>
   							</li>
 						</ul>
-				</div>
+				</div>-->
 
 				<!-- Dwarf -->
 				<div class="sheet-dwarf">
@@ -1035,11 +1030,7 @@
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-6 sheet-hd-row">Shield bash (d14)<br/></div>
-<<<<<<< HEAD
 							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_dwarfShieldBash" value="@{character_name} does a shield bash. Attack roll: [[d14 + [[@{STR}]] + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll}]] plus Mighty Deed. Damage roll: [[1d3 + [[@{STR}]] + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]] plus Mighty Deed.">Shield Bash</button></div>			
-=======
-							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_dwarfShieldBash" value="@{character_name} does a shield bash. Attack roll: [[d14 + @{STR} + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll}]] plus Mighty Deed. Damage roll: [[1d3 + @{STR} + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]] plus Mighty Deed.">Shield Bash</button></div>			
->>>>>>> origin/master
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
@@ -1574,11 +1565,7 @@
 									<option value="@{INT}">INT</option>
 								</select>
 							</div>
-<<<<<<< HEAD
 							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MagusDie" value="@{character_name} attempts to use the secrets of the Magus: [[@{MagusDie} + [[@{MagusBonus}]]]]">Magus Die</button></div>
-=======
-							<div class="sheet-col-1-10 sheet-center"><button type="roll" class="sheet-roll" name="roll_MagusDie" value="@{character_name} attempts to use the secrets of the Magus: [[@{MagusDie} + @{MagusBonus}]]">Magus Die</button></div>
->>>>>>> origin/master
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
@@ -1600,55 +1587,35 @@
 									<option value="13">+13</option>	
 								</select>
 							</div>
-<<<<<<< HEAD
 							<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianHide" value="@{character_name} Hides: [[@{ActionDie1} + @{ReptilianStealth} + [[@{AGI}]] + @{SkillChecksLuckyRoll}]]">Hide</button></div>
-=======
-							<div class="sheet-col-1-12 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianHide" value="@{character_name} Hides: [[@{ActionDie1} + @{ReptilianStealth} + @{AGI} + @{SkillChecksLuckyRoll}]]">Hide</button></div>
->>>>>>> origin/master
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-6 sheet-hd-row">Predator: Bite Attack<br/></div>
-<<<<<<< HEAD
 							<div class="sheet-col-1-15 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianBite" value="@{character_name} bites with their powerful jaws. Attack roll: [[d20 + [[@{STR}]] + [[@{LCK}]] + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]]. Damage roll: [[1d6 + [[@{STR}]] + [[@{LCK}]] + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]].">Bite</button></div>			
-=======
-							<div class="sheet-col-1-15 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianBite" value="@{character_name} bites with their powerful jaws. Attack roll: [[d20 + @{STR} + @{LCK} + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]]. Damage roll: [[1d6 + @{STR} + @{LCK} + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]].">Bite</button></div>			
->>>>>>> origin/master
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-6 sheet-hd-row">Predator: Claw Attack<br/></div>
-<<<<<<< HEAD
 							<div class="sheet-col-1-15 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianClaw" value="@{character_name} shreds with their razor sharp claws. Attack roll: [[d20 + [[@{STR}]] + [[@{LCK}]] + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]]. Damage roll: [[1d8 + [[@{STR}]] + [[@{LCK}]] + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]].">Claw</button></div>			
-=======
-							<div class="sheet-col-1-15 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianClaw" value="@{character_name} shreds with their razor sharp claws. Attack roll: [[d20 + @{STR} + @{LCK} + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]]. Damage roll: [[1d8 + @{STR} + @{LCK} + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]].">Claw</button></div>			
->>>>>>> origin/master
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-6 sheet-hd-row">Predator: Tail Swipe<br/></div>
-<<<<<<< HEAD
 							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianTailSwipe" value="@{character_name} swipes with their powerful tail. Attack roll: [[d20 + [[@{STR}]] + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]]. Damage roll: [[1d5 + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]].">Tail Swipe</button></div>			
-=======
-							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianTailSwipe" value="@{character_name} swipes with their powerful tail. Attack roll: [[d20 + @{STR} + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]]. Damage roll: [[1d5 + @{DmgLuckyRoll} + @{MeleeDmgLuckyRoll}]].">Tail Swipe</button></div>			
->>>>>>> origin/master
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
 
 						<div class="sheet-row">
 							<div class="sheet-col-1-6 sheet-hd-row">Predator: Tail Trip<br/></div>
-<<<<<<< HEAD
 							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianTailTrip" value="@{character_name} tries to trip with their tail. Attack roll: [[d20 + [[@{STR}]] + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]].  Enemy must save against this roll if the attack hits.">Tail Trip</button></div>			
-=======
-							<div class="sheet-col-1-8 sheet-center"><button type="roll" class="sheet-roll" name="roll_ReptilianTailTrip" value="@{character_name} tries to trip with their tail. Attack roll: [[d20 +@{STR} + @{AllAtkLuckyRoll} + @{MeleeAtkLuckyRoll} + @{UnarmedAtkLuckyRoll}]].  Enemy must save against this roll if the attack hits.">Tail Trip</button></div>			
->>>>>>> origin/master
 						</div>
 
 						<div class="sheet-col-1-1 sheet-center sheet-small-label">&nbsp;</div>
